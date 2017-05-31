@@ -1,0 +1,39 @@
+Name: MCgrid_CMS_2015_I1370682
+Year: 2015
+Summary: NNPDF Analysis for CMS15 ttbar differential data
+Experiment: CMS
+Collider: LHC
+InspireID: 1370682
+Status: UNVALIDATED
+Authors:
+ - Nathan Hartland nathan.hartland@physics.ox.ac.uk
+References:
+ - ARXIV:1505.04480
+RunInfo:
+  Inclusive ttbar
+NumEvents: 10M
+NeedCrossSection: no
+Beams: [p+, p+]
+Energies: [8000]
+Description:
+  'MCgrid-Rivet analysis for CMS 2015 ttbar differential'
+BibKey: Khachatryan:2015oqa
+BibTeX: '@article{Khachatryan:2015oqa,
+      author         = "Khachatryan, Vardan and others",
+      title          = "{Measurement of the differential cross section for top
+                        quark pair production in pp collisions at $\sqrt{s} =
+                        8\,\text {TeV} $}",
+      collaboration  = "CMS",
+      journal        = "Eur. Phys. J.",
+      volume         = "C75",
+      year           = "2015",
+      number         = "11",
+      pages          = "542",
+      doi            = "10.1140/epjc/s10052-015-3709-x",
+      eprint         = "1505.04480",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CMS-TOP-12-028, CERN-PH-EP-2015-117",
+      SLACcitation   = "%%CITATION = ARXIV:1505.04480;%%"
+}'
+

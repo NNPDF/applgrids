@@ -1,0 +1,34 @@
+Combined MCgrid Analyses for NNPDF
+
+_____ChangeLog________________________________________
+
+	- 25/11/15 -nh 
+		 First commit
+
+_____Requirements_____________________________________
+
+To reproduce original results, the following versions
+MUST be used
+
+SHERPA 2.1.1
+Rivet 2.2.1
+MCgrid 1.2
+
+_____Implemented Analyses_____________________________
+
+CMS_2015_I1370682.cc : CMS 2015 ttbar differential.
+Data files are from http://hepdata.cedar.ac.uk/view/ins1370682
+
+D0_2013_I1253555.cc : D0 2013 W muon asymmetry.
+Data files are from http://hepdata.cedar.ac.uk/view/ins1253555
+
+LHCB_2016_I1406555.cc : LHCb 2016 W/Z muon rapidity distributions
+Data files are from http://hepdata.cedar.ac.uk/view/ins1406555
+
+_____Rivet Analysis___________________________________
+
+To compile and install the NNPDF MCgrid Analyses, type:
+
+	make && make install
+
+In this directory.

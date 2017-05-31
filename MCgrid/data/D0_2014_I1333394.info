@@ -1,0 +1,47 @@
+Name: D0_2014_I1333394
+Year: 2014
+Summary: D0 Final W electron asymmetry measurement
+Experiment: D0
+Collider: Tevatron
+InspireID: 1333394
+Status: UNVALIDATED
+Authors:
+ - Nathan Hartland nathan.hartland@physics.ox.ac.uk
+#References:
+# - <Example: arXiv:hep-ex/0511054 (plus erratum)>
+RunInfo:
+  <Insert event types (not gen-specific), energy, any kinematic
+  efficiency cut(s) that may be needed; essentially any details needed to set
+  up a generator to reproduce the data.>
+NumEvents: 1000000
+NeedCrossSection: no
+Beams: [p-, p+]
+Energies: [1960]
+#PtCuts: <Insert list of kinematic pT cuts in GeV, e.g. [0, 20]>
+#NeedCrossSection: True
+Description:
+  ''
+BibKey: D0:2014kma
+BibTeX: '@article{D0:2014kma,
+      author         = "Abazov, Victor Mukhamedovich and others",
+      title          = "{Measurement of the electron charge asymmetry in
+                        $\boldsymbol{p\bar{p}\rightarrow W+X \rightarrow e\nu +X}$
+                        decays in $\boldsymbol{p\bar{p}}$ collisions at
+                        $\boldsymbol{\sqrt{s}=1.96}$ TeV}",
+      collaboration  = "D0",
+      journal        = "Phys. Rev.",
+      volume         = "D91",
+      year           = "2015",
+      number         = "3",
+      pages          = "032007",
+      doi            = "10.1103/PhysRevD.91.032007, 10.1103/PhysRevD.91.079901",
+      note           = "[Erratum: Phys. Rev.D91,no.7,079901(2015)]",
+      eprint         = "1412.2862",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "FERMILAB-PUB-14-514-E",
+      SLACcitation   = "%%CITATION = ARXIV:1412.2862;%%"
+}'
+ToDo:
+ - X
+
