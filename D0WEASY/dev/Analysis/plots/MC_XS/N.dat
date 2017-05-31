@@ -1,0 +1,46 @@
+# BEGIN PLOT
+DrawOnly=/home/hartland/applgrids/D0WEASY/dev/Analysis/1000M.yoda/MC_XS/N /home/hartland/applgrids/D0WEASY/dev/Analysis/100M.yoda/MC_XS/N /home/hartland/applgrids/D0WEASY/dev/Analysis/2000M.yoda/MC_XS/N
+Title=Number of generated events
+XMajorTickMarks=20
+RatioPlot=1
+LogY=0
+RatioPlotReference=/home/hartland/applgrids/D0WEASY/dev/Analysis/1000M.yoda/MC_XS/N
+XLabel=
+XMinorTickMarks=0
+YLabel=$N$
+Legend=1
+# END PLOT
+
+# BEGIN HISTO1D /home/hartland/applgrids/D0WEASY/dev/Analysis/1000M.yoda/MC_XS/N
+LineColor={[HTML]{EE3311}}
+LineStyle=solid
+Path=/home/hartland/applgrids/D0WEASY/dev/Analysis/1000M.yoda/MC_XS/N
+Title=1000M
+XLabel=
+YLabel=
+# xlow	 xhigh	 val	 errminus	 errplus
+0.000000e+00	1.000000e+00	1.123034e+09	3.351170e+04	3.351170e+04
+# END HISTO1D
+
+# BEGIN HISTO1D /home/hartland/applgrids/D0WEASY/dev/Analysis/100M.yoda/MC_XS/N
+LineColor={[HTML]{3366FF}}
+LineStyle=solid
+Path=/home/hartland/applgrids/D0WEASY/dev/Analysis/100M.yoda/MC_XS/N
+Title=100M
+XLabel=
+YLabel=
+# xlow	 xhigh	 val	 errminus	 errplus
+0.000000e+00	1.000000e+00	1.123070e+08	1.059750e+04	1.059750e+04
+# END HISTO1D
+
+# BEGIN HISTO1D /home/hartland/applgrids/D0WEASY/dev/Analysis/2000M.yoda/MC_XS/N
+LineColor={[HTML]{109618}}
+LineStyle=solid
+Path=/home/hartland/applgrids/D0WEASY/dev/Analysis/2000M.yoda/MC_XS/N
+Title=2000M
+XLabel=
+YLabel=
+# xlow	 xhigh	 val	 errminus	 errplus
+0.000000e+00	1.000000e+00	2.246076e+09	4.739278e+04	4.739278e+04
+# END HISTO1D
+

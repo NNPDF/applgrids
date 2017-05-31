@@ -1,0 +1,1028 @@
+setup_mcfmbridge()
+ ************** MCFM - version 6.8 ****************
+ *                                                *
+ * MCFM, v6.8                   April 26th, 2014  *
+ *                                                *
+ * Authors: John Campbell, Keith Ellis,           *
+ *          Ciaran Williams                       *
+ *         (johnmc@fnal.gov, ellis@fnal.gov,      *
+ *          ciaran@fnal.gov)                      *
+ *                                                *
+ * For details see:                               *
+ *                                                *
+ *  arXiv:1403.2641 (Triphoton production)        *
+ *  arXiv:1312.1628 (gg->WW, Higgs interference)  *
+ *  arXiv:1311.3589 (gg->ZZ, Higgs interference)  *
+ *  Phys.Rev.D87:114006, arXiv:1302.3856          *
+ *  (tZ, tH -- with R. Rontsch)                   *
+ *  arXiv:1211.6390 (DM, P. Fox and C. Williams)  *
+ *  JHEP 1211:162 (2012), arXiv:1208.0566         *
+ *  (Z+gam+jet,Z+gam+gam -- with H. Hartanto)     *
+ *  arXiv:1204.1513 (top production+decay)        *
+ *  JHEP 1207:052 (2012), arXiv:1204.5678 (ttW)   *
+ *  JHEP 1110:005 (2011), arXiv:1107.5569         *
+ *         (gg->WW,Higgs intference)              *
+ *  JHEP 1107:018 (2011), arXiv:1105.0020         *
+ *         (diboson update)                       *
+ *  JHEP 1103:027 (2011), arXiv:1011.6647         *
+ *         (Wbb for mb>0, with S. Badger)         *
+ *  Phys.Rev.D81:074023, arXiv:1001.4495 (H+2jet) *
+ *                                                *
+ *  P.R.L. 102:142001, arXiv:0903.0005 [hep-ph]   *
+ *    (t-channel single top + explicit b,         *
+ *      JC, R.Frederix, F.Maltoni, F.Tramontano)  *
+ *  N.P.B 726:109(2005), hep-ph/0506289 (W+t)     *
+ *  Phys.Rev.D70:094012, hep-ph/0408158 (Sngl Top)*
+ *       (with Francesco Tramontano)              *
+ *                                                *
+ *  Phys.Rev.D65:113007, hep-ph/0202176 (W,Z+2j)  *
+ *  Phys.Rev.D62:114012, hep-ph/0006304 (W,Z+bb)  *
+ *  Phys.Rev.D60:113006, hep-ph/9905386 (diboson) *
+ *                                                *
+ * On the web:  http://mcfm.fnal.gov/             *
+ **************************************************
+
+ * Using input file named LHCBWZMU8TEV_Z.DAT                                                      
+
+ * [Flags to specify the mode in which MCFM is run]                                          
+ *                   -1            [nevtrequested] 
+ *                    F            [creatent] 
+ *                    F            [skipnt] 
+ *                    F            [dswhisto] 
+ *                    T            [creategrid] 
+ *                    F            [writetop] 
+ *                    F            [writedat] 
+ *                    F            [writegnu] 
+ *                    F            [writeroot] 
+ *                    F            [writepwg] 
+
+ * [General options to specify the process and execution]                                    
+ *                   31            [nproc] 
+ *                 tota            [part] 
+ * LHCBWZMU8TEV                    [runstring] 
+ *            8000.0000            [sqrts] 
+ *                    1            [ih1] 
+ *                    1            [ih2] 
+ *             126.0000            [hmass] 
+ *              91.1876            [scale] 
+ *              91.1876            [facscale] 
+ * no                              [dynamicscale] 
+ *                    F            [zerowidth] 
+ *                    F            [removebr] 
+ *                   10            [itmx1] 
+ *               100000            [ncall1] 
+ *                   10            [itmx2] 
+ *              2000000            [ncall2] 
+ *                 4537            [ij] 
+ *                    F            [dryrun] 
+ *                    T            [Qflag] 
+ *                    T            [Gflag] 
+
+ * [Heavy quark masses]                                                                      
+ *             172.5000            [top mass] 
+ *               4.1800            [bottom mass] 
+ *               1.2700            [charm mass] 
+
+ * [Pdf selection]                                                                           
+ *              cteq6_m            [pdlabel] 
+ *                    4            [NGROUP] 
+ *                   46            [NSET] 
+ * NNPDF30_nlo_as_0118             [LHAPDF group] 
+ *                    0            [LHAPDF set] 
+
+ * [Jet definition and event cuts]                                                           
+ *              60.0000            [m34min] 
+ *             120.0000            [m34max] 
+ *               0.0000            [m56min] 
+ *            8000.0000            [m56max] 
+ *                    T            [inclusive] 
+ *                 ankt            [algorithm] 
+ *              15.0000            [ptjetmin] 
+ *               0.0000            [etajetmin] 
+ *               3.0000            [etajetmax] 
+ *               0.5000            [Rcut] 
+ *                    T            [makecuts] 
+ *              20.0000            [leptpt] 
+ *               4.5000            [leptrap] 
+ *    0.000,   2.000                [leptveto] 
+ *               0.0000            [misspt] 
+ *              20.0000            [leptpt2] 
+ *               4.5000            [leptrap2] 
+ *    0.000,   2.000                [leptveto2] 
+ *               0.0000            [mtrans34cut] 
+ *               0.0000            [Rjlmin] 
+ *               0.0000            [Rllmin] 
+ *               0.0000            [delyjjmin] 
+ *                    F            [jetsopphem] 
+ *                    0            [lbjscheme] 
+ *               0.0000            [ptbjetmin] 
+ *              99.0000            [etabjetmax] 
+
+ * [Settings for photon processes]                                                           
+ *                    F            [frag] 
+ *             GdRG__LO            [fragset] 
+ *              80.0000            [frag_scale] 
+ *              20.0000            [gammpt] 
+ *               2.5000            [gammrap] 
+ *              20.0000            [gammpt2] 
+ *              20.0000            [gammpt3] 
+ *               0.0000            [Rgalmin] 
+ *               0.4000            [Rgagamin] 
+ *               0.4000            [Rgajetmin] 
+ *               0.4000            [cone_ang] 
+ *               0.5000            [epsilon_h] 
+
+ * [Anomalous couplings of the W and Z]                                                      
+ *               0.0000            [delg1_z] 
+ *               0.0000            [delk_z] 
+ *               0.0000            [delk_g] 
+ *               0.0000            [lambda_z] 
+ *               0.0000            [lambda_g] 
+ *               0.0000            [h1Z] 
+ *               0.0000            [h1gam] 
+ *               0.0000            [h2Z] 
+ *               0.0000            [h2gam] 
+ *               0.0000            [h3Z] 
+ *               0.0000            [h3gam] 
+ *               0.0000            [h4Z] 
+ *               0.0000            [h4gam] 
+ *               2.0000            [tevscale] 
+
+ * [Anomalous width of the Higgs]                                                            
+ *               1.0000            [Gamma_H/Gamma_H(SM)] 
+
+ * [How to resume/save a run]                                                                
+ *                    F            [readin] 
+ *                    F            [writeout] 
+ *                                 [ingridfile] 
+ *                                 [outgridfile] 
+
+ * [Technical parameters that should not normally be changed]
+
+ *                    F            [debug] 
+ *                    T            [verbose] 
+ *                    F            [new_pspace] 
+ *                    F            [virtonly] 
+ *                    F            [realonly] 
+ *                    T            [spira] 
+ *                    F            [noglue] 
+ *                    F            [ggonly] 
+ *                    F            [gqonly] 
+ *                    F            [omitgg] 
+ *                    F            [vanillafiles] 
+ *                    1            [nmin] 
+LHAPDF 6.1.6 loading /home/guffanti/software/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0000.dat
+NNPDF30_nlo_as_0118 PDF set, member #0, version 2; LHAPDF ID = 260000
+LHAPDF 6.1.6 loading /home/guffanti/software/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0000.dat
+NNPDF30_nlo_as_0118 PDF set, member #0, version 2; LHAPDF ID = 260000
+ ***********************************************
+ booking the grids Mon Feb 22 20:30:24 2016
+
+Dataset ID: LHCBWZMU8TEV_Z
+LHCb Z -> mu mu rapidity distribution, 2 fb-1, 8 TeV
+
+Using existing grid file LHCBWZMU8TEV_Z_yZ.root
+appl::grid() reading grid from file LHCBWZMU8TEV_Z_yZ.root	version 1.4.70
+appl::grid() read grid, size 0 MB	in 399.053 ms	trim in 0.046 ms
+grid::optimise() bin 0		size(untrimmed)=5	size(trimmed)=5
+grid::optimise() bin 1		size(untrimmed)=4	size(trimmed)=4
+grid::optimise() bin 2		size(untrimmed)=5	size(trimmed)=5
+grid::optimise() bin 3		size(untrimmed)=4	size(trimmed)=4
+grid::optimise() bin 4		size(untrimmed)=5	size(trimmed)=5
+grid::optimise() bin 5		size(untrimmed)=6	size(trimmed)=6
+grid::optimise() bin 6		size(untrimmed)=4	size(trimmed)=4
+grid::optimise() bin 7		size(untrimmed)=5	size(trimmed)=5
+grid::optimise() bin 8		size(untrimmed)=6	size(trimmed)=6
+grid::optimise() bin 9		size(untrimmed)=5	size(trimmed)=5
+grid::optimise() bin 10		size(untrimmed)=8	size(trimmed)=8
+grid::optimise() bin 11		size(untrimmed)=6	size(trimmed)=6
+grid::optimise() bin 12		size(untrimmed)=6	size(trimmed)=6
+grid::optimise() bin 13		size(untrimmed)=8	size(trimmed)=8
+grid::optimise() bin 14		size(untrimmed)=6	size(trimmed)=6
+grid::optimise() bin 15		size(untrimmed)=6	size(trimmed)=6
+grid::optimise() bin 16		size(untrimmed)=6	size(trimmed)=6
+grid::optimise() bin 17		size(untrimmed)=3	size(trimmed)=3
+grid::optimise() bin 0		size(untrimmed)=144	size(trimmed)=144
+grid::optimise() bin 1		size(untrimmed)=143	size(trimmed)=143
+grid::optimise() bin 2		size(untrimmed)=134	size(trimmed)=134
+grid::optimise() bin 3		size(untrimmed)=128	size(trimmed)=128
+grid::optimise() bin 4		size(untrimmed)=128	size(trimmed)=128
+grid::optimise() bin 5		size(untrimmed)=136	size(trimmed)=136
+grid::optimise() bin 6		size(untrimmed)=119	size(trimmed)=119
+grid::optimise() bin 7		size(untrimmed)=119	size(trimmed)=119
+grid::optimise() bin 8		size(untrimmed)=119	size(trimmed)=119
+grid::optimise() bin 9		size(untrimmed)=102	size(trimmed)=102
+grid::optimise() bin 10		size(untrimmed)=108	size(trimmed)=108
+grid::optimise() bin 11		size(untrimmed)=108	size(trimmed)=108
+grid::optimise() bin 12		size(untrimmed)=90	size(trimmed)=90
+grid::optimise() bin 13		size(untrimmed)=90	size(trimmed)=90
+grid::optimise() bin 14		size(untrimmed)=72	size(trimmed)=72
+grid::optimise() bin 15		size(untrimmed)=75	size(trimmed)=75
+grid::optimise() bin 16		size(untrimmed)=57	size(trimmed)=57
+grid::optimise() bin 17		size(untrimmed)=38	size(trimmed)=38
+==================================================
+appl::grid version 1.4.70	( 12-LO, 12-NLO, initial states, 18 observable bins )
+Optimised grid
+Unsymmetrised in x1, x2
+leading order of processes  0
+number of loops for grid    1
+x->y coordinate transform:  f2
+genpdf in use: mcfm-z
+--------------------------------------------------
+Observable binning: [ 18 bins : 2,  4.5 ]
+0	    2	- 2.125	   	 x:  [ 40 :	 0.00722862 - 0.485106	 : 40 :	 7.40381e-05 - 0.0435945	 : 	( order=6 ) ]	 Q2: [ 3 :	 8315.17 - 8315.19	( order=1 ) ]
+1	2.125	-  2.25	   	 x:  [ 40 :	 0.00722862 - 0.485106	 : 40 :	 7.40381e-05 - 0.0247667	 : 	( order=6 ) ]	 Q2: [ 3 :	 8315.17 - 8315.19	( order=1 ) ]
+2	 2.25	- 2.375	   	 x:  [ 40 :	 0.00722862 - 0.485106	 : 40 :	 7.40381e-05 - 0.0247667	 : 	( order=6 ) ]	 Q2: [ 3 :	 8315.17 - 8315.19	( order=1 ) ]
+3	2.375	-   2.5	   	 x:  [ 40 :	 0.0135453 - 0.580958	 : 40 :	 7.40381e-05 - 0.0247667	 : 	( order=6 ) ]	 Q2: [ 3 :	 8315.17 - 8315.19	( order=1 ) ]
+4	  2.5	- 2.625	   	 x:  [ 40 :	 0.0135453 - 0.580958	 : 40 :	 7.40381e-05 - 0.0247667	 : 	( order=6 ) ]	 Q2: [ 3 :	 8315.17 - 8315.19	( order=1 ) ]
+5	2.625	-  2.75	   	 x:  [ 40 :	 0.0135453 - 0.580958	 : 40 :	 3.829e-05 - 0.0247667	 : 	( order=6 ) ]	 Q2: [ 3 :	 8315.17 - 8315.19	( order=1 ) ]
+6	 2.75	- 2.875	   	 x:  [ 40 :	 0.0247667 - 0.681074	 : 40 :	 3.829e-05 - 0.0135453	 : 	( order=6 ) ]	 Q2: [ 3 :	 8315.17 - 8315.19	( order=1 ) ]
+7	2.875	-     3	   	 x:  [ 40 :	 0.0247667 - 0.681074	 : 40 :	 3.829e-05 - 0.0135453	 : 	( order=6 ) ]	 Q2: [ 3 :	 8315.17 - 8315.19	( order=1 ) ]
+8	    3	- 3.125	   	 x:  [ 40 :	 0.0247667 - 0.78467	 : 40 :	 3.829e-05 - 0.0135453	 : 	( order=6 ) ]	 Q2: [ 3 :	 8315.17 - 8315.19	( order=1 ) ]
+9	3.125	-  3.25	   	 x:  [ 40 :	 0.0435945 - 0.78467	 : 40 :	 3.829e-05 - 0.0135453	 : 	( order=6 ) ]	 Q2: [ 3 :	 8315.17 - 8315.19	( order=1 ) ]
+10	 3.25	- 3.375	   	 x:  [ 40 :	 0.0435945 - 0.891137	 : 40 :	 1.98005e-05 - 0.0135453	 : 	( order=6 ) ]	 Q2: [ 3 :	 8315.17 - 8315.19	( order=1 ) ]
+11	3.375	-   3.5	   	 x:  [ 40 :	 0.0435945 -       1	 : 40 :	 1.98005e-05 - 0.00722862	 : 	( order=6 ) ]	 Q2: [ 3 :	 8315.17 - 8315.19	( order=1 ) ]
+12	  3.5	- 3.625	   	 x:  [ 40 :	 0.0728405 -       1	 : 40 :	 1.98005e-05 - 0.00722862	 : 	( order=6 ) ]	 Q2: [ 3 :	 8315.17 - 8315.19	( order=1 ) ]
+13	3.625	-  3.75	   	 x:  [ 40 :	 0.0728405 -       1	 : 40 :	 1.98005e-05 - 0.00722862	 : 	( order=6 ) ]	 Q2: [ 3 :	 8315.17 - 8315.19	( order=1 ) ]
+14	 3.75	- 3.875	   	 x:  [ 40 :	 0.114425 -       1	 : 40 :	 1.98005e-05 - 0.00722862	 : 	( order=6 ) ]	 Q2: [ 3 :	 8315.17 - 8315.19	( order=1 ) ]
+15	3.875	-     4	   	 x:  [ 40 :	 0.114425 -       1	 : 40 :	 1.02388e-05 - 0.00722862	 : 	( order=6 ) ]	 Q2: [ 3 :	 8315.17 - 8315.19	( order=1 ) ]
+16	    4	-  4.25	   	 x:  [ 40 :	  0.1687 -       1	 : 40 :	 1.02388e-05 - 0.00380231	 : 	( order=6 ) ]	 Q2: [ 3 :	 8315.17 - 8315.19	( order=1 ) ]
+17	 4.25	-   4.5	   	 x:  [ 40 :	 0.234633 -       1	 : 40 :	 1.02388e-05 - 0.00380231	 : 	( order=6 ) ]	 Q2: [ 3 :	 8315.17 - 8315.19	( order=1 ) ]
+
+
+ ***********************************************
+ *                    2            [nmax] 
+ *                    T            [clustering] 
+ *                    F            [realwt] 
+ *                    0            [colourchoice] 
+ *               0.0100            [rtsmin] 
+ *               0.0001            [cutoff] 
+ *               0.2000            [aii] 
+ *               0.2000            [aif] 
+ *               0.2000            [afi] 
+ *               1.0000            [aff] 
+ *               1.0000            [bfi] 
+ *               1.0000            [bff] 
+
+ Chooser:process chosen by nproc=          31
+
+ *************************** f(p1)+f(p2) --> ******************************************
+ * Z^0(-->e^-(p3)+e^+(p4))                                                            *
+ **************************************************************************************
+
+
+ *******************************************
+ *     MCFM is calling LHAPDF              *
+ *                                         *
+ *   PDFname NNPDF30_nlo_as_0118.LHpdf     *
+ *   PDFmember  0                          *
+ *******************************************
+
+ ************** Electroweak parameters **************
+ *                                                  *
+ *  zmass(+)   91.1876000     wmass(+)  80.3980000  *
+ * zwidth(+)    2.4952000    wwidth(+)   2.1410000  *
+ *     Gf(+) 0.116637D-04   1/aemmz    132.3407015  *
+ *     xw       0.2226459      mtop(+) 172.5000000  *
+ *   gwsq       0.4264831       esq      0.0949547  *
+ * top width    1.4539179 (LO)                      *
+ *    mb        4.1800000        mc      1.2700000  *
+ *                                                  *
+ * Parameters marked (+) are input, others derived  *
+ ****************************************************
+
+ *******************************************
+ *     MCFM is calling LHAPDF              *
+ *                                         *
+ *   PDFname NNPDF30_nlo_as_0118.LHpdf     *
+ *   PDFmember  0                          *
+ *******************************************
+
+
+ ***************** CKM mixing matrix ****************
+ *                                                  *
+ *      Vud=.97419    Vus=.22570    Vub=.35900E-02  *
+ *      Vcd=.22560    Vcs=.97334    Vcb=.41500E-01  *
+ ****************************************************
+
+ ************* Strong coupling, alpha_s  ************
+ *                                                  *
+ *       alpha_s (scale)  0.11800230                *
+ *       alpha_s (zmass)  0.11800230                *
+ *         (using 2-loop running of alpha_s)        *
+ ****************************************************
+
+ ****************************************
+ *     Cross section in femtobarns      *
+ ****************************************
+
+
+ input parameters for vegas:  ndim=  5  ncall=  98304.
+                              it=    0  itmx=   10
+                              nprn=  0  alph= 1.50
+                              mds=  1   nd= 100
+                              xl( 1)=   0.000     xu( 1)=   1.000    
+                              xl( 2)=   0.000     xu( 2)=   1.000    
+                              xl( 3)=   0.000     xu( 3)=   1.000    
+                              xl( 4)=   0.000     xu( 4)=   1.000    
+                              xl( 5)=   0.000     xu( 5)=   1.000    
+
+ ****************** Basic mass cuts *****************
+ *                                                  *
+ *             60.00  <   m34  <   120.00           *
+ *              0.00  <   m56  <  8000.00           *
+ ****************************************************
+
+ ****************** Generic cuts ********************
+ *                                                  *
+ *        pt(lepton)      >    20.00 GeV            *
+ *      |eta(lepton)|     <     4.50                *
+ *       pt(missing)      >     0.00 GeV            *
+ *     pt(2nd+ lepton)    >    20.00 GeV            *
+ *   |eta(2nd+ lepton)|   <     4.50                *
+ *  (3,4) transverse mass >     0.00 GeV            *
+ *      R(jet,lepton)     >     0.00                *
+ *     R(lepton,lepton)   >     0.00                *
+ * |eta(jet1)-eta(jet2)|  >     0.00                *
+ ****************************************************
+ Poles cancelled!
+
+************* Integration by Vegas (iteration   1) **************
+*                                                               *
+*  integral  =  166706.93       accum. integral =  166706.93    *
+*  std. dev. =  808.28078       accum. std. dev =  808.28078    *
+*   max. wt. =    100.970                                       *
+*                                                               *
+**************   chi**2/iteration =  0.000       ****************
+
+
+************* Integration by Vegas (iteration   2) **************
+*                                                               *
+*  integral  =  166464.30       accum. integral =  166501.70    *
+*  std. dev. =  345.04188       accum. std. dev =  317.33712    *
+*   max. wt. =    100.970                                       *
+*                                                               *
+**************   chi**2/iteration = 0.7547E-01   ****************
+
+
+************* Integration by Vegas (iteration   3) **************
+*                                                               *
+*  integral  =  166314.84       accum. integral =  166406.17    *
+*  std. dev. =  310.26326       accum. std. dev =  221.84796    *
+*   max. wt. =    100.970                                       *
+*                                                               *
+**************   chi**2/iteration = 0.1261       ****************
+
+
+************* Integration by Vegas (iteration   4) **************
+*                                                               *
+*  integral  =  166827.00       accum. integral =  166553.61    *
+*  std. dev. =  302.09043       accum. std. dev =  178.81035    *
+*   max. wt. =    100.970                                       *
+*                                                               *
+**************   chi**2/iteration = 0.5031       ****************
+
+
+************* Integration by Vegas (iteration   5) **************
+*                                                               *
+*  integral  =  166802.95       accum. integral =  166597.04    *
+*  std. dev. =  389.34677       accum. std. dev =  162.49329    *
+*   max. wt. =    190.843                                       *
+*                                                               *
+**************   chi**2/iteration = 0.4621       ****************
+
+
+************* Integration by Vegas (iteration   6) **************
+*                                                               *
+*  integral  =  166313.61       accum. integral =  166545.77    *
+*  std. dev. =  345.78178       accum. std. dev =  147.06423    *
+*   max. wt. =    190.843                                       *
+*                                                               *
+**************   chi**2/iteration = 0.4797       ****************
+
+
+************* Integration by Vegas (iteration   7) **************
+*                                                               *
+*  integral  =  166696.35       accum. integral =  166569.03    *
+*  std. dev. =  344.05212       accum. std. dev =  135.22832    *
+*   max. wt. =    190.843                                       *
+*                                                               *
+**************   chi**2/iteration = 0.4268       ****************
+
+
+************* Integration by Vegas (iteration   8) **************
+*                                                               *
+*  integral  =  166365.93       accum. integral =  166541.66    *
+*  std. dev. =  342.63860       accum. std. dev =  125.78631    *
+*   max. wt. =    190.843                                       *
+*                                                               *
+**************   chi**2/iteration = 0.4093       ****************
+
+
+************* Integration by Vegas (iteration   9) **************
+*                                                               *
+*  integral  =  167027.03       accum. integral =  166601.29    *
+*  std. dev. =  336.10649       accum. std. dev =  117.80659    *
+*   max. wt. =    190.843                                       *
+*                                                               *
+**************   chi**2/iteration = 0.5866       ****************
+
+
+************* Integration by Vegas (iteration  10) **************
+*                                                               *
+*  integral  =  167013.75       accum. integral =  166645.18    *
+*  std. dev. =  341.38660       accum. std. dev =  111.36241    *
+*   max. wt. =    190.843                                       *
+*                                                               *
+**************   chi**2/iteration = 0.6662       ****************
+
+ ****************************************************
+ * Writing out vegas grid to Z_only_tota_NNPDF30_91__91__LHCBWZMU8TEV_dvegas_virt.grid                                                          *
+ ****************************************************
+ Adjusting number of points for real to     1000000
+
+ input parameters for vegas:  ndim=  7  ncall= 839808.
+                              it=   11  itmx=   10
+                              nprn=  0  alph= 1.50
+                              mds=  1   nd= 100
+                              xl( 1)=   0.000     xu( 1)=   1.000    
+                              xl( 2)=   0.000     xu( 2)=   1.000    
+                              xl( 3)=   0.000     xu( 3)=   1.000    
+                              xl( 4)=   0.000     xu( 4)=   1.000    
+                              xl( 5)=   0.000     xu( 5)=   1.000    
+                              xl( 6)=   0.000     xu( 6)=   1.000    
+                              xl( 7)=   0.000     xu( 7)=   1.000    
+
+ *********** Basic jet-defining parameters **********
+ *     (Anti-kt algorithm - see arXiv:0802.1189)    *
+ *                                                  *
+ *     pt(jet)         >  15.0000                   *
+ *   |pseudo-rap(jet)| >   0.0000                   *
+ *   |pseudo-rap(jet)| <   3.0000                   *
+ * pseudo-cone size, R :   0.5000                   *
+ *                                                  *
+ *    Cross-section defined by:   0 <= jets <= 1    *
+ ****************************************************
+
+************* Integration by Vegas (iteration   1) **************
+*                                                               *
+*  integral  =  16202.461       accum. integral =  16202.461    *
+*  std. dev. =  3177.7746       accum. std. dev =  3177.7746    *
+*   max. wt. =    2963.37                                       *
+*                                                               *
+**************   chi**2/iteration = 0.3553E-12   ****************
+
+
+************* Integration by Vegas (iteration   2) **************
+*                                                               *
+*  integral  =  12273.953       accum. integral =  12545.286    *
+*  std. dev. =  865.56988       accum. std. dev =  835.14358    *
+*   max. wt. =    2963.37                                       *
+*                                                               *
+**************   chi**2/iteration =  1.409       ****************
+
+
+************* Integration by Vegas (iteration   3) **************
+*                                                               *
+*  integral  =  12344.785       accum. integral =  12367.681    *
+*  std. dev. =  299.85801       accum. std. dev =  282.21800    *
+*   max. wt. =    2963.37                                       *
+*                                                               *
+**************   chi**2/iteration = 0.7332       ****************
+
+
+************* Integration by Vegas (iteration   4) **************
+*                                                               *
+*  integral  =  11638.730       accum. integral =  11849.664    *
+*  std. dev. =  180.08880       accum. std. dev =  151.81313    *
+*   max. wt. =    2963.37                                       *
+*                                                               *
+**************   chi**2/iteration =  2.065       ****************
+
+
+************* Integration by Vegas (iteration   5) **************
+*                                                               *
+*  integral  =  11898.104       accum. integral =  11870.003    *
+*  std. dev. =  178.44300       accum. std. dev =  115.62871    *
+*   max. wt. =    2963.37                                       *
+*                                                               *
+**************   chi**2/iteration =  1.560       ****************
+
+
+************* Integration by Vegas (iteration   6) **************
+*                                                               *
+*  integral  =  11672.617       accum. integral =  11838.383    *
+*  std. dev. =  264.74428       accum. std. dev =  105.96301    *
+*   max. wt. =    2963.37                                       *
+*                                                               *
+**************   chi**2/iteration =  1.342       ****************
+
+
+************* Integration by Vegas (iteration   7) **************
+*                                                               *
+*  integral  =  11834.670       accum. integral =  11837.548    *
+*  std. dev. =  196.80366       accum. std. dev =  93.298989    *
+*   max. wt. =    2963.37                                       *
+*                                                               *
+**************   chi**2/iteration =  1.119       ****************
+
+
+************* Integration by Vegas (iteration   8) **************
+*                                                               *
+*  integral  =  11765.308       accum. integral =  11822.176    *
+*  std. dev. =  179.44656       accum. std. dev =  82.778927    *
+*   max. wt. =    2963.37                                       *
+*                                                               *
+**************   chi**2/iteration = 0.9775       ****************
+
+
+************* Integration by Vegas (iteration   9) **************
+*                                                               *
+*  integral  =  12297.974       accum. integral =  11904.579    *
+*  std. dev. =  180.86743       accum. std. dev =  75.270101    *
+*   max. wt. =    2963.37                                       *
+*                                                               *
+**************   chi**2/iteration =  1.570       ****************
+
+
+************* Integration by Vegas (iteration  10) **************
+*                                                               *
+*  integral  =  11843.062       accum. integral =  11896.515    *
+*  std. dev. =  193.78058       accum. std. dev =  70.162968    *
+*   max. wt. =    2963.37                                       *
+*                                                               *
+**************   chi**2/iteration =  1.405       ****************
+
+ ****************************************************
+ * Writing out vegas grid to Z_only_tota_NNPDF30_91__91__LHCBWZMU8TEV_dvegas_real.grid                                                          *
+ ****************************************************
+
+ ****************************************************
+ * Reading in vegas grid from Z_only_tota_NNPDF30_91__91__LHCBWZMU8TEV_dvegas_virt.grid                                                         *
+ ****************************************************
+
+ input parameters for vegas:  ndim=  5  ncall=1518750.
+                              it=   11  itmx=   10
+                              nprn=  0  alph= 1.50
+                              mds=  1   nd= 100
+                              xl( 1)=   0.000     xu( 1)=   1.000    
+                              xl( 2)=   0.000     xu( 2)=   1.000    
+                              xl( 3)=   0.000     xu( 3)=   1.000    
+                              xl( 4)=   0.000     xu( 4)=   1.000    
+                              xl( 5)=   0.000     xu( 5)=   1.000    
+fill_grid() filled 1000000 weights Mon Feb 22 20:37:58 2016
+
+************* Integration by Vegas (iteration   1) **************
+*                                                               *
+*  integral  =  166543.26       accum. integral =  166543.26    *
+*  std. dev. =  71.889813       accum. std. dev =  71.889813    *
+*   max. wt. =    2.63184                                       *
+*                                                               *
+**************   chi**2/iteration =  0.000       ****************
+
+ Writing out intermediate results for iteration           1
+fill_grid() filled 2000000 weights Mon Feb 22 20:40:46 2016
+
+************* Integration by Vegas (iteration   2) **************
+*                                                               *
+*  integral  =  166827.20       accum. integral =  166684.18    *
+*  std. dev. =  72.421981       accum. std. dev =  51.020883    *
+*   max. wt. =    2.63184                                       *
+*                                                               *
+**************   chi**2/iteration =  7.666       ****************
+
+ Writing out intermediate results for iteration           2
+fill_grid() filled 3000000 weights Mon Feb 22 20:43:32 2016
+
+************* Integration by Vegas (iteration   3) **************
+*                                                               *
+*  integral  =  166557.62       accum. integral =  166642.01    *
+*  std. dev. =  72.170579       accum. std. dev =  41.661485    *
+*   max. wt. =    2.63184                                       *
+*                                                               *
+**************   chi**2/iteration =  4.872       ****************
+
+ Writing out intermediate results for iteration           3
+fill_grid() filled 4000000 weights Mon Feb 22 20:46:20 2016
+
+************* Integration by Vegas (iteration   4) **************
+*                                                               *
+*  integral  =  166657.29       accum. integral =  166645.76    *
+*  std. dev. =  73.113620       accum. std. dev =  36.197379    *
+*   max. wt. =    2.75759                                       *
+*                                                               *
+**************   chi**2/iteration =  3.264       ****************
+
+ Writing out intermediate results for iteration           4
+fill_grid() filled 5000000 weights Mon Feb 22 20:49:09 2016
+
+************* Integration by Vegas (iteration   5) **************
+*                                                               *
+*  integral  =  166581.03       accum. integral =  166632.93    *
+*  std. dev. =  72.825143       accum. std. dev =  32.414142    *
+*   max. wt. =    2.75759                                       *
+*                                                               *
+**************   chi**2/iteration =  2.608       ****************
+
+ Writing out intermediate results for iteration           5
+fill_grid() filled 6000000 weights Mon Feb 22 20:51:57 2016
+
+************* Integration by Vegas (iteration   6) **************
+*                                                               *
+*  integral  =  166653.76       accum. integral =  166636.28    *
+*  std. dev. =  74.044829       accum. std. dev =  29.693577    *
+*   max. wt. =    2.75759                                       *
+*                                                               *
+**************   chi**2/iteration =  2.101       ****************
+
+ Writing out intermediate results for iteration           6
+fill_grid() filled 7000000 weights Mon Feb 22 20:54:42 2016
+
+************* Integration by Vegas (iteration   7) **************
+*                                                               *
+*  integral  =  166638.47       accum. integral =  166636.58    *
+*  std. dev. =  74.549330       accum. std. dev =  27.585862    *
+*   max. wt. =    2.75759                                       *
+*                                                               *
+**************   chi**2/iteration =  1.752       ****************
+
+ Writing out intermediate results for iteration           7
+fill_grid() filled 8000000 weights Mon Feb 22 20:57:25 2016
+fill_grid() filled 9000000 weights Mon Feb 22 21:00:09 2016
+
+************* Integration by Vegas (iteration   8) **************
+*                                                               *
+*  integral  =  166648.79       accum. integral =  166638.02    *
+*  std. dev. =  75.392376       accum. std. dev =  25.906149    *
+*   max. wt. =    2.75759                                       *
+*                                                               *
+**************   chi**2/iteration =  1.505       ****************
+
+ Writing out intermediate results for iteration           8
+fill_grid() filled 10000000 weights Mon Feb 22 21:02:54 2016
+
+************* Integration by Vegas (iteration   9) **************
+*                                                               *
+*  integral  =  166679.11       accum. integral =  166642.21    *
+*  std. dev. =  76.947215       accum. std. dev =  24.552012    *
+*   max. wt. =    8.53546                                       *
+*                                                               *
+**************   chi**2/iteration =  1.349       ****************
+
+ Writing out intermediate results for iteration           9
+fill_grid() filled 11000000 weights Mon Feb 22 21:05:43 2016
+
+************* Integration by Vegas (iteration  10) **************
+*                                                               *
+*  integral  =  166619.49       accum. integral =  166640.13    *
+*  std. dev. =  77.339646       accum. std. dev =  23.401141    *
+*   max. wt. =    8.53546                                       *
+*                                                               *
+**************   chi**2/iteration =  1.208       ****************
+
+ Adjusting number of points for real to    20000000
+ ****************************************************
+ * Reading in vegas grid from Z_only_tota_NNPDF30_91__91__LHCBWZMU8TEV_dvegas_real.grid                                                         *
+ ****************************************************
+
+ input parameters for vegas:  ndim=  7  ncall=********
+                              it=   11  itmx=   10
+                              nprn=  0  alph= 1.50
+                              mds=  1   nd= 100
+                              xl( 1)=   0.000     xu( 1)=   1.000    
+                              xl( 2)=   0.000     xu( 2)=   1.000    
+                              xl( 3)=   0.000     xu( 3)=   1.000    
+                              xl( 4)=   0.000     xu( 4)=   1.000    
+                              xl( 5)=   0.000     xu( 5)=   1.000    
+                              xl( 6)=   0.000     xu( 6)=   1.000    
+                              xl( 7)=   0.000     xu( 7)=   1.000    
+fill_grid() filled 12000000 weights Mon Feb 22 21:07:26 2016
+fill_grid() filled 13000000 weights Mon Feb 22 21:08:28 2016
+fill_grid() filled 14000000 weights Mon Feb 22 21:09:26 2016
+fill_grid() filled 15000000 weights Mon Feb 22 21:10:23 2016
+fill_grid() filled 16000000 weights Mon Feb 22 21:11:19 2016
+fill_grid() filled 17000000 weights Mon Feb 22 21:12:17 2016
+fill_grid() filled 18000000 weights Mon Feb 22 21:13:14 2016
+fill_grid() filled 19000000 weights Mon Feb 22 21:14:11 2016
+fill_grid() filled 20000000 weights Mon Feb 22 21:15:07 2016
+fill_grid() filled 21000000 weights Mon Feb 22 21:16:03 2016
+fill_grid() filled 22000000 weights Mon Feb 22 21:16:59 2016
+fill_grid() filled 23000000 weights Mon Feb 22 21:17:56 2016
+fill_grid() filled 24000000 weights Mon Feb 22 21:18:52 2016
+fill_grid() filled 25000000 weights Mon Feb 22 21:19:48 2016
+fill_grid() filled 26000000 weights Mon Feb 22 21:20:44 2016
+fill_grid() filled 27000000 weights Mon Feb 22 21:21:41 2016
+fill_grid() filled 28000000 weights Mon Feb 22 21:22:37 2016
+fill_grid() filled 29000000 weights Mon Feb 22 21:23:34 2016
+fill_grid() filled 30000000 weights Mon Feb 22 21:24:30 2016
+fill_grid() filled 31000000 weights Mon Feb 22 21:25:27 2016
+
+************* Integration by Vegas (iteration   1) **************
+*                                                               *
+*  integral  =  11925.712       accum. integral =  11925.712    *
+*  std. dev. =  40.457667       accum. std. dev =  40.457667    *
+*   max. wt. =    16.6428                                       *
+*                                                               *
+**************   chi**2/iteration =  0.000       ****************
+
+ Writing out intermediate results for iteration           1
+fill_grid() filled 32000000 weights Mon Feb 22 21:26:25 2016
+fill_grid() filled 33000000 weights Mon Feb 22 21:27:29 2016
+fill_grid() filled 34000000 weights Mon Feb 22 21:28:29 2016
+fill_grid() filled 35000000 weights Mon Feb 22 21:29:29 2016
+fill_grid() filled 36000000 weights Mon Feb 22 21:30:27 2016
+fill_grid() filled 37000000 weights Mon Feb 22 21:31:25 2016
+fill_grid() filled 38000000 weights Mon Feb 22 21:32:22 2016
+fill_grid() filled 39000000 weights Mon Feb 22 21:33:19 2016
+fill_grid() filled 40000000 weights Mon Feb 22 21:34:16 2016
+fill_grid() filled 41000000 weights Mon Feb 22 21:35:13 2016
+fill_grid() filled 42000000 weights Mon Feb 22 21:36:10 2016
+fill_grid() filled 43000000 weights Mon Feb 22 21:37:07 2016
+fill_grid() filled 44000000 weights Mon Feb 22 21:38:04 2016
+fill_grid() filled 45000000 weights Mon Feb 22 21:39:00 2016
+fill_grid() filled 46000000 weights Mon Feb 22 21:39:56 2016
+fill_grid() filled 47000000 weights Mon Feb 22 21:40:53 2016
+fill_grid() filled 48000000 weights Mon Feb 22 21:41:49 2016
+fill_grid() filled 49000000 weights Mon Feb 22 21:42:47 2016
+fill_grid() filled 50000000 weights Mon Feb 22 21:43:44 2016
+fill_grid() filled 51000000 weights Mon Feb 22 21:44:41 2016
+
+************* Integration by Vegas (iteration   2) **************
+*                                                               *
+*  integral  =  11973.290       accum. integral =  11951.200    *
+*  std. dev. =  37.663887       accum. std. dev =  27.567194    *
+*   max. wt. =    16.6428                                       *
+*                                                               *
+**************   chi**2/iteration = 0.7336       ****************
+
+ Writing out intermediate results for iteration           2
+fill_grid() filled 52000000 weights Mon Feb 22 21:45:43 2016
+fill_grid() filled 53000000 weights Mon Feb 22 21:46:46 2016
+fill_grid() filled 54000000 weights Mon Feb 22 21:47:44 2016
+fill_grid() filled 55000000 weights Mon Feb 22 21:48:42 2016
+fill_grid() filled 56000000 weights Mon Feb 22 21:49:40 2016
+fill_grid() filled 57000000 weights Mon Feb 22 21:50:37 2016
+fill_grid() filled 58000000 weights Mon Feb 22 21:51:35 2016
+fill_grid() filled 59000000 weights Mon Feb 22 21:52:31 2016
+fill_grid() filled 60000000 weights Mon Feb 22 21:53:28 2016
+fill_grid() filled 61000000 weights Mon Feb 22 21:54:25 2016
+fill_grid() filled 62000000 weights Mon Feb 22 21:55:23 2016
+fill_grid() filled 63000000 weights Mon Feb 22 21:56:20 2016
+fill_grid() filled 64000000 weights Mon Feb 22 21:57:18 2016
+fill_grid() filled 65000000 weights Mon Feb 22 21:58:14 2016
+fill_grid() filled 66000000 weights Mon Feb 22 21:59:12 2016
+fill_grid() filled 67000000 weights Mon Feb 22 22:00:08 2016
+fill_grid() filled 68000000 weights Mon Feb 22 22:01:04 2016
+fill_grid() filled 69000000 weights Mon Feb 22 22:02:00 2016
+fill_grid() filled 70000000 weights Mon Feb 22 22:02:57 2016
+
+************* Integration by Vegas (iteration   3) **************
+*                                                               *
+*  integral  =  11910.913       accum. integral =  11938.606    *
+*  std. dev. =  40.878436       accum. std. dev =  22.855706    *
+*   max. wt. =    19.4532                                       *
+*                                                               *
+**************   chi**2/iteration = 0.7008       ****************
+
+ Writing out intermediate results for iteration           3
+fill_grid() filled 71000000 weights Mon Feb 22 22:03:56 2016
+fill_grid() filled 72000000 weights Mon Feb 22 22:04:58 2016
+fill_grid() filled 73000000 weights Mon Feb 22 22:05:56 2016
+fill_grid() filled 74000000 weights Mon Feb 22 22:06:52 2016
+fill_grid() filled 75000000 weights Mon Feb 22 22:07:48 2016
+fill_grid() filled 76000000 weights Mon Feb 22 22:08:44 2016
+fill_grid() filled 77000000 weights Mon Feb 22 22:09:39 2016
+fill_grid() filled 78000000 weights Mon Feb 22 22:10:35 2016
+fill_grid() filled 79000000 weights Mon Feb 22 22:11:30 2016
+fill_grid() filled 80000000 weights Mon Feb 22 22:12:25 2016
+fill_grid() filled 81000000 weights Mon Feb 22 22:13:20 2016
+fill_grid() filled 82000000 weights Mon Feb 22 22:14:15 2016
+fill_grid() filled 83000000 weights Mon Feb 22 22:15:10 2016
+fill_grid() filled 84000000 weights Mon Feb 22 22:16:05 2016
+fill_grid() filled 85000000 weights Mon Feb 22 22:17:00 2016
+fill_grid() filled 86000000 weights Mon Feb 22 22:17:56 2016
+fill_grid() filled 87000000 weights Mon Feb 22 22:18:51 2016
+fill_grid() filled 88000000 weights Mon Feb 22 22:19:46 2016
+fill_grid() filled 89000000 weights Mon Feb 22 22:20:42 2016
+
+************* Integration by Vegas (iteration   4) **************
+*                                                               *
+*  integral  =  11935.208       accum. integral =  11937.798    *
+*  std. dev. =  40.920514       accum. std. dev =  19.954156    *
+*   max. wt. =    19.4532                                       *
+*                                                               *
+**************   chi**2/iteration = 0.4697       ****************
+
+ Writing out intermediate results for iteration           4
+fill_grid() filled 90000000 weights Mon Feb 22 22:21:40 2016
+fill_grid() filled 91000000 weights Mon Feb 22 22:22:44 2016
+fill_grid() filled 92000000 weights Mon Feb 22 22:23:43 2016
+fill_grid() filled 93000000 weights Mon Feb 22 22:24:41 2016
+fill_grid() filled 94000000 weights Mon Feb 22 22:25:39 2016
+fill_grid() filled 95000000 weights Mon Feb 22 22:26:37 2016
+fill_grid() filled 96000000 weights Mon Feb 22 22:27:34 2016
+fill_grid() filled 97000000 weights Mon Feb 22 22:28:32 2016
+fill_grid() filled 98000000 weights Mon Feb 22 22:29:29 2016
+fill_grid() filled 99000000 weights Mon Feb 22 22:30:27 2016
+fill_grid() filled 100000000 weights Mon Feb 22 22:31:24 2016
+fill_grid() filled 101000000 weights Mon Feb 22 22:32:21 2016
+fill_grid() filled 102000000 weights Mon Feb 22 22:33:18 2016
+fill_grid() filled 103000000 weights Mon Feb 22 22:34:16 2016
+fill_grid() filled 104000000 weights Mon Feb 22 22:35:14 2016
+fill_grid() filled 105000000 weights Mon Feb 22 22:36:11 2016
+fill_grid() filled 106000000 weights Mon Feb 22 22:37:07 2016
+fill_grid() filled 107000000 weights Mon Feb 22 22:38:03 2016
+fill_grid() filled 108000000 weights Mon Feb 22 22:39:00 2016
+
+************* Integration by Vegas (iteration   5) **************
+*                                                               *
+*  integral  =  11961.584       accum. integral =  11943.211    *
+*  std. dev. =  36.763210       accum. std. dev =  17.537382    *
+*   max. wt. =    19.4532                                       *
+*                                                               *
+**************   chi**2/iteration = 0.4332       ****************
+
+ Writing out intermediate results for iteration           5
+fill_grid() filled 109000000 weights Mon Feb 22 22:39:59 2016
+fill_grid() filled 110000000 weights Mon Feb 22 22:41:03 2016
+fill_grid() filled 111000000 weights Mon Feb 22 22:42:02 2016
+fill_grid() filled 112000000 weights Mon Feb 22 22:43:01 2016
+fill_grid() filled 113000000 weights Mon Feb 22 22:43:59 2016
+fill_grid() filled 114000000 weights Mon Feb 22 22:44:57 2016
+fill_grid() filled 115000000 weights Mon Feb 22 22:45:54 2016
+fill_grid() filled 116000000 weights Mon Feb 22 22:46:51 2016
+fill_grid() filled 117000000 weights Mon Feb 22 22:47:48 2016
+fill_grid() filled 118000000 weights Mon Feb 22 22:48:45 2016
+fill_grid() filled 119000000 weights Mon Feb 22 22:49:41 2016
+fill_grid() filled 120000000 weights Mon Feb 22 22:50:37 2016
+fill_grid() filled 121000000 weights Mon Feb 22 22:51:33 2016
+fill_grid() filled 122000000 weights Mon Feb 22 22:52:29 2016
+fill_grid() filled 123000000 weights Mon Feb 22 22:53:24 2016
+fill_grid() filled 124000000 weights Mon Feb 22 22:54:19 2016
+fill_grid() filled 125000000 weights Mon Feb 22 22:55:15 2016
+fill_grid() filled 126000000 weights Mon Feb 22 22:56:10 2016
+fill_grid() filled 127000000 weights Mon Feb 22 22:57:05 2016
+
+************* Integration by Vegas (iteration   6) **************
+*                                                               *
+*  integral  =  11958.162       accum. integral =  11946.195    *
+*  std. dev. =  35.116889       accum. std. dev =  15.689674    *
+*   max. wt. =    19.4532                                       *
+*                                                               *
+**************   chi**2/iteration = 0.3757       ****************
+
+ Writing out intermediate results for iteration           6
+fill_grid() filled 128000000 weights Mon Feb 22 22:58:03 2016
+fill_grid() filled 129000000 weights Mon Feb 22 22:59:05 2016
+fill_grid() filled 130000000 weights Mon Feb 22 23:00:02 2016
+fill_grid() filled 131000000 weights Mon Feb 22 23:00:59 2016
+fill_grid() filled 132000000 weights Mon Feb 22 23:01:55 2016
+fill_grid() filled 133000000 weights Mon Feb 22 23:02:51 2016
+fill_grid() filled 134000000 weights Mon Feb 22 23:03:46 2016
+fill_grid() filled 135000000 weights Mon Feb 22 23:04:42 2016
+fill_grid() filled 136000000 weights Mon Feb 22 23:05:37 2016
+fill_grid() filled 137000000 weights Mon Feb 22 23:06:31 2016
+fill_grid() filled 138000000 weights Mon Feb 22 23:07:26 2016
+fill_grid() filled 139000000 weights Mon Feb 22 23:08:21 2016
+fill_grid() filled 140000000 weights Mon Feb 22 23:09:15 2016
+fill_grid() filled 141000000 weights Mon Feb 22 23:10:10 2016
+fill_grid() filled 142000000 weights Mon Feb 22 23:11:04 2016
+fill_grid() filled 143000000 weights Mon Feb 22 23:11:59 2016
+fill_grid() filled 144000000 weights Mon Feb 22 23:12:53 2016
+fill_grid() filled 145000000 weights Mon Feb 22 23:13:47 2016
+fill_grid() filled 146000000 weights Mon Feb 22 23:14:42 2016
+
+************* Integration by Vegas (iteration   7) **************
+*                                                               *
+*  integral  =  11961.745       accum. integral =  11948.881    *
+*  std. dev. =  34.334844       accum. std. dev =  14.270340    *
+*   max. wt. =    19.4532                                       *
+*                                                               *
+**************   chi**2/iteration = 0.3414       ****************
+
+ Writing out intermediate results for iteration           7
+fill_grid() filled 147000000 weights Mon Feb 22 23:15:38 2016
+fill_grid() filled 148000000 weights Mon Feb 22 23:16:41 2016
+fill_grid() filled 149000000 weights Mon Feb 22 23:17:41 2016
+fill_grid() filled 150000000 weights Mon Feb 22 23:18:39 2016
+fill_grid() filled 151000000 weights Mon Feb 22 23:19:36 2016
+fill_grid() filled 152000000 weights Mon Feb 22 23:20:32 2016
+fill_grid() filled 153000000 weights Mon Feb 22 23:21:26 2016
+fill_grid() filled 154000000 weights Mon Feb 22 23:22:22 2016
+fill_grid() filled 155000000 weights Mon Feb 22 23:23:16 2016
+fill_grid() filled 156000000 weights Mon Feb 22 23:24:11 2016
+fill_grid() filled 157000000 weights Mon Feb 22 23:25:05 2016
+fill_grid() filled 158000000 weights Mon Feb 22 23:26:00 2016
+fill_grid() filled 159000000 weights Mon Feb 22 23:26:54 2016
+fill_grid() filled 160000000 weights Mon Feb 22 23:27:49 2016
+fill_grid() filled 161000000 weights Mon Feb 22 23:28:42 2016
+fill_grid() filled 162000000 weights Mon Feb 22 23:29:37 2016
+fill_grid() filled 163000000 weights Mon Feb 22 23:30:30 2016
+fill_grid() filled 164000000 weights Mon Feb 22 23:31:25 2016
+fill_grid() filled 165000000 weights Mon Feb 22 23:32:19 2016
+fill_grid() filled 166000000 weights Mon Feb 22 23:33:13 2016
+
+************* Integration by Vegas (iteration   8) **************
+*                                                               *
+*  integral  =  11899.386       accum. integral =  11941.793    *
+*  std. dev. =  34.903623       accum. std. dev =  13.208986    *
+*   max. wt. =    19.4532                                       *
+*                                                               *
+**************   chi**2/iteration = 0.5385       ****************
+
+ Writing out intermediate results for iteration           8
+fill_grid() filled 167000000 weights Mon Feb 22 23:34:12 2016
+fill_grid() filled 168000000 weights Mon Feb 22 23:35:12 2016
+fill_grid() filled 169000000 weights Mon Feb 22 23:36:08 2016
+fill_grid() filled 170000000 weights Mon Feb 22 23:37:03 2016
+fill_grid() filled 171000000 weights Mon Feb 22 23:37:58 2016
+fill_grid() filled 172000000 weights Mon Feb 22 23:38:53 2016
+fill_grid() filled 173000000 weights Mon Feb 22 23:39:48 2016
+fill_grid() filled 174000000 weights Mon Feb 22 23:40:42 2016
+fill_grid() filled 175000000 weights Mon Feb 22 23:41:37 2016
+fill_grid() filled 176000000 weights Mon Feb 22 23:42:31 2016
+fill_grid() filled 177000000 weights Mon Feb 22 23:43:26 2016
+fill_grid() filled 178000000 weights Mon Feb 22 23:44:20 2016
+fill_grid() filled 179000000 weights Mon Feb 22 23:45:14 2016
+fill_grid() filled 180000000 weights Mon Feb 22 23:46:08 2016
+fill_grid() filled 181000000 weights Mon Feb 22 23:47:03 2016
+fill_grid() filled 182000000 weights Mon Feb 22 23:47:57 2016
+fill_grid() filled 183000000 weights Mon Feb 22 23:48:51 2016
+fill_grid() filled 184000000 weights Mon Feb 22 23:49:46 2016
+fill_grid() filled 185000000 weights Mon Feb 22 23:50:41 2016
+
+************* Integration by Vegas (iteration   9) **************
+*                                                               *
+*  integral  =  11965.513       accum. integral =  11944.863    *
+*  std. dev. =  34.256481       accum. std. dev =  12.324516    *
+*   max. wt. =    19.4532                                       *
+*                                                               *
+**************   chi**2/iteration = 0.5234       ****************
+
+ Writing out intermediate results for iteration           9
+fill_grid() filled 186000000 weights Mon Feb 22 23:51:40 2016
+fill_grid() filled 187000000 weights Mon Feb 22 23:52:43 2016
+fill_grid() filled 188000000 weights Mon Feb 22 23:53:41 2016
+fill_grid() filled 189000000 weights Mon Feb 22 23:54:39 2016
+fill_grid() filled 190000000 weights Mon Feb 22 23:55:36 2016
+fill_grid() filled 191000000 weights Mon Feb 22 23:56:32 2016
+fill_grid() filled 192000000 weights Mon Feb 22 23:57:29 2016
+fill_grid() filled 193000000 weights Mon Feb 22 23:58:25 2016
+fill_grid() filled 194000000 weights Mon Feb 22 23:59:21 2016
+fill_grid() filled 195000000 weights Tue Feb 23 00:00:17 2016
+fill_grid() filled 196000000 weights Tue Feb 23 00:01:12 2016
+fill_grid() filled 197000000 weights Tue Feb 23 00:02:08 2016
+fill_grid() filled 198000000 weights Tue Feb 23 00:03:02 2016
+fill_grid() filled 199000000 weights Tue Feb 23 00:03:57 2016
+fill_grid() filled 200000000 weights Tue Feb 23 00:04:51 2016
+fill_grid() filled 201000000 weights Tue Feb 23 00:05:45 2016
+fill_grid() filled 202000000 weights Tue Feb 23 00:06:38 2016
+fill_grid() filled 203000000 weights Tue Feb 23 00:07:32 2016
+fill_grid() filled 204000000 weights Tue Feb 23 00:08:27 2016
+
+************* Integration by Vegas (iteration  10) **************
+*                                                               *
+*  integral  =  11960.920       accum. integral =  11946.673    *
+*  std. dev. =  34.572580       accum. std. dev =  11.608940    *
+*   max. wt. =    19.4532                                       *
+*                                                               *
+**************   chi**2/iteration = 0.4865       ****************
+
+
+
+Value of final tota integral is   178586.7997 +/-    26.1224 fb
+
+ Total number of shots       :    215187500
+ Total no. failing cuts      :    125162854
+ Number failing jet cuts     :            0
+ Number failing process cuts :    116203429
+
+   Jet efficiency : 100.00%
+   Cut efficiency :  43.65%
+ Total efficiency :  43.65%
+
+ Contribution from parton sub-processes:
+ ---------------------------------------
+       GG     |           0.00000    0.00%
+       GQ     |      -11025.80194   -6.17%
+       GQB    |       -1982.74324   -1.11%
+       QG     |      -11026.99003   -6.17%
+       QBG    |       -1984.28242   -1.11%
+       QQ     |           0.00000    0.00%
+       QBQB   |           0.00000    0.00%
+       QQB    |      102303.31289   57.28%
+       QBQ    |      102303.30445   57.28%
+ ---------------------------------------
+
+ ****************************************************
+ output files  Z_only_tota_NNPDF30_91__91__LHCBWZMU8TEV
+ ****************************************************
+Write out grids ...
+saving grid N=1	of 1	appl::grid::Write() LHCBWZMU8TEV_Z_yZ.root	dirname grid	pdfname 
+grid::Write()size(untrimmed)=2025 kB	size(trimmed)=501 kB (24.7%)
+size(untrimmed)=2073600	size(trimmed)=513024	fraction=24.7407 %
+ ***********************************************
+ saved grids Tue Feb 23 00:09:18 2016
+ ***********************************************
+Thanks for using LHAPDF 6.1.6. Please make sure to cite the paper:
+  Eur.Phys.J. C75 (2015) 3, 132  (http://arxiv.org/abs/1412.7420)

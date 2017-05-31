@@ -1,0 +1,47 @@
+# BEGIN PLOT
+DrawOnly=/home/hartland/applgrids/D0WEASY/dev/Analysis/1000M.yoda/MC_XS/XS /home/hartland/applgrids/D0WEASY/dev/Analysis/100M.yoda/MC_XS/XS /home/hartland/applgrids/D0WEASY/dev/Analysis/2000M.yoda/MC_XS/XS
+Title=Total generated cross section
+XMajorTickMarks=20
+RatioPlot=1
+LogY=0
+RatioPlotReference=/home/hartland/applgrids/D0WEASY/dev/Analysis/1000M.yoda/MC_XS/XS
+XLabel=
+ShowZero=0
+XMinorTickMarks=0
+YLabel=$\sigma_\text{total}$ [pb]
+Legend=1
+# END PLOT
+
+# BEGIN HISTO1D /home/hartland/applgrids/D0WEASY/dev/Analysis/1000M.yoda/MC_XS/XS
+LineColor={[HTML]{EE3311}}
+LineStyle=solid
+Path=/home/hartland/applgrids/D0WEASY/dev/Analysis/1000M.yoda/MC_XS/XS
+Title=1000M
+XLabel=
+YLabel=
+# xlow	 xhigh	 val	 errminus	 errplus
+-5.000000e-01	5.000000e-01	2.733355e+03	8.487334e-02	8.487334e-02
+# END HISTO1D
+
+# BEGIN HISTO1D /home/hartland/applgrids/D0WEASY/dev/Analysis/100M.yoda/MC_XS/XS
+LineColor={[HTML]{3366FF}}
+LineStyle=solid
+Path=/home/hartland/applgrids/D0WEASY/dev/Analysis/100M.yoda/MC_XS/XS
+Title=100M
+XLabel=
+YLabel=
+# xlow	 xhigh	 val	 errminus	 errplus
+-5.000000e-01	5.000000e-01	2.733351e+03	2.682507e-01	2.682507e-01
+# END HISTO1D
+
+# BEGIN HISTO1D /home/hartland/applgrids/D0WEASY/dev/Analysis/2000M.yoda/MC_XS/XS
+LineColor={[HTML]{109618}}
+LineStyle=solid
+Path=/home/hartland/applgrids/D0WEASY/dev/Analysis/2000M.yoda/MC_XS/XS
+Title=2000M
+XLabel=
+YLabel=
+# xlow	 xhigh	 val	 errminus	 errplus
+-5.000000e-01	5.000000e-01	2.733341e+03	6.002114e-02	6.002114e-02
+# END HISTO1D
+

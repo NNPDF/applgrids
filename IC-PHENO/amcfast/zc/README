@@ -1,0 +1,27 @@
+└── zc
+
+aMC@NLO: 2.3.4
+LHAPDF : 6.1.6
+aMCfast: 1.3.0
+APPLgrid: 1.4.70
+
+cuts: default card, anti-kt, R=0.7, ptj > 10 GeV, etaj < 4.5.
+      ptl > 10 GeV and etal < 4.5, ptgam > 10 GeV and etagam < 4.5.
+
+command: generate p p > z c [QCD]
+accuracy: 0.03
+
+├── zc_13tev.root: inclusive xsection, 1  bin
+├── zc_ptz_13tev.root: Z pT, 10 bins, 0 to 200 GeV
+├── zc_yz_13tev.root: Z y, 10 bins, -4.5 to 4.5
+├── zc_etaz_13tev.root: Z eta, 10 bins, -4.5 to 4.5
+
+├── zc_ptj1_13tev.root: jet pT, 10 bins, 0 to 200 GeV
+├── zc_yj1_13tev.root: jet y, 10 bins, -4.5 to 4.5
+├── zc_etaj1_13tev.root: jet eta, 10 bins, -4.5 to 4.5
+
+├── zc_ptj2_13tev.root: jet pT, 10 bins, 0 to 200 GeV
+├── zc_yj2_13tev.root: jet y, 10 bins, -4.5 to 4.5
+├── zc_etaj2_13tev.root: jet eta, 10 bins, -4.5 to 4.5
+
+

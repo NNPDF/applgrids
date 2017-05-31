@@ -1,0 +1,52 @@
+# BEGIN PLOT
+DrawOnly=/home/hartland/applgrids/D0WEASY/dev/Analysis/1000M.yoda/MC_XS/pmN /home/hartland/applgrids/D0WEASY/dev/Analysis/100M.yoda/MC_XS/pmN /home/hartland/applgrids/D0WEASY/dev/Analysis/2000M.yoda/MC_XS/pmN
+Title=Number of positive and negative weighted events
+XMajorTickMarks=20
+RatioPlot=1
+LogY=0
+RatioPlotReference=/home/hartland/applgrids/D0WEASY/dev/Analysis/1000M.yoda/MC_XS/pmN
+XLabel=$\pm$
+ShowZero=0
+XMax=1
+YLabel=$N_\pm$
+XMin=-1
+XMinorTickMarks=0
+Legend=1
+# END PLOT
+
+# BEGIN HISTO1D /home/hartland/applgrids/D0WEASY/dev/Analysis/1000M.yoda/MC_XS/pmN
+LineColor={[HTML]{EE3311}}
+LineStyle=solid
+Path=/home/hartland/applgrids/D0WEASY/dev/Analysis/1000M.yoda/MC_XS/pmN
+Title=1000M
+XLabel=
+YLabel=
+# xlow	 xhigh	 val	 errminus	 errplus
+-1.000000e+00	0.000000e+00	1.406956e+08	1.186152e+04	1.186152e+04
+0.000000e+00	1.000000e+00	9.823383e+08	3.134228e+04	3.134228e+04
+# END HISTO1D
+
+# BEGIN HISTO1D /home/hartland/applgrids/D0WEASY/dev/Analysis/100M.yoda/MC_XS/pmN
+LineColor={[HTML]{3366FF}}
+LineStyle=solid
+Path=/home/hartland/applgrids/D0WEASY/dev/Analysis/100M.yoda/MC_XS/pmN
+Title=100M
+XLabel=
+YLabel=
+# xlow	 xhigh	 val	 errminus	 errplus
+-1.000000e+00	0.000000e+00	1.407227e+07	3.751302e+03	3.751302e+03
+0.000000e+00	1.000000e+00	9.823477e+07	9.911346e+03	9.911346e+03
+# END HISTO1D
+
+# BEGIN HISTO1D /home/hartland/applgrids/D0WEASY/dev/Analysis/2000M.yoda/MC_XS/pmN
+LineColor={[HTML]{109618}}
+LineStyle=solid
+Path=/home/hartland/applgrids/D0WEASY/dev/Analysis/2000M.yoda/MC_XS/pmN
+Title=2000M
+XLabel=
+YLabel=
+# xlow	 xhigh	 val	 errminus	 errplus
+-1.000000e+00	0.000000e+00	2.813988e+08	1.677495e+04	1.677495e+04
+0.000000e+00	1.000000e+00	1.964677e+09	4.432468e+04	4.432468e+04
+# END HISTO1D
+
