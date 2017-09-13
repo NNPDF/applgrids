@@ -4,7 +4,7 @@ _____ChangeLog________________________________________
 
 	- 25/11/15 -nh 
 		 First commit
-
+	
 _____Requirements_____________________________________
 
 To reproduce original results, the following versions
@@ -13,6 +13,7 @@ MUST be used
 SHERPA 2.1.1
 Rivet 2.2.1
 MCgrid 1.2
+Yoda 1.5.9
 
 _____Implemented Analyses_____________________________
 
@@ -24,6 +25,9 @@ Data files are from http://hepdata.cedar.ac.uk/view/ins1253555
 
 LHCB_2016_I1406555.cc : LHCb 2016 W/Z muon rapidity distributions
 Data files are from http://hepdata.cedar.ac.uk/view/ins1406555
+
+E866_2001_I554316.cc : FNAL E866 pd/pp fixed target Drell-Yan
+Data files are from http://hepdata.cedar.ac.uk/view/ins554316
 
 _____Rivet Analysis___________________________________
 
