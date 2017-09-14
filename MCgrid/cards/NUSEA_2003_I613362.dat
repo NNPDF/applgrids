@@ -5,7 +5,7 @@
   RANDOM_SEED 1374 2119
 
   ANALYSIS Rivet
-  ANALYSIS_OUTPUT 1M_EnhanceM;
+  ANALYSIS_OUTPUT 1M_EnhanceMX;
 
   ME_SIGNAL_GENERATOR Comix, Internal;
   EVENT_GENERATION_MODE W;
@@ -20,7 +20,7 @@
 
 (processes){
   Process 93 93 -> 13 -13;
-  Enhance_Observable VAR{Mass(p[2]+p[3])}|4.2|16.85;
+  Enhance_Observable VAR{Mass(p[2]+p[3])*Comp(p[2]+p[3],3)/19.4}|-0.21|13.48;
   NLO_QCD_Mode Fixed_Order;
   Order (*,2);
   NLO_QCD_Part BVIRS;

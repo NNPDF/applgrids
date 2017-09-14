@@ -36,10 +36,11 @@ namespace Rivet {
       const double xmin = 1E-2; const double Q2min = 4.2*4.2;
       const double xmax = 1;    const double Q2max = 16.85*16.85;
 
-      for (int i=0; i<bin_edge_xF.size()-2; i++)
+      for (int i=0; i<bin_edge_xF.size()-1; i++)
       {
         Histo1DPtr      histogram = bookHisto1D(i+1, 1, 1);
         MCgrid::gridPtr applgrid  = MCgrid::bookGrid(histogram, histoDir(), PDFname, 0, xmin, xmax, Q2min, Q2max, arch);
+        std::cout << "Booking: " << bin_edge_xF[i] <<" - " << bin_edge_xF[i+1] <<std::endl;
         _hist_sigma.addHistogram(bin_edge_xF[i], bin_edge_xF[i+1], histogram);
         _appl_sigma.addGrid(bin_edge_xF[i], bin_edge_xF[i+1], applgrid);
       }
