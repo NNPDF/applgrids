@@ -32,7 +32,7 @@ namespace Rivet {
       // Initialise the subprocess PDF and grid architecture
       const string PDFname("NUSEA_2003_I613362.config");
       MCgrid::bookPDF(PDFname, histoDir(), MCgrid::BEAM_PROTON, MCgrid::BEAM_PROTON);
-      MCgrid::gridArch arch(50,20,3,3);
+      MCgrid::gridArch arch(80,40,3,3);
       const double xmin = 1E-2; const double Q2min = 4.2*4.2;
       const double xmax = 1;    const double Q2max = 16.85*16.85;
 
@@ -82,8 +82,8 @@ namespace Rivet {
 
 
   private:
-    const std::array<int, 4> protect_wgts = {4,6,7,8};
-    const std::array<double, 17>  bin_edge_xF = {-0.05,0.05,0.1,0.15,0.2,0.25,0.3,0.35,0.4,0.45,0.5,0.55,0.6,0.65,0.7,0.75,0.8};
+    const std::array<int, 4> protect_wgts = {{4,6,7,8}};
+    const std::array<double, 17>  bin_edge_xF = {{-0.05,0.05,0.1,0.15,0.2,0.25,0.3,0.35,0.4,0.45,0.5,0.55,0.6,0.65,0.7,0.75,0.8}};
     BinnedHistogram<double> _hist_sigma;
     MCgrid::BinnedGrid<double> _appl_sigma;
   };

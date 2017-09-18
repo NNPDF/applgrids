@@ -26,7 +26,7 @@ LHALDFLAGS=  $(shell lhapdf-config --ldflags)
 #########################################
 
 # Total flags for plugin
-PLGFLAGS=$(RFLAGS) $(AFLAGS) $(MCFLAGS)
+PLGFLAGS=$(RFLAGS) $(AFLAGS) $(MCFLAGS) -std=c++11
 PLGLDFLAGS=$(RLDFLAGS) $(ALDFLAGS) $(MCLDFLAGS)
 
 # Total flags for test code
