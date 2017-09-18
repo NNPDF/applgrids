@@ -23,7 +23,7 @@
   NLO_QCD_Mode Fixed_Order;
   Order (*,2);
   NLO_QCD_Part B;
-  Integration_Error 0.0001;
+  Integration_Error 0.001;
   End process;
 
   Process 93 93 -> 13 -13;
@@ -31,14 +31,14 @@
   NLO_QCD_Mode Fixed_Order;
   Order (*,2);
   NLO_QCD_Part VI;
-  Integration_Error 0.0001;
+  Integration_Error 0.001;
   End process;
 
   Process 93 93 -> 13 -13;
   NLO_QCD_Mode Fixed_Order;
   Order (*,2);
   NLO_QCD_Part RS;
-  Integration_Error 0.001;
+  Integration_Error 0.005;
   End process;
 
 
