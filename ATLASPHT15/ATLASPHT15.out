@@ -1,0 +1,1783 @@
+=========================================================
+Job submitted date = Thu Oct 26 09:58:56 BST 2017
+1 nodes ( processes per node )
+1 hosts used: comp36
+Job output begins
+-----------------
+
+setup_mcfmbridge()
+ ************** MCFM - version 6.8 ****************
+ *                                                *
+ * MCFM, v6.8                   April 26th, 2014  *
+ *                                                *
+ * Authors: John Campbell, Keith Ellis,           *
+ *          Ciaran Williams                       *
+ *         (johnmc@fnal.gov, ellis@fnal.gov,      *
+ *          ciaran@fnal.gov)                      *
+ *                                                *
+ * For details see:                               *
+ *                                                *
+ *  arXiv:1403.2641 (Triphoton production)        *
+ *  arXiv:1312.1628 (gg->WW, Higgs interference)  *
+ *  arXiv:1311.3589 (gg->ZZ, Higgs interference)  *
+ *  Phys.Rev.D87:114006, arXiv:1302.3856          *
+ *  (tZ, tH -- with R. Rontsch)                   *
+ *  arXiv:1211.6390 (DM, P. Fox and C. Williams)  *
+ *  JHEP 1211:162 (2012), arXiv:1208.0566         *
+ *  (Z+gam+jet,Z+gam+gam -- with H. Hartanto)     *
+ *  arXiv:1204.1513 (top production+decay)        *
+ *  JHEP 1207:052 (2012), arXiv:1204.5678 (ttW)   *
+ *  JHEP 1110:005 (2011), arXiv:1107.5569         *
+ *         (gg->WW,Higgs intference)              *
+ *  JHEP 1107:018 (2011), arXiv:1105.0020         *
+ *         (diboson update)                       *
+ *  JHEP 1103:027 (2011), arXiv:1011.6647         *
+ *         (Wbb for mb>0, with S. Badger)         *
+ *  Phys.Rev.D81:074023, arXiv:1001.4495 (H+2jet) *
+ *                                                *
+ *  P.R.L. 102:142001, arXiv:0903.0005 [hep-ph]   *
+ *    (t-channel single top + explicit b,         *
+ *      JC, R.Frederix, F.Maltoni, F.Tramontano)  *
+ *  N.P.B 726:109(2005), hep-ph/0506289 (W+t)     *
+ *  Phys.Rev.D70:094012, hep-ph/0408158 (Sngl Top)*
+ *       (with Francesco Tramontano)              *
+ *                                                *
+ *  Phys.Rev.D65:113007, hep-ph/0202176 (W,Z+2j)  *
+ *  Phys.Rev.D62:114012, hep-ph/0006304 (W,Z+bb)  *
+ *  Phys.Rev.D60:113006, hep-ph/9905386 (diboson) *
+ *                                                *
+ * On the web:  http://mcfm.fnal.gov/             *
+ **************************************************
+
+ * Using input file named ATLASPHT15.DAT                                                          
+
+ * [Flags to specify the mode in which MCFM is run]                                          
+ *                   -1            [nevtrequested] 
+ *                    F            [creatent] 
+ *                    F            [skipnt] 
+ *                    F            [dswhisto] 
+ *                    T            [creategrid] 
+ *                    F            [writetop] 
+ *                    F            [writedat] 
+ *                    F            [writegnu] 
+ *                    F            [writeroot] 
+ *                    F            [writepwg] 
+
+ * [General options to specify the process and execution]                                    
+ *                  280            [nproc] 
+ *                 tota            [part] 
+ * ATLASPHT15                      [runstring] 
+ *           13000.0000            [sqrts] 
+ *                    1            [ih1] 
+ *                    1            [ih2] 
+ *             125.0000            [hmass] 
+ *               1.0000            [scale] 
+ *               1.0000            [facscale] 
+ * pt(photon)                      [dynamicscale] 
+ *                    F            [zerowidth] 
+ *                    F            [removebr] 
+ *                   10            [itmx1] 
+ *               200000            [ncall1] 
+ *                   15            [itmx2] 
+ *              2000000            [ncall2] 
+ *                29841            [ij] 
+ *                    F            [dryrun] 
+ *                    T            [Qflag] 
+ *                    T            [Gflag] 
+
+ * [Heavy quark masses]                                                                      
+ *             173.2000            [top mass] 
+ *               4.6600            [bottom mass] 
+ *               1.2750            [charm mass] 
+
+ * [Pdf selection]                                                                           
+ *              mstw8nl            [pdlabel] 
+ *                    4            [NGROUP] 
+ *                   46            [NSET] 
+ * NNPDF31_nlo_as_0118.            [LHAPDF group] 
+ *                    0            [LHAPDF set] 
+
+ * [Jet definition and event cuts]                                                           
+ *               0.0000            [m34min] 
+ *           13000.0000            [m34max] 
+ *               0.0000            [m56min] 
+ *           13000.0000            [m56max] 
+ *                    T            [inclusive] 
+ *                 ankt            [algorithm] 
+ *               0.0000            [ptjetmin] 
+ *               0.0000            [etajetmin] 
+ *              99.0000            [etajetmax] 
+ *               0.2000            [Rcut] 
+ *                    F            [makecuts] 
+ *               0.0000            [leptpt] 
+ *              99.0000            [leptrap] 
+ *    0.000,   0.000                [leptveto] 
+ *               0.0000            [misspt] 
+ *               0.0000            [leptpt2] 
+ *              99.0000            [leptrap2] 
+ *    0.000,   0.000                [leptveto2] 
+ *               0.0000            [mtrans34cut] 
+ *               0.0000            [Rjlmin] 
+ *               0.0000            [Rllmin] 
+ *               0.0000            [delyjjmin] 
+ *                    F            [jetsopphem] 
+ *                    0            [lbjscheme] 
+ *               0.0000            [ptbjetmin] 
+ *              99.0000            [etabjetmax] 
+
+ * [Settings for photon processes]                                                           
+ *                    F            [frag] 
+ *             GdRG__LO            [fragset] 
+ *              80.0000            [frag_scale] 
+ *             120.0000            [gammpt] 
+ *               5.0000            [gammrap] 
+ *               0.0000            [gammpt2] 
+ *               0.0000            [gammpt3] 
+ *               0.0000            [Rgalmin] 
+ *               0.0000            [Rgagamin] 
+ *               0.0000            [Rgajetmin] 
+ *               0.4000            [cone_ang] 
+ *               0.1000            [epsilon_h] 
+
+ * [Anomalous couplings of the W and Z]                                                      
+ *               0.0000            [delg1_z] 
+ *               0.0000            [delk_z] 
+ *               0.0000            [delk_g] 
+ *               0.0000            [lambda_z] 
+ *               0.0000            [lambda_g] 
+ *               0.0000            [h1Z] 
+ *               0.0000            [h1gam] 
+ *               0.0000            [h2Z] 
+ *               0.0000            [h2gam] 
+ *               0.0000            [h3Z] 
+ *               0.0000            [h3gam] 
+ *               0.0000            [h4Z] 
+ *               0.0000            [h4gam] 
+ *               2.0000            [tevscale] 
+
+ * [Anomalous width of the Higgs]                                                            
+ *               1.0000            [Gamma_H/Gamma_H(SM)] 
+
+ * [How to resume/save a run]                                                                
+ *                    F            [readin] 
+ *                    F            [writeout] 
+ *                                 [ingridfile] 
+ *                                 [outgridfile] 
+
+ * [Technical parameters that should not normally be changed]
+
+ *                    F            [debug] 
+ *                    T            [verbose] 
+ *                    T            [new_pspace] 
+ *                    F            [virtonly] 
+ *                    F            [realonly] 
+ *                    T            [spira] 
+ *                    F            [noglue] 
+ *                    F            [ggonly] 
+ *                    F            [gqonly] 
+ *                    F            [omitgg] 
+ *                    F            [vanillafiles] 
+ *                    1            [nmin] 
+ *                    2            [nmax] 
+ *                    T            [clustering] 
+ *                    F            [realwt] 
+ *                    0            [colourchoice] 
+ *               0.0100            [rtsmin] 
+ *               0.0001            [cutoff] 
+ *               0.1000            [aii] 
+ *               0.1000            [aif] 
+ *               0.1000            [afi] 
+ *               1.0000            [aff] 
+ *               1.0000            [bfi] 
+ *               1.0000            [bff] 
+
+ Chooser:process chosen by nproc=         280
+
+ *************************** f(p1)+f(p2) --> ******************************************
+ * gamma(p3)+f(p4)                                                                    *
+ **************************************************************************************
+
+
+ *******************************************
+ *     MCFM is calling LHAPDF              *
+ *                                         *
+ *   PDFname NNPDF31_nlo_as_0118.LHgrid    *
+ *   PDFmember  0                          *
+ *******************************************
+
+LHAPDF 6.1.6 loading /users/sladee/libs/share/LHAPDF/NNPDF31_nlo_as_0118/NNPDF31_nlo_as_0118_0000.dat
+NNPDF31_nlo_as_0118 PDF set, member #0, version 1
+ ************** Electroweak parameters **************
+ *                                                  *
+ *  zmass(+)   91.1876000     wmass(+)  80.3980000  *
+ * zwidth(+)    2.4952000    wwidth(+)   2.1054000  *
+ *     Gf(+) 0.116639D-04   1/aemmz(+) 127.8999998  *
+ *     xw(+)    0.2312000      mtop(+) 173.2000000  *
+ *   gwsq       0.4249634       esq      0.0982515  *
+ * top width    1.4744578 (LO)                      *
+ *    mb        4.6600000        mc      1.2750000  *
+ *                                                  *
+ * Parameters marked (+) are input, others derived  *
+ ****************************************************
+
+ Setting inclusive = .true. for direct photon production.
+
+ *******************************************
+ *     MCFM is calling LHAPDF              *
+ *                                         *
+ *   PDFname NNPDF31_nlo_as_0118.LHgrid    *
+ *   PDFmember  0                          *
+ *******************************************
+
+LHAPDF 6.1.6 loading /users/sladee/libs/share/LHAPDF/NNPDF31_nlo_as_0118/NNPDF31_nlo_as_0118_0000.dat
+NNPDF31_nlo_as_0118 PDF set, member #0, version 1
+
+ ***************** CKM mixing matrix ****************
+ *                                                  *
+ *      Vud=.97500    Vus=.22200    Vub=0.0000      *
+ *      Vcd=.22200    Vcs=.97500    Vcb=0.0000      *
+ ****************************************************
+
+ ************* Strong coupling, alpha_s  ************
+ *                                                  *
+ *  Dynamic scale - alpha_s changed event-by-event  *
+ *       alpha_s (zmass)  0.11800217                *
+ *         (using 2-loop running of alpha_s)        *
+ ****************************************************
+
+ ****************************************
+ *     Cross section in femtobarns      *
+ ****************************************
+
+ ***********************************************
+ booking the grids Thu Oct 26 09:59:01 2017
+
+Dataset ID: ATLASPHT15
+ATLAS Inclusive isolated prompt photons, 13 TeV, 3.2 fb^-1
+
+Using existing grid file ATLASPHT15_Etagamma.root
+appl::grid() reading grid from file ATLASPHT15_Etagamma.root	version 1.4.70
+appl::grid::addpdf() creating new lumi_pdf basic.config
+lumi_pdf::lumi_pdf() basic.config	combinations 121
+appl::grid() read grid, size 0 MB	in 7152.71 ms	trim in 1.731 ms
+grid::optimise() bin 0		size(untrimmed)=0	size(trimmed)=0
+grid::optimise() bin 1		size(untrimmed)=0	size(trimmed)=0
+grid::optimise() bin 2		size(untrimmed)=0	size(trimmed)=0
+grid::optimise() bin 3		size(untrimmed)=0	size(trimmed)=0
+grid::optimise() bin 4		size(untrimmed)=0	size(trimmed)=0
+grid::optimise() bin 5		size(untrimmed)=0	size(trimmed)=0
+grid::optimise() bin 6		size(untrimmed)=0	size(trimmed)=0
+grid::optimise() bin 7		size(untrimmed)=0	size(trimmed)=0
+grid::optimise() bin 8		size(untrimmed)=0	size(trimmed)=0
+grid::optimise() bin 9		size(untrimmed)=0	size(trimmed)=0
+grid::optimise() bin 10		size(untrimmed)=0	size(trimmed)=0
+grid::optimise() bin 11		size(untrimmed)=0	size(trimmed)=0
+grid::optimise() bin 0		size(untrimmed)=330	size(trimmed)=330
+grid::optimise() bin 1		size(untrimmed)=350	size(trimmed)=350
+grid::optimise() bin 2		size(untrimmed)=364	size(trimmed)=364
+grid::optimise() bin 3		size(untrimmed)=370	size(trimmed)=370
+grid::optimise() bin 4		size(untrimmed)=378	size(trimmed)=378
+grid::optimise() bin 5		size(untrimmed)=385	size(trimmed)=385
+grid::optimise() bin 6		size(untrimmed)=384	size(trimmed)=384
+grid::optimise() bin 7		size(untrimmed)=379	size(trimmed)=379
+grid::optimise() bin 8		size(untrimmed)=377	size(trimmed)=377
+grid::optimise() bin 9		size(untrimmed)=362	size(trimmed)=362
+grid::optimise() bin 10		size(untrimmed)=349	size(trimmed)=349
+grid::optimise() bin 11		size(untrimmed)=322	size(trimmed)=322
+==================================================
+appl::grid version 1.4.70	( 121-LO, 121-NLO, initial states, 12 observable bins )
+Optimised grid
+Unsymmetrised in x1, x2
+leading order of processes  0
+number of loops for grid    1
+x->y coordinate transform:  f2
+genpdf in use: basic.config
+--------------------------------------------------
+Observable binning: [ 12 bins : 0,  2.37 ]
+0	    0	-   0.2	   	 x:  [ 40 :	 0.00103079 -       1	 : 40 :	 0.00103079 -       1	 : 	( order=6 ) ]	 Q2: [ 15 :	 500.837 - 1.69e+08	( order=3 ) ]
+1	  0.2	-   0.4	   	 x:  [ 40 :	 0.000534318 -       1	 : 40 :	 0.000534318 -       1	 : 	( order=6 ) ]	 Q2: [ 15 :	 500.837 - 1.69e+08	( order=3 ) ]
+2	  0.4	-   0.6	   	 x:  [ 40 :	 0.000534318 -       1	 : 40 :	 0.000534318 -       1	 : 	( order=6 ) ]	 Q2: [ 15 :	 500.837 - 1.69e+08	( order=3 ) ]
+3	  0.6	-   0.8	   	 x:  [ 40 :	 0.000534318 -       1	 : 40 :	 0.000534318 -       1	 : 	( order=6 ) ]	 Q2: [ 15 :	 500.837 - 1.69e+08	( order=3 ) ]
+4	  0.8	-     1	   	 x:  [ 40 :	 0.000276638 -       1	 : 40 :	 0.000276638 -       1	 : 	( order=6 ) ]	 Q2: [ 15 :	 500.837 - 1.69e+08	( order=3 ) ]
+5	    1	-   1.2	   	 x:  [ 40 :	 0.000276638 -       1	 : 40 :	 0.000276638 -       1	 : 	( order=6 ) ]	 Q2: [ 15 :	 500.837 - 1.69e+08	( order=3 ) ]
+6	  1.2	-  1.37	   	 x:  [ 40 :	 0.000276638 -       1	 : 40 :	 0.000276638 -       1	 : 	( order=6 ) ]	 Q2: [ 15 :	 500.837 - 1.69e+08	( order=3 ) ]
+7	 1.37	-  1.56	   	 x:  [ 40 :	 0.000276638 -       1	 : 40 :	 0.000276638 -       1	 : 	( order=6 ) ]	 Q2: [ 15 :	 500.837 - 1.69e+08	( order=3 ) ]
+8	 1.56	-   1.8	   	 x:  [ 40 :	 0.000143137 -       1	 : 40 :	 0.000143137 -       1	 : 	( order=6 ) ]	 Q2: [ 15 :	 500.837 - 1.69e+08	( order=3 ) ]
+9	  1.8	-     2	   	 x:  [ 40 :	 0.000143137 -       1	 : 40 :	 0.000143137 -       1	 : 	( order=6 ) ]	 Q2: [ 15 :	 500.837 - 1.69e+08	( order=3 ) ]
+10	    2	-   2.2	   	 x:  [ 40 :	 0.000143137 -       1	 : 40 :	 0.000143137 -       1	 : 	( order=6 ) ]	 Q2: [ 15 :	 500.837 - 1.69e+08	( order=3 ) ]
+11	  2.2	-  2.37	   	 x:  [ 40 :	 7.40381e-05 -       1	 : 40 :	 7.40381e-05 -       1	 : 	( order=6 ) ]	 Q2: [ 15 :	 500.837 - 1.69e+08	( order=3 ) ]
+
+
+Using existing grid file ATLASPHT15_Et_1bin.root
+appl::grid() reading grid from file ATLASPHT15_Et_1bin.root	version 1.4.70
+appl::grid() read grid, size 0 MB	in 8278.34 ms	trim in 1.101 ms
+grid::optimise() bin 0		size(untrimmed)=0	size(trimmed)=0
+grid::optimise() bin 1		size(untrimmed)=0	size(trimmed)=0
+grid::optimise() bin 2		size(untrimmed)=0	size(trimmed)=0
+grid::optimise() bin 3		size(untrimmed)=0	size(trimmed)=0
+grid::optimise() bin 4		size(untrimmed)=0	size(trimmed)=0
+grid::optimise() bin 5		size(untrimmed)=0	size(trimmed)=0
+grid::optimise() bin 6		size(untrimmed)=0	size(trimmed)=0
+grid::optimise() bin 7		size(untrimmed)=0	size(trimmed)=0
+grid::optimise() bin 8		size(untrimmed)=0	size(trimmed)=0
+grid::optimise() bin 9		size(untrimmed)=0	size(trimmed)=0
+grid::optimise() bin 10		size(untrimmed)=0	size(trimmed)=0
+grid::optimise() bin 11		size(untrimmed)=0	size(trimmed)=0
+grid::optimise() bin 12		size(untrimmed)=0	size(trimmed)=0
+grid::optimise() bin 13		size(untrimmed)=0	size(trimmed)=0
+grid::optimise() bin 0		size(untrimmed)=159	size(trimmed)=159
+grid::optimise() bin 1		size(untrimmed)=153	size(trimmed)=153
+grid::optimise() bin 2		size(untrimmed)=138	size(trimmed)=138
+grid::optimise() bin 3		size(untrimmed)=136	size(trimmed)=136
+grid::optimise() bin 4		size(untrimmed)=260	size(trimmed)=260
+grid::optimise() bin 5		size(untrimmed)=117	size(trimmed)=117
+grid::optimise() bin 6		size(untrimmed)=113	size(trimmed)=113
+grid::optimise() bin 7		size(untrimmed)=109	size(trimmed)=109
+grid::optimise() bin 8		size(untrimmed)=103	size(trimmed)=103
+grid::optimise() bin 9		size(untrimmed)=93	size(trimmed)=93
+grid::optimise() bin 10		size(untrimmed)=88	size(trimmed)=88
+grid::optimise() bin 11		size(untrimmed)=159	size(trimmed)=159
+grid::optimise() bin 12		size(untrimmed)=72	size(trimmed)=72
+grid::optimise() bin 13		size(untrimmed)=64	size(trimmed)=64
+==================================================
+appl::grid version 1.4.70	( 121-LO, 121-NLO, initial states, 14 observable bins )
+Optimised grid
+Unsymmetrised in x1, x2
+leading order of processes  0
+number of loops for grid    1
+x->y coordinate transform:  f2
+genpdf in use: basic.config
+--------------------------------------------------
+Observable binning: [ 14 bins : 125,  1500 ]
+0	  125	-   150	   	 x:  [ 40 :	 0.000534318 -       1	 : 40 :	 0.000534318 -       1	 : 	( order=6 ) ]	 Q2: [ 15 :	 500.837 - 8.67492e+06	( order=3 ) ]
+1	  150	-   175	   	 x:  [ 40 :	 0.000534318 -       1	 : 40 :	 0.000534318 -       1	 : 	( order=6 ) ]	 Q2: [ 15 :	 500.837 - 8.67492e+06	( order=3 ) ]
+2	  175	-   200	   	 x:  [ 40 :	 0.00103079 -       1	 : 40 :	 0.00103079 -       1	 : 	( order=6 ) ]	 Q2: [ 15 :	 500.837 - 8.67492e+06	( order=3 ) ]
+3	  200	-   250	   	 x:  [ 40 :	 0.00103079 -       1	 : 40 :	 0.00103079 -       1	 : 	( order=6 ) ]	 Q2: [ 15 :	 500.837 - 8.67492e+06	( order=3 ) ]
+4	  250	-   300	   	 x:  [ 40 :	 0.00103079 -       1	 : 40 :	 0.00103079 -       1	 : 	( order=6 ) ]	 Q2: [ 15 :	 500.837 - 1.69e+08	( order=3 ) ]
+5	  300	-   350	   	 x:  [ 40 :	 0.00198403 -       1	 : 40 :	 0.00198403 -       1	 : 	( order=6 ) ]	 Q2: [ 15 :	 2079.68 - 1.69e+08	( order=3 ) ]
+6	  350	-   400	   	 x:  [ 40 :	 0.00198403 -       1	 : 40 :	 0.00198403 -       1	 : 	( order=6 ) ]	 Q2: [ 15 :	 2079.68 - 1.69e+08	( order=3 ) ]
+7	  400	-   470	   	 x:  [ 40 :	 0.00198403 -       1	 : 40 :	 0.00198403 -       1	 : 	( order=6 ) ]	 Q2: [ 15 :	 2079.68 - 1.69e+08	( order=3 ) ]
+8	  470	-   550	   	 x:  [ 40 :	 0.00198403 -       1	 : 40 :	 0.00198403 -       1	 : 	( order=6 ) ]	 Q2: [ 15 :	 2079.68 - 1.69e+08	( order=3 ) ]
+9	  550	-   650	   	 x:  [ 40 :	 0.00380231 -       1	 : 40 :	 0.00380231 -       1	 : 	( order=6 ) ]	 Q2: [ 15 :	 2079.68 - 1.69e+08	( order=3 ) ]
+10	  650	-   750	   	 x:  [ 40 :	 0.00380231 -       1	 : 40 :	 0.00380231 -       1	 : 	( order=6 ) ]	 Q2: [ 15 :	 2079.68 - 1.69e+08	( order=3 ) ]
+11	  750	-   900	   	 x:  [ 40 :	 0.00380231 -       1	 : 40 :	 0.00380231 -       1	 : 	( order=6 ) ]	 Q2: [ 15 :	 2079.68 - 1.69e+08	( order=3 ) ]
+12	  900	-  1100	   	 x:  [ 40 :	 0.00722862 -       1	 : 40 :	 0.00722862 -       1	 : 	( order=6 ) ]	 Q2: [ 15 :	   10820 - 1.69e+08	( order=3 ) ]
+13	 1100	-  1500	   	 x:  [ 40 :	 0.00722862 -       1	 : 40 :	 0.00722862 -       1	 : 	( order=6 ) ]	 Q2: [ 15 :	   10820 - 1.69e+08	( order=3 ) ]
+
+
+Using existing grid file ATLASPHT15_Et_2bin.root
+appl::grid() reading grid from file ATLASPHT15_Et_2bin.root	version 1.4.70
+appl::grid() read grid, size 0 MB	in 8285.56 ms	trim in 1.212 ms
+grid::optimise() bin 0		size(untrimmed)=0	size(trimmed)=0
+grid::optimise() bin 1		size(untrimmed)=0	size(trimmed)=0
+grid::optimise() bin 2		size(untrimmed)=0	size(trimmed)=0
+grid::optimise() bin 3		size(untrimmed)=0	size(trimmed)=0
+grid::optimise() bin 4		size(untrimmed)=0	size(trimmed)=0
+grid::optimise() bin 5		size(untrimmed)=0	size(trimmed)=0
+grid::optimise() bin 6		size(untrimmed)=0	size(trimmed)=0
+grid::optimise() bin 7		size(untrimmed)=0	size(trimmed)=0
+grid::optimise() bin 8		size(untrimmed)=0	size(trimmed)=0
+grid::optimise() bin 9		size(untrimmed)=0	size(trimmed)=0
+grid::optimise() bin 10		size(untrimmed)=0	size(trimmed)=0
+grid::optimise() bin 11		size(untrimmed)=0	size(trimmed)=0
+grid::optimise() bin 12		size(untrimmed)=0	size(trimmed)=0
+grid::optimise() bin 13		size(untrimmed)=0	size(trimmed)=0
+grid::optimise() bin 0		size(untrimmed)=175	size(trimmed)=175
+grid::optimise() bin 1		size(untrimmed)=168	size(trimmed)=168
+grid::optimise() bin 2		size(untrimmed)=158	size(trimmed)=158
+grid::optimise() bin 3		size(untrimmed)=152	size(trimmed)=152
+grid::optimise() bin 4		size(untrimmed)=282	size(trimmed)=282
+grid::optimise() bin 5		size(untrimmed)=133	size(trimmed)=133
+grid::optimise() bin 6		size(untrimmed)=123	size(trimmed)=123
+grid::optimise() bin 7		size(untrimmed)=120	size(trimmed)=120
+grid::optimise() bin 8		size(untrimmed)=112	size(trimmed)=112
+grid::optimise() bin 9		size(untrimmed)=104	size(trimmed)=104
+grid::optimise() bin 10		size(untrimmed)=95	size(trimmed)=95
+grid::optimise() bin 11		size(untrimmed)=172	size(trimmed)=172
+grid::optimise() bin 12		size(untrimmed)=78	size(trimmed)=78
+grid::optimise() bin 13		size(untrimmed)=66	size(trimmed)=66
+==================================================
+appl::grid version 1.4.70	( 121-LO, 121-NLO, initial states, 14 observable bins )
+Optimised grid
+Unsymmetrised in x1, x2
+leading order of processes  0
+number of loops for grid    1
+x->y coordinate transform:  f2
+genpdf in use: basic.config
+--------------------------------------------------
+Observable binning: [ 14 bins : 125,  1500 ]
+0	  125	-   150	   	 x:  [ 40 :	 0.000276638 -       1	 : 40 :	 0.000276638 -       1	 : 	( order=6 ) ]	 Q2: [ 15 :	 500.837 - 8.67492e+06	( order=3 ) ]
+1	  150	-   175	   	 x:  [ 40 :	 0.000276638 -       1	 : 40 :	 0.000276638 -       1	 : 	( order=6 ) ]	 Q2: [ 15 :	 500.837 - 8.67492e+06	( order=3 ) ]
+2	  175	-   200	   	 x:  [ 40 :	 0.000276638 -       1	 : 40 :	 0.000276638 -       1	 : 	( order=6 ) ]	 Q2: [ 15 :	 500.837 - 8.67492e+06	( order=3 ) ]
+3	  200	-   250	   	 x:  [ 40 :	 0.000534318 -       1	 : 40 :	 0.000534318 -       1	 : 	( order=6 ) ]	 Q2: [ 15 :	 500.837 - 8.67492e+06	( order=3 ) ]
+4	  250	-   300	   	 x:  [ 40 :	 0.000534318 -       1	 : 40 :	 0.000534318 -       1	 : 	( order=6 ) ]	 Q2: [ 15 :	 500.837 - 1.69e+08	( order=3 ) ]
+5	  300	-   350	   	 x:  [ 40 :	 0.000534318 -       1	 : 40 :	 0.000534318 -       1	 : 	( order=6 ) ]	 Q2: [ 15 :	 2079.68 - 1.69e+08	( order=3 ) ]
+6	  350	-   400	   	 x:  [ 40 :	 0.00103079 -       1	 : 40 :	 0.00103079 -       1	 : 	( order=6 ) ]	 Q2: [ 15 :	 2079.68 - 1.69e+08	( order=3 ) ]
+7	  400	-   470	   	 x:  [ 40 :	 0.00103079 -       1	 : 40 :	 0.00103079 -       1	 : 	( order=6 ) ]	 Q2: [ 15 :	 2079.68 - 1.69e+08	( order=3 ) ]
+8	  470	-   550	   	 x:  [ 40 :	 0.00103079 -       1	 : 40 :	 0.00103079 -       1	 : 	( order=6 ) ]	 Q2: [ 15 :	 2079.68 - 1.69e+08	( order=3 ) ]
+9	  550	-   650	   	 x:  [ 40 :	 0.00198403 -       1	 : 40 :	 0.00198403 -       1	 : 	( order=6 ) ]	 Q2: [ 15 :	 2079.68 - 1.69e+08	( order=3 ) ]
+10	  650	-   750	   	 x:  [ 40 :	 0.00198403 -       1	 : 40 :	 0.00198403 -       1	 : 	( order=6 ) ]	 Q2: [ 15 :	 2079.68 - 1.69e+08	( order=3 ) ]
+11	  750	-   900	   	 x:  [ 40 :	 0.00198403 -       1	 : 40 :	 0.00198403 -       1	 : 	( order=6 ) ]	 Q2: [ 15 :	 2079.68 - 1.69e+08	( order=3 ) ]
+12	  900	-  1100	   	 x:  [ 40 :	 0.00380231 -       1	 : 40 :	 0.00380231 -       1	 : 	( order=6 ) ]	 Q2: [ 15 :	   10820 - 1.69e+08	( order=3 ) ]
+13	 1100	-  1500	   	 x:  [ 40 :	 0.00380231 -       1	 : 40 :	 0.00380231 -       1	 : 	( order=6 ) ]	 Q2: [ 15 :	   10820 - 1.69e+08	( order=3 ) ]
+
+
+Using existing grid file ATLASPHT15_Et_3bin.root
+appl::grid() reading grid from file ATLASPHT15_Et_3bin.root	version 1.4.70
+appl::grid() read grid, size 0 MB	in 7683.95 ms	trim in 1.177 ms
+grid::optimise() bin 0		size(untrimmed)=0	size(trimmed)=0
+grid::optimise() bin 1		size(untrimmed)=0	size(trimmed)=0
+grid::optimise() bin 2		size(untrimmed)=0	size(trimmed)=0
+grid::optimise() bin 3		size(untrimmed)=0	size(trimmed)=0
+grid::optimise() bin 4		size(untrimmed)=0	size(trimmed)=0
+grid::optimise() bin 5		size(untrimmed)=0	size(trimmed)=0
+grid::optimise() bin 6		size(untrimmed)=0	size(trimmed)=0
+grid::optimise() bin 7		size(untrimmed)=0	size(trimmed)=0
+grid::optimise() bin 8		size(untrimmed)=0	size(trimmed)=0
+grid::optimise() bin 9		size(untrimmed)=0	size(trimmed)=0
+grid::optimise() bin 10		size(untrimmed)=0	size(trimmed)=0
+grid::optimise() bin 11		size(untrimmed)=0	size(trimmed)=0
+grid::optimise() bin 12		size(untrimmed)=0	size(trimmed)=0
+grid::optimise() bin 0		size(untrimmed)=179	size(trimmed)=179
+grid::optimise() bin 1		size(untrimmed)=165	size(trimmed)=165
+grid::optimise() bin 2		size(untrimmed)=161	size(trimmed)=161
+grid::optimise() bin 3		size(untrimmed)=152	size(trimmed)=152
+grid::optimise() bin 4		size(untrimmed)=274	size(trimmed)=274
+grid::optimise() bin 5		size(untrimmed)=127	size(trimmed)=127
+grid::optimise() bin 6		size(untrimmed)=123	size(trimmed)=123
+grid::optimise() bin 7		size(untrimmed)=113	size(trimmed)=113
+grid::optimise() bin 8		size(untrimmed)=102	size(trimmed)=102
+grid::optimise() bin 9		size(untrimmed)=94	size(trimmed)=94
+grid::optimise() bin 10		size(untrimmed)=81	size(trimmed)=81
+grid::optimise() bin 11		size(untrimmed)=137	size(trimmed)=137
+grid::optimise() bin 12		size(untrimmed)=60	size(trimmed)=60
+==================================================
+appl::grid version 1.4.70	( 121-LO, 121-NLO, initial states, 13 observable bins )
+Optimised grid
+Unsymmetrised in x1, x2
+leading order of processes  0
+number of loops for grid    1
+x->y coordinate transform:  f2
+genpdf in use: basic.config
+--------------------------------------------------
+Observable binning: [ 13 bins : 125,  1100 ]
+0	  125	-   150	   	 x:  [ 40 :	 0.000143137 -       1	 : 40 :	 0.000143137 -       1	 : 	( order=6 ) ]	 Q2: [ 15 :	 500.837 - 8.67492e+06	( order=3 ) ]
+1	  150	-   175	   	 x:  [ 40 :	 0.000276638 -       1	 : 40 :	 0.000276638 -       1	 : 	( order=6 ) ]	 Q2: [ 15 :	 500.837 - 8.67492e+06	( order=3 ) ]
+2	  175	-   200	   	 x:  [ 40 :	 0.000276638 -       1	 : 40 :	 0.000276638 -       1	 : 	( order=6 ) ]	 Q2: [ 15 :	 500.837 - 8.67492e+06	( order=3 ) ]
+3	  200	-   250	   	 x:  [ 40 :	 0.000276638 -       1	 : 40 :	 0.000276638 -       1	 : 	( order=6 ) ]	 Q2: [ 15 :	 500.837 - 8.67492e+06	( order=3 ) ]
+4	  250	-   300	   	 x:  [ 40 :	 0.000276638 -       1	 : 40 :	 0.000276638 -       1	 : 	( order=6 ) ]	 Q2: [ 15 :	 500.837 - 1.69e+08	( order=3 ) ]
+5	  300	-   350	   	 x:  [ 40 :	 0.000534318 -       1	 : 40 :	 0.000534318 -       1	 : 	( order=6 ) ]	 Q2: [ 15 :	 2079.68 - 1.69e+08	( order=3 ) ]
+6	  350	-   400	   	 x:  [ 40 :	 0.000534318 -       1	 : 40 :	 0.000534318 -       1	 : 	( order=6 ) ]	 Q2: [ 15 :	 2079.68 - 1.69e+08	( order=3 ) ]
+7	  400	-   470	   	 x:  [ 40 :	 0.000534318 -       1	 : 40 :	 0.000534318 -       1	 : 	( order=6 ) ]	 Q2: [ 15 :	 2079.68 - 1.69e+08	( order=3 ) ]
+8	  470	-   550	   	 x:  [ 40 :	 0.00103079 -       1	 : 40 :	 0.00103079 -       1	 : 	( order=6 ) ]	 Q2: [ 15 :	 2079.68 - 1.69e+08	( order=3 ) ]
+9	  550	-   650	   	 x:  [ 40 :	 0.00103079 -       1	 : 40 :	 0.00103079 -       1	 : 	( order=6 ) ]	 Q2: [ 15 :	 2079.68 - 1.69e+08	( order=3 ) ]
+10	  650	-   750	   	 x:  [ 40 :	 0.00103079 -       1	 : 40 :	 0.00103079 -       1	 : 	( order=6 ) ]	 Q2: [ 15 :	 2079.68 - 1.69e+08	( order=3 ) ]
+11	  750	-   900	   	 x:  [ 40 :	 0.00198403 -       1	 : 40 :	 0.00198403 -       1	 : 	( order=6 ) ]	 Q2: [ 15 :	 2079.68 - 1.69e+08	( order=3 ) ]
+12	  900	-  1100	   	 x:  [ 40 :	 0.00198403 -       1	 : 40 :	 0.00198403 -       1	 : 	( order=6 ) ]	 Q2: [ 15 :	   10820 - 1.69e+08	( order=3 ) ]
+
+
+Using existing grid file ATLASPHT15_Et_4bin.root
+appl::grid() reading grid from file ATLASPHT15_Et_4bin.root	version 1.4.70
+appl::grid() read grid, size 0 MB	in 7098.89 ms	trim in 1.213 ms
+grid::optimise() bin 0		size(untrimmed)=0	size(trimmed)=0
+grid::optimise() bin 1		size(untrimmed)=0	size(trimmed)=0
+grid::optimise() bin 2		size(untrimmed)=0	size(trimmed)=0
+grid::optimise() bin 3		size(untrimmed)=0	size(trimmed)=0
+grid::optimise() bin 4		size(untrimmed)=0	size(trimmed)=0
+grid::optimise() bin 5		size(untrimmed)=0	size(trimmed)=0
+grid::optimise() bin 6		size(untrimmed)=0	size(trimmed)=0
+grid::optimise() bin 7		size(untrimmed)=0	size(trimmed)=0
+grid::optimise() bin 8		size(untrimmed)=0	size(trimmed)=0
+grid::optimise() bin 9		size(untrimmed)=0	size(trimmed)=0
+grid::optimise() bin 10		size(untrimmed)=0	size(trimmed)=0
+grid::optimise() bin 11		size(untrimmed)=0	size(trimmed)=0
+grid::optimise() bin 0		size(untrimmed)=181	size(trimmed)=181
+grid::optimise() bin 1		size(untrimmed)=168	size(trimmed)=168
+grid::optimise() bin 2		size(untrimmed)=160	size(trimmed)=160
+grid::optimise() bin 3		size(untrimmed)=152	size(trimmed)=152
+grid::optimise() bin 4		size(untrimmed)=272	size(trimmed)=272
+grid::optimise() bin 5		size(untrimmed)=129	size(trimmed)=129
+grid::optimise() bin 6		size(untrimmed)=114	size(trimmed)=114
+grid::optimise() bin 7		size(untrimmed)=108	size(trimmed)=108
+grid::optimise() bin 8		size(untrimmed)=95	size(trimmed)=95
+grid::optimise() bin 9		size(untrimmed)=85	size(trimmed)=85
+grid::optimise() bin 10		size(untrimmed)=72	size(trimmed)=72
+grid::optimise() bin 11		size(untrimmed)=114	size(trimmed)=114
+==================================================
+appl::grid version 1.4.70	( 121-LO, 121-NLO, initial states, 12 observable bins )
+Optimised grid
+Unsymmetrised in x1, x2
+leading order of processes  0
+number of loops for grid    1
+x->y coordinate transform:  f2
+genpdf in use: basic.config
+--------------------------------------------------
+Observable binning: [ 12 bins : 125,  900 ]
+0	  125	-   150	   	 x:  [ 40 :	 7.40381e-05 -       1	 : 40 :	 7.40381e-05 -       1	 : 	( order=6 ) ]	 Q2: [ 15 :	 500.837 - 8.67492e+06	( order=3 ) ]
+1	  150	-   175	   	 x:  [ 40 :	 0.000143137 -       1	 : 40 :	 0.000143137 -       1	 : 	( order=6 ) ]	 Q2: [ 15 :	 500.837 - 8.67492e+06	( order=3 ) ]
+2	  175	-   200	   	 x:  [ 40 :	 0.000143137 -       1	 : 40 :	 0.000143137 -       1	 : 	( order=6 ) ]	 Q2: [ 15 :	 500.837 - 8.67492e+06	( order=3 ) ]
+3	  200	-   250	   	 x:  [ 40 :	 0.000143137 -       1	 : 40 :	 0.000143137 -       1	 : 	( order=6 ) ]	 Q2: [ 15 :	 500.837 - 8.67492e+06	( order=3 ) ]
+4	  250	-   300	   	 x:  [ 40 :	 0.000276638 -       1	 : 40 :	 0.000276638 -       1	 : 	( order=6 ) ]	 Q2: [ 15 :	 500.837 - 1.69e+08	( order=3 ) ]
+5	  300	-   350	   	 x:  [ 40 :	 0.000276638 -       1	 : 40 :	 0.000276638 -       1	 : 	( order=6 ) ]	 Q2: [ 15 :	 2079.68 - 1.69e+08	( order=3 ) ]
+6	  350	-   400	   	 x:  [ 40 :	 0.000276638 -       1	 : 40 :	 0.000276638 -       1	 : 	( order=6 ) ]	 Q2: [ 15 :	 2079.68 - 1.69e+08	( order=3 ) ]
+7	  400	-   470	   	 x:  [ 40 :	 0.000534318 -       1	 : 40 :	 0.000534318 -       1	 : 	( order=6 ) ]	 Q2: [ 15 :	 2079.68 - 1.69e+08	( order=3 ) ]
+8	  470	-   550	   	 x:  [ 40 :	 0.000534318 -       1	 : 40 :	 0.000534318 -       1	 : 	( order=6 ) ]	 Q2: [ 15 :	 2079.68 - 1.69e+08	( order=3 ) ]
+9	  550	-   650	   	 x:  [ 40 :	 0.00103079 -       1	 : 40 :	 0.00103079 -       1	 : 	( order=6 ) ]	 Q2: [ 15 :	 2079.68 - 1.69e+08	( order=3 ) ]
+10	  650	-   750	   	 x:  [ 40 :	 0.00103079 -       1	 : 40 :	 0.00103079 -       1	 : 	( order=6 ) ]	 Q2: [ 15 :	 2079.68 - 1.69e+08	( order=3 ) ]
+11	  750	-   900	   	 x:  [ 40 :	 0.00103079 -       1	 : 40 :	 0.00198403 -       1	 : 	( order=6 ) ]	 Q2: [ 15 :	 2079.68 - 1.69e+08	( order=3 ) ]
+
+
+ ***********************************************
+
+ input parameters for vegas:  ndim=  5  ncall= 200000.
+                              it=    0  itmx=   10
+                              nprn=  0  alph= 1.50
+                              mds=  1   nd= 100
+                              xl( 1)=   0.000     xu( 1)=   1.000    
+                              xl( 2)=   0.000     xu( 2)=   1.000    
+                              xl( 3)=   0.000     xu( 3)=   1.000    
+                              xl( 4)=   0.000     xu( 4)=   1.000    
+                              xl( 5)=   0.000     xu( 5)=   1.000    
+
+ ************** Frixione Isolation    ***************
+ *                                                  *
+ *  eps_phot = 0.100  delta_0 = 0.400               *
+ *  n = 2                                           *
+ ****************************************************
+
+ *********** Basic jet-defining parameters **********
+ *     (Anti-kt algorithm - see arXiv:0802.1189)    *
+ *                                                  *
+ *     pt(jet)         > 120.0000                   *
+ *   |pseudo-rap(jet)| >   0.0000                   *
+ *   |pseudo-rap(jet)| <  99.0000                   *
+ * pseudo-cone size, R :   0.2000                   *
+ *                                                  *
+ *        Jet cross-section is INCLUSIVE            *
+ ****************************************************
+
+ ****************** Photon cuts *********************
+ *                                                  *
+ *   pt(photon 1)         >   120.00                *
+ *   pt(photon 2)         >     0.00                *
+ *   eta(photon)          <     5.00                *
+ *   R(photon,lepton)     >     0.00                *
+ *   R(photon,photon)     >     0.00                *
+ *   R(photon,jet)        >     0.00                *
+ *                                                  *
+ ****************************************************
+
+ ****************** Basic mass cuts *****************
+ *                                                  *
+ *              0.00  <   m34  < 90000.00           *
+ *              0.00  <   m56  < 13000.00           *
+ ****************************************************
+
+ ************** Dynamic scale choice ****************
+ *                                                  *
+ *                 RENORMALIZATION                  *
+ *       mu_ren  =  1.00 x pt(photon)               *
+ *                                                  *
+ *                  FACTORIZATION                   *
+ *       mu_fac  =  1.00 x pt(photon)               *
+ *                                                  *
+ ****************************************************
+ Poles cancelled!
+
+************* Integration by Vegas (iteration   1) **************
+*                                                               *
+*  integral  =  322195.61       accum. integral =  322195.61    *
+*  std. dev. =  1158.8574       accum. std. dev =  1158.8574    *
+*   max. wt. =    196.367                                       *
+*                                                               *
+**************   chi**2/iteration =  0.000       ****************
+
+
+************* Integration by Vegas (iteration   2) **************
+*                                                               *
+*  integral  =  322042.71       accum. integral =  322046.40    *
+*  std. dev. =  182.06724       accum. std. dev =  179.86099    *
+*   max. wt. =    196.367                                       *
+*                                                               *
+**************   chi**2/iteration = 0.1682E-01   ****************
+
+
+************* Integration by Vegas (iteration   3) **************
+*                                                               *
+*  integral  =  321869.61       accum. integral =  321946.18    *
+*  std. dev. =  157.20414       accum. std. dev =  118.36497    *
+*   max. wt. =    196.367                                       *
+*                                                               *
+**************   chi**2/iteration = 0.2809       ****************
+
+
+************* Integration by Vegas (iteration   4) **************
+*                                                               *
+*  integral  =  322189.50       accum. integral =  322038.09    *
+*  std. dev. =  151.91070       accum. std. dev =  93.368412    *
+*   max. wt. =    196.367                                       *
+*                                                               *
+**************   chi**2/iteration = 0.7180       ****************
+
+
+************* Integration by Vegas (iteration   5) **************
+*                                                               *
+*  integral  =  322148.34       accum. integral =  322065.37    *
+*  std. dev. =  162.85690       accum. std. dev =  81.000555    *
+*   max. wt. =    196.367                                       *
+*                                                               *
+**************   chi**2/iteration = 0.6249       ****************
+
+
+************* Integration by Vegas (iteration   6) **************
+*                                                               *
+*  integral  =  322304.88       accum. integral =  322110.40    *
+*  std. dev. =  168.33741       accum. std. dev =  72.990241    *
+*   max. wt. =    196.367                                       *
+*                                                               *
+**************   chi**2/iteration = 0.8283       ****************
+
+
+************* Integration by Vegas (iteration   7) **************
+*                                                               *
+*  integral  =  322111.19       accum. integral =  322110.52    *
+*  std. dev. =  168.72655       accum. std. dev =  66.990641    *
+*   max. wt. =    196.367                                       *
+*                                                               *
+**************   chi**2/iteration = 0.6905       ****************
+
+
+************* Integration by Vegas (iteration   8) **************
+*                                                               *
+*  integral  =  321918.16       accum. integral =  322084.11    *
+*  std. dev. =  167.90673       accum. std. dev =  62.221210    *
+*   max. wt. =    196.367                                       *
+*                                                               *
+**************   chi**2/iteration = 0.7535       ****************
+
+
+************* Integration by Vegas (iteration   9) **************
+*                                                               *
+*  integral  =  322025.71       accum. integral =  322077.68    *
+*  std. dev. =  176.93610       accum. std. dev =  58.697577    *
+*   max. wt. =    196.367                                       *
+*                                                               *
+**************   chi**2/iteration = 0.6715       ****************
+
+
+************* Integration by Vegas (iteration  10) **************
+*                                                               *
+*  integral  =  322211.50       accum. integral =  322092.24    *
+*  std. dev. =  167.97965       accum. std. dev =  55.411994    *
+*   max. wt. =    196.367                                       *
+*                                                               *
+**************   chi**2/iteration = 0.6598       ****************
+
+ ****************************************************
+ * Writing out vegas grid to dirgam_tota_NNPDF31_1___1___ATLASPHT15_dvegas_virt.grid                                                          *
+ ****************************************************
+ Adjusting number of points for real to     2000000
+
+ input parameters for vegas:  ndim=  7  ncall=1647086.
+                              it=   11  itmx=   10
+                              nprn=  0  alph= 1.50
+                              mds=  1   nd= 100
+                              xl( 1)=   0.000     xu( 1)=   1.000    
+                              xl( 2)=   0.000     xu( 2)=   1.000    
+                              xl( 3)=   0.000     xu( 3)=   1.000    
+                              xl( 4)=   0.000     xu( 4)=   1.000    
+                              xl( 5)=   0.000     xu( 5)=   1.000    
+                              xl( 6)=   0.000     xu( 6)=   1.000    
+                              xl( 7)=   0.000     xu( 7)=   1.000    
+
+************* Integration by Vegas (iteration   1) **************
+*                                                               *
+*  integral  =  274781.42       accum. integral =  274781.42    *
+*  std. dev. =  7543.0079       accum. std. dev =  7543.0079    *
+*   max. wt. =    2915.98                                       *
+*                                                               *
+**************   chi**2/iteration =  0.000       ****************
+
+
+************* Integration by Vegas (iteration   2) **************
+*                                                               *
+*  integral  =  280922.52       accum. integral =  279833.96    *
+*  std. dev. =  3501.1940       accum. std. dev =  3175.7617    *
+*   max. wt. =    2915.98                                       *
+*                                                               *
+**************   chi**2/iteration = 0.5399       ****************
+
+
+************* Integration by Vegas (iteration   3) **************
+*                                                               *
+*  integral  =  283036.10       accum. integral =  281816.21    *
+*  std. dev. =  2491.3291       accum. std. dev =  1960.1503    *
+*   max. wt. =    2915.98                                       *
+*                                                               *
+**************   chi**2/iteration = 0.5844       ****************
+
+
+************* Integration by Vegas (iteration   4) **************
+*                                                               *
+*  integral  =  279452.85       accum. integral =  280737.00    *
+*  std. dev. =  2138.1774       accum. std. dev =  1444.8810    *
+*   max. wt. =    2915.98                                       *
+*                                                               *
+**************   chi**2/iteration = 0.6108       ****************
+
+
+************* Integration by Vegas (iteration   5) **************
+*                                                               *
+*  integral  =  280305.53       accum. integral =  280599.18    *
+*  std. dev. =  2109.0833       accum. std. dev =  1191.9901    *
+*   max. wt. =    2915.98                                       *
+*                                                               *
+**************   chi**2/iteration = 0.4656       ****************
+
+
+************* Integration by Vegas (iteration   6) **************
+*                                                               *
+*  integral  =  279509.35       accum. integral =  280317.02    *
+*  std. dev. =  2016.7273       accum. std. dev =  1026.1518    *
+*   max. wt. =    2915.98                                       *
+*                                                               *
+**************   chi**2/iteration = 0.4159       ****************
+
+
+************* Integration by Vegas (iteration   7) **************
+*                                                               *
+*  integral  =  277758.98       accum. integral =  279851.45    *
+*  std. dev. =  2175.4356       accum. std. dev =  928.08363    *
+*   max. wt. =    2915.98                                       *
+*                                                               *
+**************   chi**2/iteration = 0.5349       ****************
+
+
+************* Integration by Vegas (iteration   8) **************
+*                                                               *
+*  integral  =  282568.25       accum. integral =  280115.35    *
+*  std. dev. =  2829.5091       accum. std. dev =  881.85781    *
+*   max. wt. =    2915.98                                       *
+*                                                               *
+**************   chi**2/iteration = 0.5773       ****************
+
+
+************* Integration by Vegas (iteration   9) **************
+*                                                               *
+*  integral  =  280706.69       accum. integral =  280174.86    *
+*  std. dev. =  2636.2678       accum. std. dev =  836.30810    *
+*   max. wt. =    2915.98                                       *
+*                                                               *
+**************   chi**2/iteration = 0.5109       ****************
+
+
+************* Integration by Vegas (iteration  10) **************
+*                                                               *
+*  integral  =  284860.51       accum. integral =  280384.41    *
+*  std. dev. =  3865.1777       accum. std. dev =  817.39343    *
+*   max. wt. =    3187.83                                       *
+*                                                               *
+**************   chi**2/iteration = 0.6100       ****************
+
+ ****************************************************
+ * Writing out vegas grid to dirgam_tota_NNPDF31_1___1___ATLASPHT15_dvegas_real.grid                                                          *
+ ****************************************************
+
+ ****************************************************
+ * Reading in vegas grid from dirgam_tota_NNPDF31_1___1___ATLASPHT15_dvegas_virt.grid                                                         *
+ ****************************************************
+
+ input parameters for vegas:  ndim=  5  ncall=1518750.
+                              it=   11  itmx=   15
+                              nprn=  0  alph= 1.50
+                              mds=  1   nd= 100
+                              xl( 1)=   0.000     xu( 1)=   1.000    
+                              xl( 2)=   0.000     xu( 2)=   1.000    
+                              xl( 3)=   0.000     xu( 3)=   1.000    
+                              xl( 4)=   0.000     xu( 4)=   1.000    
+                              xl( 5)=   0.000     xu( 5)=   1.000    
+	Warning: x2 out of range: x=0.000657338	(y=12.324)	Above Delx=-0.999343 ( 0.00198403 - 1 )	y=12.324	dely=12.324 ( 0 - 11.2127 )
+	Warning: x2 out of range: x=0.000868515	(y=12.0444)	Above Delx=-0.999131 ( 0.00103079 - 1 )	y=12.0444	dely=12.0444 ( 0 - 11.8723 )
+	Warning: x2 out of range: x=0.00299626	(y=10.7954)	Above Delx=-0.997004 ( 0.00380231 - 1 )	y=10.7954	dely=10.7954 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.000906022	(y=12.0019)	Above Delx=-0.999094 ( 0.00103079 - 1 )	y=12.0019	dely=12.0019 ( 0 - 11.8723 )
+	Warning: x2 out of range: x=0.000906022	(y=12.0019)	Above Delx=-0.999094 ( 0.00198403 - 1 )	y=12.0019	dely=12.0019 ( 0 - 11.2127 )
+	Warning: x1 out of range: x=0.0037271	(y=10.5735)	Above Delx=-0.996273 ( 0.00380231 - 1 )	y=10.5735	Dely=10.5735 ( 0 - 10.5531 )
+	Warning: x1 out of range: x=0.0037271	(y=10.5735)	Above Delx=-0.996273 ( 0.00380231 - 1 )	y=10.5735	Dely=10.5735 ( 0 - 10.5531 )
+fill_grid() filled 1000000 weights Thu Oct 26 11:08:06 2017
+	Warning: x2 out of range: x=0.00112776	(y=11.7819)	Above Delx=-0.998872 ( 0.00380231 - 1 )	y=11.7819	dely=11.7819 ( 0 - 10.5531 )
+	Warning: x1 out of range: x=0.0013972	(y=11.5663)	Above Delx=-0.998603 ( 0.00380231 - 1 )	y=11.5663	Dely=11.5663 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.00130448	(y=11.6354)	Above Delx=-0.998696 ( 0.00380231 - 1 )	y=11.6354	dely=11.6354 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.00130448	(y=11.6354)	Above Delx=-0.998696 ( 0.00380231 - 1 )	y=11.6354	dely=11.6354 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.00153316	(y=11.4728)	Above Delx=-0.998467 ( 0.00198403 - 1 )	y=11.4728	dely=11.4728 ( 0 - 11.2127 )
+	Warning: x2 out of range: x=0.00195966	(y=11.2252)	Above Delx=-0.99804 ( 0.00380231 - 1 )	y=11.2252	dely=11.2252 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.00195966	(y=11.2252)	Above Delx=-0.99804 ( 0.00722862 - 1 )	y=11.2252	dely=11.2252 ( 0 - 9.89356 )
+	Warning: x2 out of range: x=0.00195966	(y=11.2252)	Above Delx=-0.99804 ( 0.00380231 - 1 )	y=11.2252	dely=11.2252 ( 0 - 10.5531 )
+
+************* Integration by Vegas (iteration   1) **************
+*                                                               *
+*  integral  =  321953.49       accum. integral =  321953.49    *
+*  std. dev. =  59.993474       accum. std. dev =  59.993474    *
+*   max. wt. =    3.98103                                       *
+*                                                               *
+**************   chi**2/iteration =  0.000       ****************
+
+ Writing out intermediate results for iteration           1
+	Warning: x2 out of range: x=0.000580998	(y=12.4479)	Above Delx=-0.999419 ( 0.00103079 - 1 )	y=12.4479	dely=12.4479 ( 0 - 11.8723 )
+	Warning: x2 out of range: x=0.00141577	(y=11.553)	Above Delx=-0.998584 ( 0.00198403 - 1 )	y=11.553	dely=11.553 ( 0 - 11.2127 )
+	Warning: x2 out of range: x=0.00141577	(y=11.553)	Above Delx=-0.998584 ( 0.00198403 - 1 )	y=11.553	dely=11.553 ( 0 - 11.2127 )
+fill_grid() filled 2000000 weights Thu Oct 26 11:51:52 2017
+	Warning: x1 out of range: x=0.00128269	(y=11.6524)	Above Delx=-0.998717 ( 0.00198403 - 1 )	y=11.6524	Dely=11.6524 ( 0 - 11.2127 )
+	Warning: x1 out of range: x=0.00128269	(y=11.6524)	Above Delx=-0.998717 ( 0.00380231 - 1 )	y=11.6524	Dely=11.6524 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.000443456	(y=12.7187)	Above Delx=-0.999557 ( 0.000534318 - 1 )	y=12.7187	dely=12.7187 ( 0 - 12.5318 )
+	Warning: x2 out of range: x=0.000443456	(y=12.7187)	Above Delx=-0.999557 ( 0.00380231 - 1 )	y=12.7187	dely=12.7187 ( 0 - 10.5531 )
+	Warning: x1 out of range: x=0.00163062	(y=11.4106)	Above Delx=-0.998369 ( 0.00198403 - 1 )	y=11.4106	Dely=11.4106 ( 0 - 11.2127 )
+	Warning: x2 out of range: x=0.00263926	(y=10.9241)	Above Delx=-0.997361 ( 0.00380231 - 1 )	y=10.9241	dely=10.9241 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.00101114	(y=11.8916)	Above Delx=-0.998989 ( 0.00380231 - 1 )	y=11.8916	dely=11.8916 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.00101114	(y=11.8916)	Above Delx=-0.998989 ( 0.00103079 - 1 )	y=11.8916	dely=11.8916 ( 0 - 11.8723 )
+	Warning: x1 out of range: x=0.00142875	(y=11.5438)	Above Delx=-0.998571 ( 0.00198403 - 1 )	y=11.5438	Dely=11.5438 ( 0 - 11.2127 )
+	Warning: x2 out of range: x=0.00102333	(y=11.8796)	Above Delx=-0.998977 ( 0.00103079 - 1 )	y=11.8796	dely=11.8796 ( 0 - 11.8723 )
+	Warning: x1 out of range: x=0.00039988	(y=12.8223)	Above Delx=-0.9996 ( 0.00198403 - 1 )	y=12.8223	Dely=12.8223 ( 0 - 11.2127 )
+	Warning: x1 out of range: x=0.00039988	(y=12.8223)	Above Delx=-0.9996 ( 0.00198403 - 1 )	y=12.8223	Dely=12.8223 ( 0 - 11.2127 )
+	Warning: x2 out of range: x=0.00284718	(y=10.8472)	Above Delx=-0.997153 ( 0.00380231 - 1 )	y=10.8472	dely=10.8472 ( 0 - 10.5531 )
+	Warning: x1 out of range: x=0.00357894	(y=10.6148)	Above Delx=-0.996421 ( 0.00722862 - 1 )	y=10.6148	Dely=10.6148 ( 0 - 9.89356 )
+	Warning: x2 out of range: x=0.00124076	(y=11.6858)	Above Delx=-0.998759 ( 0.00380231 - 1 )	y=11.6858	dely=11.6858 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.00124076	(y=11.6858)	Above Delx=-0.998759 ( 0.00380231 - 1 )	y=11.6858	dely=11.6858 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.00261884	(y=10.9319)	Above Delx=-0.997381 ( 0.00380231 - 1 )	y=10.9319	dely=10.9319 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.00177214	(y=11.3267)	Above Delx=-0.998228 ( 0.00380231 - 1 )	y=11.3267	dely=11.3267 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.00125785	(y=11.6721)	Above Delx=-0.998742 ( 0.00722862 - 1 )	y=11.6721	dely=11.6721 ( 0 - 9.89356 )
+fill_grid() filled 3000000 weights Thu Oct 26 12:35:21 2017
+
+************* Integration by Vegas (iteration   2) **************
+*                                                               *
+*  integral  =  322012.09       accum. integral =  321982.68    *
+*  std. dev. =  60.229553       accum. std. dev =  42.505013    *
+*   max. wt. =    3.98103                                       *
+*                                                               *
+**************   chi**2/iteration = 0.4704       ****************
+
+ Writing out intermediate results for iteration           2
+	Warning: x2 out of range: x=0.00110765	(y=11.8)	Above Delx=-0.998892 ( 0.00198403 - 1 )	y=11.8	dely=11.8 ( 0 - 11.2127 )
+	Warning: x1 out of range: x=0.00164985	(y=11.3988)	Above Delx=-0.99835 ( 0.00198403 - 1 )	y=11.3988	Dely=11.3988 ( 0 - 11.2127 )
+	Warning: x2 out of range: x=0.001335	(y=11.6122)	Above Delx=-0.998665 ( 0.00380231 - 1 )	y=11.6122	dely=11.6122 ( 0 - 10.5531 )
+	Warning: x1 out of range: x=0.000742478	(y=12.2018)	Above Delx=-0.999258 ( 0.00380231 - 1 )	y=12.2018	Dely=12.2018 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.000705389	(y=12.2532)	Above Delx=-0.999295 ( 0.00198403 - 1 )	y=12.2532	dely=12.2532 ( 0 - 11.2127 )
+	Warning: x2 out of range: x=0.000705389	(y=12.2532)	Above Delx=-0.999295 ( 0.00198403 - 1 )	y=12.2532	dely=12.2532 ( 0 - 11.2127 )
+fill_grid() filled 4000000 weights Thu Oct 26 13:17:05 2017
+	Warning: x2 out of range: x=0.000478717	(y=12.642)	Above Delx=-0.999521 ( 0.00380231 - 1 )	y=12.642	dely=12.642 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.000478717	(y=12.642)	Above Delx=-0.999521 ( 0.000534318 - 1 )	y=12.642	dely=12.642 ( 0 - 12.5318 )
+	Warning: x2 out of range: x=0.000478717	(y=12.642)	Above Delx=-0.999521 ( 0.000534318 - 1 )	y=12.642	dely=12.642 ( 0 - 12.5318 )
+	Warning: x2 out of range: x=0.000478717	(y=12.642)	Above Delx=-0.999521 ( 0.00103079 - 1 )	y=12.642	dely=12.642 ( 0 - 11.8723 )
+	Warning: x2 out of range: x=0.00188068	(y=11.2667)	Above Delx=-0.998119 ( 0.00198403 - 1 )	y=11.2667	dely=11.2667 ( 0 - 11.2127 )
+	Warning: x2 out of range: x=0.00341272	(y=10.6632)	Above Delx=-0.996587 ( 0.00380231 - 1 )	y=10.6632	dely=10.6632 ( 0 - 10.5531 )
+	Warning: x1 out of range: x=0.000630956	(y=12.3651)	Above Delx=-0.999369 ( 0.00103079 - 1 )	y=12.3651	Dely=12.3651 ( 0 - 11.8723 )
+	Warning: x2 out of range: x=0.00111968	(y=11.7891)	Above Delx=-0.99888 ( 0.00380231 - 1 )	y=11.7891	dely=11.7891 ( 0 - 10.5531 )
+	Warning: x1 out of range: x=0.00292315	(y=10.8205)	Above Delx=-0.997077 ( 0.00380231 - 1 )	y=10.8205	Dely=10.8205 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.000787501	(y=12.1427)	Above Delx=-0.999212 ( 0.00380231 - 1 )	y=12.1427	dely=12.1427 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.000787501	(y=12.1427)	Above Delx=-0.999212 ( 0.00103079 - 1 )	y=12.1427	dely=12.1427 ( 0 - 11.8723 )
+	Warning: x2 out of range: x=0.000787501	(y=12.1427)	Above Delx=-0.999212 ( 0.00103079 - 1 )	y=12.1427	dely=12.1427 ( 0 - 11.8723 )
+
+************* Integration by Vegas (iteration   3) **************
+*                                                               *
+*  integral  =  321988.39       accum. integral =  321984.55    *
+*  std. dev. =  60.805040       accum. std. dev =  34.837206    *
+*   max. wt. =    3.98103                                       *
+*                                                               *
+**************   chi**2/iteration = 0.2393       ****************
+
+ Writing out intermediate results for iteration           3
+	Warning: x1 out of range: x=0.00140442	(y=11.5611)	Above Delx=-0.998596 ( 0.00380231 - 1 )	y=11.5611	Dely=11.5611 ( 0 - 10.5531 )
+	Warning: x1 out of range: x=0.00255183	(y=10.9582)	Above Delx=-0.997448 ( 0.00380231 - 1 )	y=10.9582	Dely=10.9582 ( 0 - 10.5531 )
+fill_grid() filled 5000000 weights Thu Oct 26 13:58:27 2017
+	Warning: x2 out of range: x=0.000590107	(y=12.4323)	Above Delx=-0.99941 ( 0.00198403 - 1 )	y=12.4323	dely=12.4323 ( 0 - 11.2127 )
+	Warning: x2 out of range: x=0.00239779	(y=11.0212)	Above Delx=-0.997602 ( 0.00380231 - 1 )	y=11.0212	dely=11.0212 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.00127196	(y=11.6608)	Above Delx=-0.998728 ( 0.00380231 - 1 )	y=11.6608	dely=11.6608 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.00127196	(y=11.6608)	Above Delx=-0.998728 ( 0.00380231 - 1 )	y=11.6608	dely=11.6608 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.0011789	(y=11.7373)	Above Delx=-0.998821 ( 0.00198403 - 1 )	y=11.7373	dely=11.7373 ( 0 - 11.2127 )
+	Warning: x2 out of range: x=0.0011789	(y=11.7373)	Above Delx=-0.998821 ( 0.00198403 - 1 )	y=11.7373	dely=11.7373 ( 0 - 11.2127 )
+	Warning: x2 out of range: x=0.00166717	(y=11.3883)	Above Delx=-0.998333 ( 0.00380231 - 1 )	y=11.3883	dely=11.3883 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.00123743	(y=11.6885)	Above Delx=-0.998763 ( 0.00380231 - 1 )	y=11.6885	dely=11.6885 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.00123743	(y=11.6885)	Above Delx=-0.998763 ( 0.00198403 - 1 )	y=11.6885	dely=11.6885 ( 0 - 11.2127 )
+fill_grid() filled 6000000 weights Thu Oct 26 14:41:55 2017
+
+************* Integration by Vegas (iteration   4) **************
+*                                                               *
+*  integral  =  321952.04       accum. integral =  321976.72    *
+*  std. dev. =  61.862736       accum. std. dev =  30.354989    *
+*   max. wt. =    3.98103                                       *
+*                                                               *
+**************   chi**2/iteration = 0.2295       ****************
+
+ Writing out intermediate results for iteration           4
+	Warning: x2 out of range: x=0.00609898	(y=10.0691)	Above Delx=-0.993901 ( 0.00722862 - 1 )	y=10.0691	dely=10.0691 ( 0 - 9.89356 )
+	Warning: x2 out of range: x=0.000846398	(y=12.0703)	Above Delx=-0.999154 ( 0.00198403 - 1 )	y=12.0703	dely=12.0703 ( 0 - 11.2127 )
+	Warning: x2 out of range: x=0.000854936	(y=12.0602)	Above Delx=-0.999145 ( 0.00103079 - 1 )	y=12.0602	dely=12.0602 ( 0 - 11.8723 )
+	Warning: x2 out of range: x=0.00315769	(y=10.7421)	Above Delx=-0.996842 ( 0.00380231 - 1 )	y=10.7421	dely=10.7421 ( 0 - 10.5531 )
+fill_grid() filled 7000000 weights Thu Oct 26 15:23:33 2017
+	Warning: x2 out of range: x=0.0023168	(y=11.056)	Above Delx=-0.997683 ( 0.00380231 - 1 )	y=11.056	dely=11.056 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.000529006	(y=12.5419)	Above Delx=-0.999471 ( 0.00103079 - 1 )	y=12.5419	dely=12.5419 ( 0 - 11.8723 )
+	Warning: x2 out of range: x=0.0014555	(y=11.5251)	Above Delx=-0.998544 ( 0.00380231 - 1 )	y=11.5251	dely=11.5251 ( 0 - 10.5531 )
+	Warning: x1 out of range: x=0.00224623	(y=11.0873)	Above Delx=-0.997754 ( 0.00722862 - 1 )	y=11.0873	Dely=11.0873 ( 0 - 9.89356 )
+	Warning: x2 out of range: x=0.00174309	(y=11.3434)	Above Delx=-0.998257 ( 0.00380231 - 1 )	y=11.3434	dely=11.3434 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.00174309	(y=11.3434)	Above Delx=-0.998257 ( 0.00380231 - 1 )	y=11.3434	dely=11.3434 ( 0 - 10.5531 )
+
+************* Integration by Vegas (iteration   5) **************
+*                                                               *
+*  integral  =  322036.75       accum. integral =  321988.23    *
+*  std. dev. =  62.325867       accum. std. dev =  27.290361    *
+*   max. wt. =    3.98103                                       *
+*                                                               *
+**************   chi**2/iteration = 0.3592       ****************
+
+ Writing out intermediate results for iteration           5
+	Warning: x2 out of range: x=0.000863907	(y=12.0497)	Above Delx=-0.999136 ( 0.00103079 - 1 )	y=12.0497	dely=12.0497 ( 0 - 11.8723 )
+fill_grid() filled 8000000 weights Thu Oct 26 16:05:28 2017
+	Warning: x1 out of range: x=0.00541529	(y=10.1915)	Above Delx=-0.994585 ( 0.00722862 - 1 )	y=10.1915	Dely=10.1915 ( 0 - 9.89356 )
+	Warning: x2 out of range: x=0.000895434	(y=12.0137)	Above Delx=-0.999105 ( 0.00103079 - 1 )	y=12.0137	dely=12.0137 ( 0 - 11.8723 )
+	Warning: x1 out of range: x=0.00350561	(y=10.6359)	Above Delx=-0.996494 ( 0.00380231 - 1 )	y=10.6359	Dely=10.6359 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.00143618	(y=11.5386)	Above Delx=-0.998564 ( 0.00198403 - 1 )	y=11.5386	dely=11.5386 ( 0 - 11.2127 )
+	Warning: x2 out of range: x=0.00164238	(y=11.4034)	Above Delx=-0.998358 ( 0.00198403 - 1 )	y=11.4034	dely=11.4034 ( 0 - 11.2127 )
+fill_grid() filled 9000000 weights Thu Oct 26 16:48:52 2017
+	Warning: x2 out of range: x=0.00229406	(y=11.066)	Above Delx=-0.997706 ( 0.00380231 - 1 )	y=11.066	dely=11.066 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.00229406	(y=11.066)	Above Delx=-0.997706 ( 0.00722862 - 1 )	y=11.066	dely=11.066 ( 0 - 9.89356 )
+
+************* Integration by Vegas (iteration   6) **************
+*                                                               *
+*  integral  =  322048.44       accum. integral =  321997.67    *
+*  std. dev. =  63.278225       accum. std. dev =  25.059198    *
+*   max. wt. =    3.98103                                       *
+*                                                               *
+**************   chi**2/iteration = 0.4398       ****************
+
+ Writing out intermediate results for iteration           6
+	Warning: x2 out of range: x=0.00704577	(y=9.9201)	Above Delx=-0.992954 ( 0.00722862 - 1 )	y=9.9201	dely=9.9201 ( 0 - 9.89356 )
+	Warning: x2 out of range: x=0.00134089	(y=11.6077)	Above Delx=-0.998659 ( 0.00198403 - 1 )	y=11.6077	dely=11.6077 ( 0 - 11.2127 )
+	Warning: x1 out of range: x=0.00306711	(y=10.7717)	Above Delx=-0.996933 ( 0.00380231 - 1 )	y=10.7717	Dely=10.7717 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.0030531	(y=10.7763)	Above Delx=-0.996947 ( 0.00380231 - 1 )	y=10.7763	dely=10.7763 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.00123176	(y=11.6932)	Above Delx=-0.998768 ( 0.00198403 - 1 )	y=11.6932	dely=11.6932 ( 0 - 11.2127 )
+	Warning: x2 out of range: x=0.00340838	(y=10.6645)	Above Delx=-0.996592 ( 0.00380231 - 1 )	y=10.6645	dely=10.6645 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.000989774	(y=11.9131)	Above Delx=-0.99901 ( 0.00103079 - 1 )	y=11.9131	dely=11.9131 ( 0 - 11.8723 )
+	Warning: x2 out of range: x=0.000989774	(y=11.9131)	Above Delx=-0.99901 ( 0.00103079 - 1 )	y=11.9131	dely=11.9131 ( 0 - 11.8723 )
+	Warning: x2 out of range: x=0.000966818	(y=11.9367)	Above Delx=-0.999033 ( 0.00380231 - 1 )	y=11.9367	dely=11.9367 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.000687628	(y=12.2788)	Above Delx=-0.999312 ( 0.00103079 - 1 )	y=12.2788	dely=12.2788 ( 0 - 11.8723 )
+fill_grid() filled 10000000 weights Thu Oct 26 17:30:42 2017
+	Warning: x2 out of range: x=0.001413	(y=11.555)	Above Delx=-0.998587 ( 0.00198403 - 1 )	y=11.555	dely=11.555 ( 0 - 11.2127 )
+	Warning: x2 out of range: x=0.00106386	(y=11.8405)	Above Delx=-0.998936 ( 0.00198403 - 1 )	y=11.8405	dely=11.8405 ( 0 - 11.2127 )
+	Warning: x2 out of range: x=0.00140102	(y=11.5635)	Above Delx=-0.998599 ( 0.00198403 - 1 )	y=11.5635	dely=11.5635 ( 0 - 11.2127 )
+	Warning: x2 out of range: x=0.00140102	(y=11.5635)	Above Delx=-0.998599 ( 0.00722862 - 1 )	y=11.5635	dely=11.5635 ( 0 - 9.89356 )
+	Warning: x1 out of range: x=0.00348292	(y=10.6425)	Above Delx=-0.996517 ( 0.00722862 - 1 )	y=10.6425	Dely=10.6425 ( 0 - 9.89356 )
+	Warning: x2 out of range: x=0.000696803	(y=12.2655)	Above Delx=-0.999303 ( 0.00103079 - 1 )	y=12.2655	dely=12.2655 ( 0 - 11.8723 )
+	Warning: x2 out of range: x=0.000696803	(y=12.2655)	Above Delx=-0.999303 ( 0.00380231 - 1 )	y=12.2655	dely=12.2655 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.000696803	(y=12.2655)	Above Delx=-0.999303 ( 0.00103079 - 1 )	y=12.2655	dely=12.2655 ( 0 - 11.8723 )
+	Warning: x2 out of range: x=0.000696803	(y=12.2655)	Above Delx=-0.999303 ( 0.00103079 - 1 )	y=12.2655	dely=12.2655 ( 0 - 11.8723 )
+	Warning: x2 out of range: x=0.000696803	(y=12.2655)	Above Delx=-0.999303 ( 0.00103079 - 1 )	y=12.2655	dely=12.2655 ( 0 - 11.8723 )
+
+************* Integration by Vegas (iteration   7) **************
+*                                                               *
+*  integral  =  321996.32       accum. integral =  321997.50    *
+*  std. dev. =  65.382817       accum. std. dev =  23.399433    *
+*   max. wt. =    3.98103                                       *
+*                                                               *
+**************   chi**2/iteration = 0.3667       ****************
+
+ Writing out intermediate results for iteration           7
+fill_grid() filled 11000000 weights Thu Oct 26 18:12:06 2017
+	Warning: x2 out of range: x=0.00127753	(y=11.6564)	Above Delx=-0.998722 ( 0.00198403 - 1 )	y=11.6564	dely=11.6564 ( 0 - 11.2127 )
+	Warning: x2 out of range: x=0.000934849	(y=11.9705)	Above Delx=-0.999065 ( 0.00380231 - 1 )	y=11.9705	dely=11.9705 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.00097406	(y=11.9292)	Above Delx=-0.999026 ( 0.00103079 - 1 )	y=11.9292	dely=11.9292 ( 0 - 11.8723 )
+	Warning: x1 out of range: x=0.000968101	(y=11.9353)	Above Delx=-0.999032 ( 0.00198403 - 1 )	y=11.9353	Dely=11.9353 ( 0 - 11.2127 )
+	Warning: x1 out of range: x=0.00190088	(y=11.2559)	Above Delx=-0.998099 ( 0.00380231 - 1 )	y=11.2559	Dely=11.2559 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.00324087	(y=10.7157)	Above Delx=-0.996759 ( 0.00380231 - 1 )	y=10.7157	dely=10.7157 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.00103713	(y=11.8661)	Above Delx=-0.998963 ( 0.00198403 - 1 )	y=11.8661	dely=11.8661 ( 0 - 11.2127 )
+	Warning: x1 out of range: x=0.002243	(y=11.0887)	Above Delx=-0.997757 ( 0.00380231 - 1 )	y=11.0887	Dely=11.0887 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.000881862	(y=12.0291)	Above Delx=-0.999118 ( 0.00380231 - 1 )	y=12.0291	dely=12.0291 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.000881862	(y=12.0291)	Above Delx=-0.999118 ( 0.00103079 - 1 )	y=12.0291	dely=12.0291 ( 0 - 11.8723 )
+	Warning: x2 out of range: x=0.000957255	(y=11.9467)	Above Delx=-0.999043 ( 0.00103079 - 1 )	y=11.9467	dely=11.9467 ( 0 - 11.8723 )
+	Warning: x1 out of range: x=0.000979962	(y=11.9231)	Above Delx=-0.99902 ( 0.00103079 - 1 )	y=11.9231	Dely=11.9231 ( 0 - 11.8723 )
+	Warning: x2 out of range: x=0.00095727	(y=11.9466)	Above Delx=-0.999043 ( 0.00103079 - 1 )	y=11.9466	dely=11.9466 ( 0 - 11.8723 )
+	Warning: x2 out of range: x=0.0013957	(y=11.5674)	Above Delx=-0.998604 ( 0.00380231 - 1 )	y=11.5674	dely=11.5674 ( 0 - 10.5531 )
+fill_grid() filled 12000000 weights Thu Oct 26 18:55:43 2017
+	Warning: x2 out of range: x=0.00211764	(y=11.1469)	Above Delx=-0.997882 ( 0.00380231 - 1 )	y=11.1469	dely=11.1469 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.00211764	(y=11.1469)	Above Delx=-0.997882 ( 0.00380231 - 1 )	y=11.1469	dely=11.1469 ( 0 - 10.5531 )
+
+************* Integration by Vegas (iteration   8) **************
+*                                                               *
+*  integral  =  322086.19       accum. integral =  322006.93    *
+*  std. dev. =  67.821064       accum. std. dev =  22.119899    *
+*   max. wt. =    3.98103                                       *
+*                                                               *
+**************   chi**2/iteration = 0.5324       ****************
+
+ Writing out intermediate results for iteration           8
+	Warning: x2 out of range: x=0.00176335	(y=11.3317)	Above Delx=-0.998237 ( 0.00198403 - 1 )	y=11.3317	dely=11.3317 ( 0 - 11.2127 )
+	Warning: x2 out of range: x=0.00176335	(y=11.3317)	Above Delx=-0.998237 ( 0.00198403 - 1 )	y=11.3317	dely=11.3317 ( 0 - 11.2127 )
+	Warning: x2 out of range: x=0.00176335	(y=11.3317)	Above Delx=-0.998237 ( 0.00198403 - 1 )	y=11.3317	dely=11.3317 ( 0 - 11.2127 )
+	Warning: x2 out of range: x=0.00190198	(y=11.2554)	Above Delx=-0.998098 ( 0.00380231 - 1 )	y=11.2554	dely=11.2554 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.000984999	(y=11.9179)	Above Delx=-0.999015 ( 0.00198403 - 1 )	y=11.9179	dely=11.9179 ( 0 - 11.2127 )
+	Warning: x2 out of range: x=0.000984999	(y=11.9179)	Above Delx=-0.999015 ( 0.00103079 - 1 )	y=11.9179	dely=11.9179 ( 0 - 11.8723 )
+	Warning: x2 out of range: x=0.00142501	(y=11.5465)	Above Delx=-0.998575 ( 0.00198403 - 1 )	y=11.5465	dely=11.5465 ( 0 - 11.2127 )
+fill_grid() filled 13000000 weights Thu Oct 26 19:37:07 2017
+	Warning: x2 out of range: x=0.000944214	(y=11.9604)	Above Delx=-0.999056 ( 0.00380231 - 1 )	y=11.9604	dely=11.9604 ( 0 - 10.5531 )
+	Warning: x1 out of range: x=0.00163923	(y=11.4053)	Above Delx=-0.998361 ( 0.00198403 - 1 )	y=11.4053	Dely=11.4053 ( 0 - 11.2127 )
+	Warning: x2 out of range: x=0.001315	(y=11.6273)	Above Delx=-0.998685 ( 0.00380231 - 1 )	y=11.6273	dely=11.6273 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.001315	(y=11.6273)	Above Delx=-0.998685 ( 0.00380231 - 1 )	y=11.6273	dely=11.6273 ( 0 - 10.5531 )
+	Warning: x1 out of range: x=0.00453216	(y=10.3739)	Above Delx=-0.995468 ( 0.00722862 - 1 )	y=10.3739	Dely=10.3739 ( 0 - 9.89356 )
+	Warning: x2 out of range: x=0.000462945	(y=12.6756)	Above Delx=-0.999537 ( 0.000534318 - 1 )	y=12.6756	dely=12.6756 ( 0 - 12.5318 )
+	Warning: x2 out of range: x=0.00164283	(y=11.4031)	Above Delx=-0.998357 ( 0.00380231 - 1 )	y=11.4031	dely=11.4031 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.00130341	(y=11.6363)	Above Delx=-0.998697 ( 0.00198403 - 1 )	y=11.6363	dely=11.6363 ( 0 - 11.2127 )
+	Warning: x2 out of range: x=0.00130341	(y=11.6363)	Above Delx=-0.998697 ( 0.00198403 - 1 )	y=11.6363	dely=11.6363 ( 0 - 11.2127 )
+
+************* Integration by Vegas (iteration   9) **************
+*                                                               *
+*  integral  =  322162.02       accum. integral =  322020.49    *
+*  std. dev. =  71.479346       accum. std. dev =  21.131216    *
+*   max. wt. =    3.98103                                       *
+*                                                               *
+**************   chi**2/iteration =  1.002       ****************
+
+ Writing out intermediate results for iteration           9
+	Warning: x2 out of range: x=0.00696141	(y=9.93257)	Above Delx=-0.993039 ( 0.00722862 - 1 )	y=9.93257	dely=9.93257 ( 0 - 9.89356 )
+	Warning: x2 out of range: x=0.00689691	(y=9.9422)	Above Delx=-0.993103 ( 0.00722862 - 1 )	y=9.9422	dely=9.9422 ( 0 - 9.89356 )
+	Warning: x2 out of range: x=0.000980758	(y=11.9223)	Above Delx=-0.999019 ( 0.00380231 - 1 )	y=11.9223	dely=11.9223 ( 0 - 10.5531 )
+fill_grid() filled 14000000 weights Thu Oct 26 20:18:26 2017
+	Warning: x2 out of range: x=0.000934513	(y=11.9708)	Above Delx=-0.999065 ( 0.00198403 - 1 )	y=11.9708	dely=11.9708 ( 0 - 11.2127 )
+	Warning: x2 out of range: x=0.000934513	(y=11.9708)	Above Delx=-0.999065 ( 0.00103079 - 1 )	y=11.9708	dely=11.9708 ( 0 - 11.8723 )
+	Warning: x2 out of range: x=0.0010003	(y=11.9025)	Above Delx=-0.999 ( 0.00103079 - 1 )	y=11.9025	dely=11.9025 ( 0 - 11.8723 )
+	Warning: x2 out of range: x=0.0010003	(y=11.9025)	Above Delx=-0.999 ( 0.00103079 - 1 )	y=11.9025	dely=11.9025 ( 0 - 11.8723 )
+	Warning: x2 out of range: x=0.0010003	(y=11.9025)	Above Delx=-0.999 ( 0.00103079 - 1 )	y=11.9025	dely=11.9025 ( 0 - 11.8723 )
+	Warning: x1 out of range: x=0.00171593	(y=11.3592)	Above Delx=-0.998284 ( 0.00198403 - 1 )	y=11.3592	Dely=11.3592 ( 0 - 11.2127 )
+	Warning: x2 out of range: x=0.00351825	(y=10.6322)	Above Delx=-0.996482 ( 0.00380231 - 1 )	y=10.6322	dely=10.6322 ( 0 - 10.5531 )
+	Warning: x1 out of range: x=0.00424619	(y=10.4405)	Above Delx=-0.995754 ( 0.00722862 - 1 )	y=10.4405	Dely=10.4405 ( 0 - 9.89356 )
+	Warning: x1 out of range: x=0.00636237	(y=10.0255)	Above Delx=-0.993638 ( 0.00722862 - 1 )	y=10.0255	Dely=10.0255 ( 0 - 9.89356 )
+	Warning: x1 out of range: x=0.00636237	(y=10.0255)	Above Delx=-0.993638 ( 0.00722862 - 1 )	y=10.0255	Dely=10.0255 ( 0 - 9.89356 )
+	Warning: x1 out of range: x=0.00636237	(y=10.0255)	Above Delx=-0.993638 ( 0.00722862 - 1 )	y=10.0255	Dely=10.0255 ( 0 - 9.89356 )
+	Warning: x2 out of range: x=0.0012072	(y=11.7134)	Above Delx=-0.998793 ( 0.00380231 - 1 )	y=11.7134	dely=11.7134 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.0012072	(y=11.7134)	Above Delx=-0.998793 ( 0.00198403 - 1 )	y=11.7134	dely=11.7134 ( 0 - 11.2127 )
+	Warning: x2 out of range: x=0.000721166	(y=12.231)	Above Delx=-0.999279 ( 0.00380231 - 1 )	y=12.231	dely=12.231 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.000721166	(y=12.231)	Above Delx=-0.999279 ( 0.00380231 - 1 )	y=12.231	dely=12.231 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.000721166	(y=12.231)	Above Delx=-0.999279 ( 0.00380231 - 1 )	y=12.231	dely=12.231 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.0013228	(y=11.6214)	Above Delx=-0.998677 ( 0.00380231 - 1 )	y=11.6214	dely=11.6214 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.0013228	(y=11.6214)	Above Delx=-0.998677 ( 0.00380231 - 1 )	y=11.6214	dely=11.6214 ( 0 - 10.5531 )
+fill_grid() filled 15000000 weights Thu Oct 26 21:01:57 2017
+	Warning: x2 out of range: x=0.000760384	(y=12.1779)	Above Delx=-0.99924 ( 0.00103079 - 1 )	y=12.1779	dely=12.1779 ( 0 - 11.8723 )
+	Warning: x2 out of range: x=0.000760384	(y=12.1779)	Above Delx=-0.99924 ( 0.00198403 - 1 )	y=12.1779	dely=12.1779 ( 0 - 11.2127 )
+	Warning: x2 out of range: x=0.000760384	(y=12.1779)	Above Delx=-0.99924 ( 0.00103079 - 1 )	y=12.1779	dely=12.1779 ( 0 - 11.8723 )
+	Warning: x2 out of range: x=0.000760384	(y=12.1779)	Above Delx=-0.99924 ( 0.00103079 - 1 )	y=12.1779	dely=12.1779 ( 0 - 11.8723 )
+	Warning: x2 out of range: x=0.000760384	(y=12.1779)	Above Delx=-0.99924 ( 0.00103079 - 1 )	y=12.1779	dely=12.1779 ( 0 - 11.8723 )
+	Warning: x1 out of range: x=0.00386861	(y=10.5355)	Above Delx=-0.996131 ( 0.00722862 - 1 )	y=10.5355	Dely=10.5355 ( 0 - 9.89356 )
+
+************* Integration by Vegas (iteration  10) **************
+*                                                               *
+*  integral  =  322066.19       accum. integral =  322023.80    *
+*  std. dev. =  75.540316       accum. std. dev =  20.350004    *
+*   max. wt. =    3.98103                                       *
+*                                                               *
+**************   chi**2/iteration = 0.9287       ****************
+
+ Writing out intermediate results for iteration          10
+	Warning: x2 out of range: x=0.00147695	(y=11.5104)	Above Delx=-0.998523 ( 0.00198403 - 1 )	y=11.5104	dely=11.5104 ( 0 - 11.2127 )
+	Warning: x2 out of range: x=0.000490597	(y=12.6174)	Above Delx=-0.999509 ( 0.000534318 - 1 )	y=12.6174	dely=12.6174 ( 0 - 12.5318 )
+	Warning: x2 out of range: x=0.00083306	(y=12.0862)	Above Delx=-0.999167 ( 0.00103079 - 1 )	y=12.0862	dely=12.0862 ( 0 - 11.8723 )
+	Warning: x2 out of range: x=0.000981618	(y=11.9214)	Above Delx=-0.999018 ( 0.00380231 - 1 )	y=11.9214	dely=11.9214 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.00171417	(y=11.3603)	Above Delx=-0.998286 ( 0.00380231 - 1 )	y=11.3603	dely=11.3603 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.0035077	(y=10.6353)	Above Delx=-0.996492 ( 0.00380231 - 1 )	y=10.6353	dely=10.6353 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.00226459	(y=11.079)	Above Delx=-0.997735 ( 0.00380231 - 1 )	y=11.079	dely=11.079 ( 0 - 10.5531 )
+fill_grid() filled 16000000 weights Thu Oct 26 21:43:36 2017
+	Warning: x2 out of range: x=0.000429044	(y=12.7518)	Above Delx=-0.999571 ( 0.000534318 - 1 )	y=12.7518	dely=12.7518 ( 0 - 12.5318 )
+	Warning: x2 out of range: x=0.000429044	(y=12.7518)	Above Delx=-0.999571 ( 0.000534318 - 1 )	y=12.7518	dely=12.7518 ( 0 - 12.5318 )
+	Warning: x2 out of range: x=0.000429044	(y=12.7518)	Above Delx=-0.999571 ( 0.000534318 - 1 )	y=12.7518	dely=12.7518 ( 0 - 12.5318 )
+	Warning: x2 out of range: x=0.000429044	(y=12.7518)	Above Delx=-0.999571 ( 0.00380231 - 1 )	y=12.7518	dely=12.7518 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.00101146	(y=11.8913)	Above Delx=-0.998989 ( 0.00103079 - 1 )	y=11.8913	dely=11.8913 ( 0 - 11.8723 )
+	Warning: x2 out of range: x=0.00104098	(y=11.8624)	Above Delx=-0.998959 ( 0.00380231 - 1 )	y=11.8624	dely=11.8624 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.00104098	(y=11.8624)	Above Delx=-0.998959 ( 0.00198403 - 1 )	y=11.8624	dely=11.8624 ( 0 - 11.2127 )
+	Warning: x1 out of range: x=0.00425421	(y=10.4386)	Above Delx=-0.995746 ( 0.00722862 - 1 )	y=10.4386	Dely=10.4386 ( 0 - 9.89356 )
+
+************* Integration by Vegas (iteration  11) **************
+*                                                               *
+*  integral  =  321996.16       accum. integral =  322022.18    *
+*  std. dev. =  81.409482       accum. std. dev =  19.742539    *
+*   max. wt. =    3.98103                                       *
+*                                                               *
+**************   chi**2/iteration = 0.8467       ****************
+
+ Writing out intermediate results for iteration          11
+fill_grid() filled 17000000 weights Thu Oct 26 22:25:21 2017
+	Warning: x2 out of range: x=0.00134413	(y=11.6053)	Above Delx=-0.998656 ( 0.00198403 - 1 )	y=11.6053	dely=11.6053 ( 0 - 11.2127 )
+	Warning: x1 out of range: x=0.00618939	(y=10.054)	Above Delx=-0.993811 ( 0.00722862 - 1 )	y=10.054	Dely=10.054 ( 0 - 9.89356 )
+	Warning: x1 out of range: x=0.00170685	(y=11.3646)	Above Delx=-0.998293 ( 0.00198403 - 1 )	y=11.3646	Dely=11.3646 ( 0 - 11.2127 )
+	Warning: x2 out of range: x=0.00350434	(y=10.6362)	Above Delx=-0.996496 ( 0.00380231 - 1 )	y=10.6362	dely=10.6362 ( 0 - 10.5531 )
+	Warning: x1 out of range: x=0.000583466	(y=12.4436)	Above Delx=-0.999417 ( 0.00198403 - 1 )	y=12.4436	Dely=12.4436 ( 0 - 11.2127 )
+	Warning: x2 out of range: x=0.00257493	(y=10.9491)	Above Delx=-0.997425 ( 0.00380231 - 1 )	y=10.9491	dely=10.9491 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.00111102	(y=11.7969)	Above Delx=-0.998889 ( 0.00380231 - 1 )	y=11.7969	dely=11.7969 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.00111102	(y=11.7969)	Above Delx=-0.998889 ( 0.00198403 - 1 )	y=11.7969	dely=11.7969 ( 0 - 11.2127 )
+	Warning: x2 out of range: x=0.000927757	(y=11.9781)	Above Delx=-0.999072 ( 0.00380231 - 1 )	y=11.9781	dely=11.9781 ( 0 - 10.5531 )
+fill_grid() filled 18000000 weights Thu Oct 26 23:08:52 2017
+	Warning: x1 out of range: x=0.00717252	(y=9.90164)	Above Delx=-0.992827 ( 0.00722862 - 1 )	y=9.90164	Dely=9.90164 ( 0 - 9.89356 )
+
+************* Integration by Vegas (iteration  12) **************
+*                                                               *
+*  integral  =  321957.76       accum. integral =  322018.96    *
+*  std. dev. =  86.042268       accum. std. dev =  19.242496    *
+*   max. wt. =    3.98103                                       *
+*                                                               *
+**************   chi**2/iteration = 0.8182       ****************
+
+ Writing out intermediate results for iteration          12
+	Warning: x2 out of range: x=0.00154325	(y=11.4661)	Above Delx=-0.998457 ( 0.00198403 - 1 )	y=11.4661	dely=11.4661 ( 0 - 11.2127 )
+	Warning: x2 out of range: x=0.000927036	(y=11.9789)	Above Delx=-0.999073 ( 0.00103079 - 1 )	y=11.9789	dely=11.9789 ( 0 - 11.8723 )
+	Warning: x2 out of range: x=0.00647836	(y=10.0069)	Above Delx=-0.993522 ( 0.00722862 - 1 )	y=10.0069	dely=10.0069 ( 0 - 9.89356 )
+	Warning: x2 out of range: x=0.00256943	(y=10.9512)	Above Delx=-0.997431 ( 0.00380231 - 1 )	y=10.9512	dely=10.9512 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.00049089	(y=12.6168)	Above Delx=-0.999509 ( 0.000534318 - 1 )	y=12.6168	dely=12.6168 ( 0 - 12.5318 )
+	Warning: x2 out of range: x=0.00049089	(y=12.6168)	Above Delx=-0.999509 ( 0.000534318 - 1 )	y=12.6168	dely=12.6168 ( 0 - 12.5318 )
+	Warning: x2 out of range: x=0.00049089	(y=12.6168)	Above Delx=-0.999509 ( 0.00103079 - 1 )	y=12.6168	dely=12.6168 ( 0 - 11.8723 )
+	Warning: x2 out of range: x=0.00049089	(y=12.6168)	Above Delx=-0.999509 ( 0.000534318 - 1 )	y=12.6168	dely=12.6168 ( 0 - 12.5318 )
+	Warning: x2 out of range: x=0.00049089	(y=12.6168)	Above Delx=-0.999509 ( 0.000534318 - 1 )	y=12.6168	dely=12.6168 ( 0 - 12.5318 )
+fill_grid() filled 19000000 weights Thu Oct 26 23:50:00 2017
+	Warning: x2 out of range: x=0.00307851	(y=10.7679)	Above Delx=-0.996921 ( 0.00380231 - 1 )	y=10.7679	dely=10.7679 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.00204708	(y=11.1811)	Above Delx=-0.997953 ( 0.00380231 - 1 )	y=11.1811	dely=11.1811 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.000710485	(y=12.246)	Above Delx=-0.99929 ( 0.00198403 - 1 )	y=12.246	dely=12.246 ( 0 - 11.2127 )
+	Warning: x2 out of range: x=0.00052373	(y=12.5519)	Above Delx=-0.999476 ( 0.000534318 - 1 )	y=12.5519	dely=12.5519 ( 0 - 12.5318 )
+	Warning: x2 out of range: x=0.00130313	(y=11.6365)	Above Delx=-0.998697 ( 0.00380231 - 1 )	y=11.6365	dely=11.6365 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.000405931	(y=12.8073)	Above Delx=-0.999594 ( 0.000534318 - 1 )	y=12.8073	dely=12.8073 ( 0 - 12.5318 )
+	Warning: x2 out of range: x=0.000405931	(y=12.8073)	Above Delx=-0.999594 ( 0.000534318 - 1 )	y=12.8073	dely=12.8073 ( 0 - 12.5318 )
+	Warning: x1 out of range: x=0.00180987	(y=11.3055)	Above Delx=-0.99819 ( 0.00380231 - 1 )	y=11.3055	Dely=11.3055 ( 0 - 10.5531 )
+	Warning: x1 out of range: x=0.00650402	(y=10.0028)	Above Delx=-0.993496 ( 0.00722862 - 1 )	y=10.0028	Dely=10.0028 ( 0 - 9.89356 )
+	Warning: x1 out of range: x=0.00301014	(y=10.7907)	Above Delx=-0.99699 ( 0.00722862 - 1 )	y=10.7907	Dely=10.7907 ( 0 - 9.89356 )
+	Warning: x2 out of range: x=0.00161223	(y=11.4221)	Above Delx=-0.998388 ( 0.00198403 - 1 )	y=11.4221	dely=11.4221 ( 0 - 11.2127 )
+	Warning: x2 out of range: x=0.00161223	(y=11.4221)	Above Delx=-0.998388 ( 0.00198403 - 1 )	y=11.4221	dely=11.4221 ( 0 - 11.2127 )
+	Warning: x2 out of range: x=0.00161223	(y=11.4221)	Above Delx=-0.998388 ( 0.00380231 - 1 )	y=11.4221	dely=11.4221 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.00128624	(y=11.6496)	Above Delx=-0.998714 ( 0.00198403 - 1 )	y=11.6496	dely=11.6496 ( 0 - 11.2127 )
+
+************* Integration by Vegas (iteration  13) **************
+*                                                               *
+*  integral  =  321998.88       accum. integral =  322018.11    *
+*  std. dev. =  91.876545       accum. std. dev =  18.833860    *
+*   max. wt. =    3.98103                                       *
+*                                                               *
+**************   chi**2/iteration = 0.7539       ****************
+
+ Writing out intermediate results for iteration          13
+	Warning: x1 out of range: x=0.000890128	(y=12.0197)	Above Delx=-0.99911 ( 0.00103079 - 1 )	y=12.0197	Dely=12.0197 ( 0 - 11.8723 )
+fill_grid() filled 20000000 weights Fri Oct 27 00:30:56 2017
+	Warning: x1 out of range: x=0.0018298	(y=11.2944)	Above Delx=-0.99817 ( 0.00380231 - 1 )	y=11.2944	Dely=11.2944 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.00100131	(y=11.9014)	Above Delx=-0.998999 ( 0.00103079 - 1 )	y=11.9014	dely=11.9014 ( 0 - 11.8723 )
+	Warning: x2 out of range: x=0.00100131	(y=11.9014)	Above Delx=-0.998999 ( 0.00198403 - 1 )	y=11.9014	dely=11.9014 ( 0 - 11.2127 )
+	Warning: x2 out of range: x=0.000995806	(y=11.907)	Above Delx=-0.999004 ( 0.00198403 - 1 )	y=11.907	dely=11.907 ( 0 - 11.2127 )
+	Warning: x2 out of range: x=0.000722562	(y=12.2291)	Above Delx=-0.999277 ( 0.00103079 - 1 )	y=12.2291	dely=12.2291 ( 0 - 11.8723 )
+	Warning: x2 out of range: x=0.00117151	(y=11.7436)	Above Delx=-0.998828 ( 0.00380231 - 1 )	y=11.7436	dely=11.7436 ( 0 - 10.5531 )
+	Warning: x1 out of range: x=0.00171312	(y=11.3609)	Above Delx=-0.998287 ( 0.00198403 - 1 )	y=11.3609	Dely=11.3609 ( 0 - 11.2127 )
+	Warning: x1 out of range: x=0.00171312	(y=11.3609)	Above Delx=-0.998287 ( 0.00198403 - 1 )	y=11.3609	Dely=11.3609 ( 0 - 11.2127 )
+	Warning: x1 out of range: x=0.00295912	(y=10.8081)	Above Delx=-0.997041 ( 0.00722862 - 1 )	y=10.8081	Dely=10.8081 ( 0 - 9.89356 )
+	Warning: x2 out of range: x=0.00164941	(y=11.3991)	Above Delx=-0.998351 ( 0.00198403 - 1 )	y=11.3991	dely=11.3991 ( 0 - 11.2127 )
+	Warning: x2 out of range: x=0.00191714	(y=11.2473)	Above Delx=-0.998083 ( 0.00380231 - 1 )	y=11.2473	dely=11.2473 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.000880009	(y=12.0312)	Above Delx=-0.99912 ( 0.00380231 - 1 )	y=12.0312	dely=12.0312 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.000880009	(y=12.0312)	Above Delx=-0.99912 ( 0.00103079 - 1 )	y=12.0312	dely=12.0312 ( 0 - 11.8723 )
+	Warning: x2 out of range: x=0.000880009	(y=12.0312)	Above Delx=-0.99912 ( 0.00103079 - 1 )	y=12.0312	dely=12.0312 ( 0 - 11.8723 )
+	Warning: x2 out of range: x=0.000880009	(y=12.0312)	Above Delx=-0.99912 ( 0.00103079 - 1 )	y=12.0312	dely=12.0312 ( 0 - 11.8723 )
+	Warning: x2 out of range: x=0.000880009	(y=12.0312)	Above Delx=-0.99912 ( 0.00103079 - 1 )	y=12.0312	dely=12.0312 ( 0 - 11.8723 )
+	Warning: x2 out of range: x=0.000952817	(y=11.9513)	Above Delx=-0.999047 ( 0.00380231 - 1 )	y=11.9513	dely=11.9513 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.000952817	(y=11.9513)	Above Delx=-0.999047 ( 0.00380231 - 1 )	y=11.9513	dely=11.9513 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.000952817	(y=11.9513)	Above Delx=-0.999047 ( 0.00103079 - 1 )	y=11.9513	dely=11.9513 ( 0 - 11.8723 )
+	Warning: x1 out of range: x=0.0054403	(y=10.1867)	Above Delx=-0.99456 ( 0.00722862 - 1 )	y=10.1867	Dely=10.1867 ( 0 - 9.89356 )
+	Warning: x1 out of range: x=0.00590931	(y=10.1017)	Above Delx=-0.994091 ( 0.00722862 - 1 )	y=10.1017	Dely=10.1017 ( 0 - 9.89356 )
+fill_grid() filled 21000000 weights Fri Oct 27 01:14:33 2017
+	Warning: x2 out of range: x=0.000959666	(y=11.9441)	Above Delx=-0.99904 ( 0.00103079 - 1 )	y=11.9441	dely=11.9441 ( 0 - 11.8723 )
+	Warning: x2 out of range: x=0.000959666	(y=11.9441)	Above Delx=-0.99904 ( 0.00103079 - 1 )	y=11.9441	dely=11.9441 ( 0 - 11.8723 )
+	Warning: x2 out of range: x=0.000959666	(y=11.9441)	Above Delx=-0.99904 ( 0.00103079 - 1 )	y=11.9441	dely=11.9441 ( 0 - 11.8723 )
+	Warning: x2 out of range: x=0.000959666	(y=11.9441)	Above Delx=-0.99904 ( 0.00103079 - 1 )	y=11.9441	dely=11.9441 ( 0 - 11.8723 )
+	Warning: x2 out of range: x=0.000959666	(y=11.9441)	Above Delx=-0.99904 ( 0.00103079 - 1 )	y=11.9441	dely=11.9441 ( 0 - 11.8723 )
+	Warning: x2 out of range: x=0.000959666	(y=11.9441)	Above Delx=-0.99904 ( 0.00103079 - 1 )	y=11.9441	dely=11.9441 ( 0 - 11.8723 )
+	Warning: x2 out of range: x=0.000886901	(y=12.0233)	Above Delx=-0.999113 ( 0.00103079 - 1 )	y=12.0233	dely=12.0233 ( 0 - 11.8723 )
+	Warning: x2 out of range: x=0.000886901	(y=12.0233)	Above Delx=-0.999113 ( 0.00380231 - 1 )	y=12.0233	dely=12.0233 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.000886901	(y=12.0233)	Above Delx=-0.999113 ( 0.00198403 - 1 )	y=12.0233	dely=12.0233 ( 0 - 11.2127 )
+	Warning: x2 out of range: x=0.000886901	(y=12.0233)	Above Delx=-0.999113 ( 0.00722862 - 1 )	y=12.0233	dely=12.0233 ( 0 - 9.89356 )
+	Warning: x2 out of range: x=0.000886901	(y=12.0233)	Above Delx=-0.999113 ( 0.00103079 - 1 )	y=12.0233	dely=12.0233 ( 0 - 11.8723 )
+	Warning: x2 out of range: x=0.000886901	(y=12.0233)	Above Delx=-0.999113 ( 0.00722862 - 1 )	y=12.0233	dely=12.0233 ( 0 - 9.89356 )
+	Warning: x1 out of range: x=0.00599494	(y=10.0869)	Above Delx=-0.994005 ( 0.00722862 - 1 )	y=10.0869	Dely=10.0869 ( 0 - 9.89356 )
+	Warning: x1 out of range: x=0.00512209	(y=10.2486)	Above Delx=-0.994878 ( 0.00722862 - 1 )	y=10.2486	Dely=10.2486 ( 0 - 9.89356 )
+
+************* Integration by Vegas (iteration  14) **************
+*                                                               *
+*  integral  =  322092.18       accum. integral =  322020.76    *
+*  std. dev. =  97.801576       accum. std. dev =  18.494064    *
+*   max. wt. =    3.98103                                       *
+*                                                               *
+**************   chi**2/iteration = 0.7384       ****************
+
+ Writing out intermediate results for iteration          14
+	Warning: x2 out of range: x=0.00718151	(y=9.90034)	Above Delx=-0.992818 ( 0.00722862 - 1 )	y=9.90034	dely=9.90034 ( 0 - 9.89356 )
+	Warning: x2 out of range: x=0.000898695	(y=12.0101)	Above Delx=-0.999101 ( 0.00103079 - 1 )	y=12.0101	dely=12.0101 ( 0 - 11.8723 )
+	Warning: x1 out of range: x=0.00170791	(y=11.3639)	Above Delx=-0.998292 ( 0.00198403 - 1 )	y=11.3639	Dely=11.3639 ( 0 - 11.2127 )
+	Warning: x1 out of range: x=0.00170791	(y=11.3639)	Above Delx=-0.998292 ( 0.00380231 - 1 )	y=11.3639	Dely=11.3639 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.000430072	(y=12.7494)	Above Delx=-0.99957 ( 0.000534318 - 1 )	y=12.7494	dely=12.7494 ( 0 - 12.5318 )
+	Warning: x2 out of range: x=0.000680878	(y=12.2887)	Above Delx=-0.999319 ( 0.00103079 - 1 )	y=12.2887	dely=12.2887 ( 0 - 11.8723 )
+	Warning: x2 out of range: x=0.00104085	(y=11.8625)	Above Delx=-0.998959 ( 0.00198403 - 1 )	y=11.8625	dely=11.8625 ( 0 - 11.2127 )
+fill_grid() filled 22000000 weights Fri Oct 27 01:55:30 2017
+	Warning: x2 out of range: x=0.000371186	(y=12.897)	Above Delx=-0.999629 ( 0.00103079 - 1 )	y=12.897	dely=12.897 ( 0 - 11.8723 )
+	Warning: x2 out of range: x=0.000371186	(y=12.897)	Above Delx=-0.999629 ( 0.00103079 - 1 )	y=12.897	dely=12.897 ( 0 - 11.8723 )
+	Warning: x2 out of range: x=0.000371186	(y=12.897)	Above Delx=-0.999629 ( 0.000534318 - 1 )	y=12.897	dely=12.897 ( 0 - 12.5318 )
+	Warning: x2 out of range: x=0.000371186	(y=12.897)	Above Delx=-0.999629 ( 0.00103079 - 1 )	y=12.897	dely=12.897 ( 0 - 11.8723 )
+	Warning: x2 out of range: x=0.000939832	(y=11.9651)	Above Delx=-0.99906 ( 0.00380231 - 1 )	y=11.9651	dely=11.9651 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.000939832	(y=11.9651)	Above Delx=-0.99906 ( 0.00103079 - 1 )	y=11.9651	dely=11.9651 ( 0 - 11.8723 )
+	Warning: x2 out of range: x=0.000939832	(y=11.9651)	Above Delx=-0.99906 ( 0.00380231 - 1 )	y=11.9651	dely=11.9651 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.000939832	(y=11.9651)	Above Delx=-0.99906 ( 0.00103079 - 1 )	y=11.9651	dely=11.9651 ( 0 - 11.8723 )
+	Warning: x2 out of range: x=0.00339309	(y=10.669)	Above Delx=-0.996607 ( 0.00380231 - 1 )	y=10.669	dely=10.669 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.00122348	(y=11.6999)	Above Delx=-0.998777 ( 0.00198403 - 1 )	y=11.6999	dely=11.6999 ( 0 - 11.2127 )
+	Warning: x2 out of range: x=0.00122348	(y=11.6999)	Above Delx=-0.998777 ( 0.00380231 - 1 )	y=11.6999	dely=11.6999 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.00144807	(y=11.5303)	Above Delx=-0.998552 ( 0.00380231 - 1 )	y=11.5303	dely=11.5303 ( 0 - 10.5531 )
+	Warning: x2 out of range: x=0.00144118	(y=11.5351)	Above Delx=-0.998559 ( 0.00198403 - 1 )	y=11.5351	dely=11.5351 ( 0 - 11.2127 )
+
+************* Integration by Vegas (iteration  15) **************
+*                                                               *
+*  integral  =  322142.60       accum. integral =  322024.55    *
+*  std. dev. =  103.18725       accum. std. dev =  18.203994    *
+*   max. wt. =    4.21128                                       *
+*                                                               *
+**************   chi**2/iteration = 0.7822       ****************
+
+ Adjusting number of points for real to    20000000
+ ****************************************************
+ * Reading in vegas grid from dirgam_tota_NNPDF31_1___1___ATLASPHT15_dvegas_real.grid                                                         *
+ ****************************************************
+
+ input parameters for vegas:  ndim=  7  ncall=********
+                              it=   16  itmx=   15
+                              nprn=  0  alph= 1.50
+                              mds=  1   nd= 100
+                              xl( 1)=   0.000     xu( 1)=   1.000    
+                              xl( 2)=   0.000     xu( 2)=   1.000    
+                              xl( 3)=   0.000     xu( 3)=   1.000    
+                              xl( 4)=   0.000     xu( 4)=   1.000    
+                              xl( 5)=   0.000     xu( 5)=   1.000    
+                              xl( 6)=   0.000     xu( 6)=   1.000    
+                              xl( 7)=   0.000     xu( 7)=   1.000    
+fill_grid() filled 23000000 weights Fri Oct 27 02:28:54 2017
+fill_grid() filled 24000000 weights Fri Oct 27 02:37:25 2017
+fill_grid() filled 25000000 weights Fri Oct 27 02:46:01 2017
+fill_grid() filled 26000000 weights Fri Oct 27 02:59:20 2017
+fill_grid() filled 27000000 weights Fri Oct 27 03:08:28 2017
+fill_grid() filled 28000000 weights Fri Oct 27 03:20:45 2017
+fill_grid() filled 29000000 weights Fri Oct 27 03:31:33 2017
+fill_grid() filled 30000000 weights Fri Oct 27 03:41:13 2017
+fill_grid() filled 31000000 weights Fri Oct 27 03:54:24 2017
+fill_grid() filled 32000000 weights Fri Oct 27 04:04:12 2017
+fill_grid() filled 33000000 weights Fri Oct 27 04:14:34 2017
+fill_grid() filled 34000000 weights Fri Oct 27 04:27:46 2017
+fill_grid() filled 35000000 weights Fri Oct 27 04:37:56 2017
+fill_grid() filled 36000000 weights Fri Oct 27 04:50:29 2017
+fill_grid() filled 37000000 weights Fri Oct 27 05:01:14 2017
+fill_grid() filled 38000000 weights Fri Oct 27 05:11:07 2017
+fill_grid() filled 39000000 weights Fri Oct 27 05:24:02 2017
+
+************* Integration by Vegas (iteration   1) **************
+*                                                               *
+*  integral  =  277965.32       accum. integral =  277965.32    *
+*  std. dev. =  815.15028       accum. std. dev =  815.15028    *
+*   max. wt. =    129.920                                       *
+*                                                               *
+**************   chi**2/iteration =  0.000       ****************
+
+ Writing out intermediate results for iteration           1
+fill_grid() filled 40000000 weights Fri Oct 27 05:29:06 2017
+fill_grid() filled 41000000 weights Fri Oct 27 05:36:34 2017
+fill_grid() filled 42000000 weights Fri Oct 27 05:48:46 2017
+fill_grid() filled 43000000 weights Fri Oct 27 05:57:50 2017
+fill_grid() filled 44000000 weights Fri Oct 27 06:11:32 2017
+fill_grid() filled 45000000 weights Fri Oct 27 06:20:45 2017
+fill_grid() filled 46000000 weights Fri Oct 27 06:33:53 2017
+fill_grid() filled 47000000 weights Fri Oct 27 06:43:53 2017
+fill_grid() filled 48000000 weights Fri Oct 27 06:56:26 2017
+fill_grid() filled 49000000 weights Fri Oct 27 07:07:02 2017
+fill_grid() filled 50000000 weights Fri Oct 27 07:18:56 2017
+fill_grid() filled 51000000 weights Fri Oct 27 07:30:13 2017
+fill_grid() filled 52000000 weights Fri Oct 27 07:41:32 2017
+fill_grid() filled 53000000 weights Fri Oct 27 07:53:31 2017
+fill_grid() filled 54000000 weights Fri Oct 27 08:04:27 2017
+fill_grid() filled 55000000 weights Fri Oct 27 08:16:54 2017
+fill_grid() filled 56000000 weights Fri Oct 27 08:27:55 2017
+fill_grid() filled 57000000 weights Fri Oct 27 08:39:52 2017
+fill_grid() filled 58000000 weights Fri Oct 27 08:51:02 2017
+fill_grid() filled 59000000 weights Fri Oct 27 09:01:33 2017
+fill_grid() filled 60000000 weights Fri Oct 27 09:11:17 2017
+
+************* Integration by Vegas (iteration   2) **************
+*                                                               *
+*  integral  =  280374.23       accum. integral =  279442.28    *
+*  std. dev. =  647.51333       accum. std. dev =  507.01773    *
+*   max. wt. =    129.920                                       *
+*                                                               *
+**************   chi**2/iteration =  5.301       ****************
+
+ Writing out intermediate results for iteration           2
+fill_grid() filled 61000000 weights Fri Oct 27 09:13:34 2017
+fill_grid() filled 62000000 weights Fri Oct 27 09:24:44 2017
+fill_grid() filled 63000000 weights Fri Oct 27 09:34:03 2017
+fill_grid() filled 64000000 weights Fri Oct 27 09:46:30 2017
+fill_grid() filled 65000000 weights Fri Oct 27 09:57:55 2017
+fill_grid() filled 66000000 weights Fri Oct 27 10:09:34 2017
+fill_grid() filled 67000000 weights Fri Oct 27 10:21:40 2017
+fill_grid() filled 68000000 weights Fri Oct 27 10:32:24 2017
+fill_grid() filled 69000000 weights Fri Oct 27 10:43:57 2017
+fill_grid() filled 70000000 weights Fri Oct 27 10:54:27 2017
+fill_grid() filled 71000000 weights Fri Oct 27 11:05:34 2017
+fill_grid() filled 72000000 weights Fri Oct 27 11:16:27 2017
+fill_grid() filled 73000000 weights Fri Oct 27 11:27:36 2017
+fill_grid() filled 74000000 weights Fri Oct 27 11:38:31 2017
+fill_grid() filled 75000000 weights Fri Oct 27 11:50:00 2017
+fill_grid() filled 76000000 weights Fri Oct 27 12:00:29 2017
+fill_grid() filled 77000000 weights Fri Oct 27 12:11:53 2017
+fill_grid() filled 78000000 weights Fri Oct 27 12:21:53 2017
+fill_grid() filled 79000000 weights Fri Oct 27 12:33:40 2017
+fill_grid() filled 80000000 weights Fri Oct 27 12:41:56 2017
+fill_grid() filled 81000000 weights Fri Oct 27 12:52:51 2017
+
+************* Integration by Vegas (iteration   3) **************
+*                                                               *
+*  integral  =  280477.08       accum. integral =  279873.71    *
+*  std. dev. =  599.60386       accum. std. dev =  387.15841    *
+*   max. wt. =    129.920                                       *
+*                                                               *
+**************   chi**2/iteration =  3.528       ****************
+
+ Writing out intermediate results for iteration           3
+fill_grid() filled 82000000 weights Fri Oct 27 12:55:45 2017
+fill_grid() filled 83000000 weights Fri Oct 27 13:02:49 2017
+fill_grid() filled 84000000 weights Fri Oct 27 13:13:30 2017
+fill_grid() filled 85000000 weights Fri Oct 27 13:21:15 2017
+fill_grid() filled 86000000 weights Fri Oct 27 13:32:40 2017
+fill_grid() filled 87000000 weights Fri Oct 27 13:40:44 2017
+fill_grid() filled 88000000 weights Fri Oct 27 13:52:08 2017
+fill_grid() filled 89000000 weights Fri Oct 27 14:00:36 2017
+fill_grid() filled 90000000 weights Fri Oct 27 14:11:55 2017
+fill_grid() filled 91000000 weights Fri Oct 27 14:20:32 2017
+fill_grid() filled 92000000 weights Fri Oct 27 14:31:45 2017
+fill_grid() filled 93000000 weights Fri Oct 27 14:40:33 2017
+fill_grid() filled 94000000 weights Fri Oct 27 14:51:40 2017
+fill_grid() filled 95000000 weights Fri Oct 27 15:00:23 2017
+fill_grid() filled 96000000 weights Fri Oct 27 15:11:39 2017
+fill_grid() filled 97000000 weights Fri Oct 27 15:20:07 2017
+fill_grid() filled 98000000 weights Fri Oct 27 15:31:24 2017
+fill_grid() filled 99000000 weights Fri Oct 27 15:39:28 2017
+fill_grid() filled 100000000 weights Fri Oct 27 15:50:55 2017
+fill_grid() filled 101000000 weights Fri Oct 27 15:57:46 2017
+fill_grid() filled 102000000 weights Fri Oct 27 16:08:38 2017
+fill_grid() filled 103000000 weights Fri Oct 27 16:13:22 2017
+
+************* Integration by Vegas (iteration   4) **************
+*                                                               *
+*  integral  =  278895.55       accum. integral =  279588.00    *
+*  std. dev. =  602.73263       accum. std. dev =  325.74614    *
+*   max. wt. =    149.927                                       *
+*                                                               *
+**************   chi**2/iteration =  2.975       ****************
+
+ Writing out intermediate results for iteration           4
+fill_grid() filled 104000000 weights Fri Oct 27 16:17:50 2017
+fill_grid() filled 105000000 weights Fri Oct 27 16:28:39 2017
+fill_grid() filled 106000000 weights Fri Oct 27 16:36:06 2017
+fill_grid() filled 107000000 weights Fri Oct 27 16:47:27 2017
+fill_grid() filled 108000000 weights Fri Oct 27 16:55:48 2017
+fill_grid() filled 109000000 weights Fri Oct 27 17:06:57 2017
+fill_grid() filled 110000000 weights Fri Oct 27 17:15:42 2017
+fill_grid() filled 111000000 weights Fri Oct 27 17:26:59 2017
+fill_grid() filled 112000000 weights Fri Oct 27 17:35:51 2017
+fill_grid() filled 113000000 weights Fri Oct 27 17:46:53 2017
+fill_grid() filled 114000000 weights Fri Oct 27 17:55:37 2017
+fill_grid() filled 115000000 weights Fri Oct 27 18:06:53 2017
+fill_grid() filled 116000000 weights Fri Oct 27 18:15:32 2017
+fill_grid() filled 117000000 weights Fri Oct 27 18:26:53 2017
+fill_grid() filled 118000000 weights Fri Oct 27 18:35:19 2017
+fill_grid() filled 119000000 weights Fri Oct 27 18:46:50 2017
+fill_grid() filled 120000000 weights Fri Oct 27 18:54:41 2017
+fill_grid() filled 121000000 weights Fri Oct 27 19:06:18 2017
+fill_grid() filled 122000000 weights Fri Oct 27 19:13:19 2017
+fill_grid() filled 123000000 weights Fri Oct 27 19:24:09 2017
+fill_grid() filled 124000000 weights Fri Oct 27 19:30:25 2017
+
+************* Integration by Vegas (iteration   5) **************
+*                                                               *
+*  integral  =  279946.24       accum. integral =  279672.53    *
+*  std. dev. =  586.19524       accum. std. dev =  284.73642    *
+*   max. wt. =    149.927                                       *
+*                                                               *
+**************   chi**2/iteration =  2.304       ****************
+
+ Writing out intermediate results for iteration           5
+fill_grid() filled 125000000 weights Fri Oct 27 19:33:17 2017
+fill_grid() filled 126000000 weights Fri Oct 27 19:43:30 2017
+fill_grid() filled 127000000 weights Fri Oct 27 19:50:54 2017
+fill_grid() filled 128000000 weights Fri Oct 27 20:01:51 2017
+fill_grid() filled 129000000 weights Fri Oct 27 20:10:56 2017
+fill_grid() filled 130000000 weights Fri Oct 27 20:21:12 2017
+fill_grid() filled 131000000 weights Fri Oct 27 20:31:20 2017
+fill_grid() filled 132000000 weights Fri Oct 27 20:40:53 2017
+fill_grid() filled 133000000 weights Fri Oct 27 20:51:21 2017
+fill_grid() filled 134000000 weights Fri Oct 27 21:00:34 2017
+fill_grid() filled 135000000 weights Fri Oct 27 21:11:13 2017
+fill_grid() filled 136000000 weights Fri Oct 27 21:20:26 2017
+fill_grid() filled 137000000 weights Fri Oct 27 21:31:17 2017
+fill_grid() filled 138000000 weights Fri Oct 27 21:40:06 2017
+fill_grid() filled 139000000 weights Fri Oct 27 21:51:01 2017
+fill_grid() filled 140000000 weights Fri Oct 27 21:59:48 2017
+fill_grid() filled 141000000 weights Fri Oct 27 22:10:53 2017
+fill_grid() filled 142000000 weights Fri Oct 27 22:19:07 2017
+fill_grid() filled 143000000 weights Fri Oct 27 22:30:17 2017
+fill_grid() filled 144000000 weights Fri Oct 27 22:37:08 2017
+fill_grid() filled 145000000 weights Fri Oct 27 22:47:51 2017
+fill_grid() filled 146000000 weights Fri Oct 27 22:52:29 2017
+
+************* Integration by Vegas (iteration   6) **************
+*                                                               *
+*  integral  =  279884.19       accum. integral =  279713.24    *
+*  std. dev. =  583.42020       accum. std. dev =  255.88770    *
+*   max. wt. =    149.927                                       *
+*                                                               *
+**************   chi**2/iteration =  1.866       ****************
+
+ Writing out intermediate results for iteration           6
+fill_grid() filled 147000000 weights Fri Oct 27 22:56:37 2017
+fill_grid() filled 148000000 weights Fri Oct 27 23:07:16 2017
+fill_grid() filled 149000000 weights Fri Oct 27 23:14:39 2017
+fill_grid() filled 150000000 weights Fri Oct 27 23:25:43 2017
+fill_grid() filled 151000000 weights Fri Oct 27 23:34:04 2017
+fill_grid() filled 152000000 weights Fri Oct 27 23:45:03 2017
+fill_grid() filled 153000000 weights Fri Oct 27 23:54:07 2017
+fill_grid() filled 154000000 weights Sat Oct 28 00:04:46 2017
+fill_grid() filled 155000000 weights Sat Oct 28 00:14:20 2017
+fill_grid() filled 156000000 weights Sat Oct 28 00:24:30 2017
+fill_grid() filled 157000000 weights Sat Oct 28 00:34:27 2017
+fill_grid() filled 158000000 weights Sat Oct 28 00:44:17 2017
+fill_grid() filled 159000000 weights Sat Oct 28 00:54:38 2017
+fill_grid() filled 160000000 weights Sat Oct 28 01:04:08 2017
+fill_grid() filled 161000000 weights Sat Oct 28 01:14:37 2017
+fill_grid() filled 162000000 weights Sat Oct 28 01:23:42 2017
+fill_grid() filled 163000000 weights Sat Oct 28 01:34:47 2017
+fill_grid() filled 164000000 weights Sat Oct 28 01:42:52 2017
+fill_grid() filled 165000000 weights Sat Oct 28 01:54:03 2017
+fill_grid() filled 166000000 weights Sat Oct 28 02:00:51 2017
+fill_grid() filled 167000000 weights Sat Oct 28 02:11:25 2017
+
+************* Integration by Vegas (iteration   7) **************
+*                                                               *
+*  integral  =  280610.36       accum. integral =  279862.52    *
+*  std. dev. =  572.74363       accum. std. dev =  233.63059    *
+*   max. wt. =    149.927                                       *
+*                                                               *
+**************   chi**2/iteration =  1.896       ****************
+
+ Writing out intermediate results for iteration           7
+fill_grid() filled 168000000 weights Sat Oct 28 02:15:38 2017
+fill_grid() filled 169000000 weights Sat Oct 28 02:20:16 2017
+fill_grid() filled 170000000 weights Sat Oct 28 02:31:11 2017
+fill_grid() filled 171000000 weights Sat Oct 28 02:38:24 2017
+fill_grid() filled 172000000 weights Sat Oct 28 02:49:41 2017
+fill_grid() filled 173000000 weights Sat Oct 28 02:57:59 2017
+fill_grid() filled 174000000 weights Sat Oct 28 03:09:09 2017
+fill_grid() filled 175000000 weights Sat Oct 28 03:17:53 2017
+fill_grid() filled 176000000 weights Sat Oct 28 03:28:54 2017
+fill_grid() filled 177000000 weights Sat Oct 28 03:37:49 2017
+fill_grid() filled 178000000 weights Sat Oct 28 03:48:48 2017
+fill_grid() filled 179000000 weights Sat Oct 28 03:57:53 2017
+fill_grid() filled 180000000 weights Sat Oct 28 04:08:42 2017
+fill_grid() filled 181000000 weights Sat Oct 28 04:17:57 2017
+fill_grid() filled 182000000 weights Sat Oct 28 04:28:37 2017
+fill_grid() filled 183000000 weights Sat Oct 28 04:38:08 2017
+fill_grid() filled 184000000 weights Sat Oct 28 04:48:26 2017
+fill_grid() filled 185000000 weights Sat Oct 28 04:58:21 2017
+fill_grid() filled 186000000 weights Sat Oct 28 05:07:38 2017
+fill_grid() filled 187000000 weights Sat Oct 28 05:18:14 2017
+fill_grid() filled 188000000 weights Sat Oct 28 05:25:39 2017
+fill_grid() filled 189000000 weights Sat Oct 28 05:35:36 2017
+
+************* Integration by Vegas (iteration   8) **************
+*                                                               *
+*  integral  =  278968.07       accum. integral =  279740.47    *
+*  std. dev. =  587.72709       accum. std. dev =  217.10607    *
+*   max. wt. =    149.927                                       *
+*                                                               *
+**************   chi**2/iteration =  1.910       ****************
+
+ Writing out intermediate results for iteration           8
+fill_grid() filled 190000000 weights Sat Oct 28 05:38:24 2017
+fill_grid() filled 191000000 weights Sat Oct 28 05:44:32 2017
+fill_grid() filled 192000000 weights Sat Oct 28 05:55:38 2017
+fill_grid() filled 193000000 weights Sat Oct 28 06:02:40 2017
+fill_grid() filled 194000000 weights Sat Oct 28 06:13:56 2017
+fill_grid() filled 195000000 weights Sat Oct 28 06:22:03 2017
+fill_grid() filled 196000000 weights Sat Oct 28 06:33:08 2017
+fill_grid() filled 197000000 weights Sat Oct 28 06:41:42 2017
+fill_grid() filled 198000000 weights Sat Oct 28 06:52:43 2017
+fill_grid() filled 199000000 weights Sat Oct 28 07:01:29 2017
+fill_grid() filled 200000000 weights Sat Oct 28 07:12:23 2017
+fill_grid() filled 201000000 weights Sat Oct 28 07:21:46 2017
+fill_grid() filled 202000000 weights Sat Oct 28 07:32:09 2017
+fill_grid() filled 203000000 weights Sat Oct 28 07:41:59 2017
+fill_grid() filled 204000000 weights Sat Oct 28 07:51:52 2017
+fill_grid() filled 205000000 weights Sat Oct 28 08:02:21 2017
+fill_grid() filled 206000000 weights Sat Oct 28 08:11:23 2017
+fill_grid() filled 207000000 weights Sat Oct 28 08:22:29 2017
+fill_grid() filled 208000000 weights Sat Oct 28 08:30:33 2017
+fill_grid() filled 209000000 weights Sat Oct 28 08:41:47 2017
+fill_grid() filled 210000000 weights Sat Oct 28 08:48:29 2017
+fill_grid() filled 211000000 weights Sat Oct 28 08:59:22 2017
+fill_grid() filled 212000000 weights Sat Oct 28 09:04:14 2017
+
+************* Integration by Vegas (iteration   9) **************
+*                                                               *
+*  integral  =  279524.21       accum. integral =  279714.25    *
+*  std. dev. =  584.50734       accum. std. dev =  203.52033    *
+*   max. wt. =    149.927                                       *
+*                                                               *
+**************   chi**2/iteration =  1.687       ****************
+
+ Writing out intermediate results for iteration           9
+fill_grid() filled 213000000 weights Sat Oct 28 09:08:05 2017
+fill_grid() filled 214000000 weights Sat Oct 28 09:18:43 2017
+fill_grid() filled 215000000 weights Sat Oct 28 09:26:04 2017
+fill_grid() filled 216000000 weights Sat Oct 28 09:37:11 2017
+fill_grid() filled 217000000 weights Sat Oct 28 09:45:35 2017
+fill_grid() filled 218000000 weights Sat Oct 28 09:56:38 2017
+fill_grid() filled 219000000 weights Sat Oct 28 10:05:27 2017
+fill_grid() filled 220000000 weights Sat Oct 28 10:16:25 2017
+fill_grid() filled 221000000 weights Sat Oct 28 10:25:18 2017
+fill_grid() filled 222000000 weights Sat Oct 28 10:36:11 2017
+fill_grid() filled 223000000 weights Sat Oct 28 10:45:28 2017
+fill_grid() filled 224000000 weights Sat Oct 28 10:56:03 2017
+fill_grid() filled 225000000 weights Sat Oct 28 11:05:24 2017
+fill_grid() filled 226000000 weights Sat Oct 28 11:15:52 2017
+fill_grid() filled 227000000 weights Sat Oct 28 11:25:31 2017
+fill_grid() filled 228000000 weights Sat Oct 28 11:35:37 2017
+fill_grid() filled 229000000 weights Sat Oct 28 11:45:31 2017
+fill_grid() filled 230000000 weights Sat Oct 28 11:54:44 2017
+fill_grid() filled 231000000 weights Sat Oct 28 12:05:23 2017
+fill_grid() filled 232000000 weights Sat Oct 28 12:12:50 2017
+fill_grid() filled 233000000 weights Sat Oct 28 12:22:46 2017
+
+************* Integration by Vegas (iteration  10) **************
+*                                                               *
+*  integral  =  279303.59       accum. integral =  279669.12    *
+*  std. dev. =  579.18615       accum. std. dev =  192.01099    *
+*   max. wt. =    149.927                                       *
+*                                                               *
+**************   chi**2/iteration =  1.549       ****************
+
+ Writing out intermediate results for iteration          10
+fill_grid() filled 234000000 weights Sat Oct 28 12:25:31 2017
+fill_grid() filled 235000000 weights Sat Oct 28 12:32:09 2017
+fill_grid() filled 236000000 weights Sat Oct 28 12:43:32 2017
+fill_grid() filled 237000000 weights Sat Oct 28 12:50:24 2017
+fill_grid() filled 238000000 weights Sat Oct 28 13:02:01 2017
+fill_grid() filled 239000000 weights Sat Oct 28 13:09:54 2017
+fill_grid() filled 240000000 weights Sat Oct 28 13:21:16 2017
+fill_grid() filled 241000000 weights Sat Oct 28 13:29:39 2017
+fill_grid() filled 242000000 weights Sat Oct 28 13:40:59 2017
+fill_grid() filled 243000000 weights Sat Oct 28 13:49:28 2017
+fill_grid() filled 244000000 weights Sat Oct 28 14:00:41 2017
+fill_grid() filled 245000000 weights Sat Oct 28 14:09:18 2017
+fill_grid() filled 246000000 weights Sat Oct 28 14:20:40 2017
+fill_grid() filled 247000000 weights Sat Oct 28 14:29:04 2017
+fill_grid() filled 248000000 weights Sat Oct 28 14:40:24 2017
+fill_grid() filled 249000000 weights Sat Oct 28 14:48:41 2017
+fill_grid() filled 250000000 weights Sat Oct 28 15:00:10 2017
+fill_grid() filled 251000000 weights Sat Oct 28 15:07:50 2017
+fill_grid() filled 252000000 weights Sat Oct 28 15:19:26 2017
+fill_grid() filled 253000000 weights Sat Oct 28 15:26:59 2017
+fill_grid() filled 254000000 weights Sat Oct 28 15:37:06 2017
+fill_grid() filled 255000000 weights Sat Oct 28 15:44:29 2017
+
+************* Integration by Vegas (iteration  11) **************
+*                                                               *
+*  integral  =  279207.83       accum. integral =  279639.38    *
+*  std. dev. =  731.42869       accum. std. dev =  185.71829    *
+*   max. wt. =    347.221                                       *
+*                                                               *
+**************   chi**2/iteration =  1.432       ****************
+
+ Writing out intermediate results for iteration          11
+fill_grid() filled 256000000 weights Sat Oct 28 15:46:40 2017
+fill_grid() filled 257000000 weights Sat Oct 28 15:56:40 2017
+fill_grid() filled 258000000 weights Sat Oct 28 16:04:49 2017
+fill_grid() filled 259000000 weights Sat Oct 28 16:15:25 2017
+fill_grid() filled 260000000 weights Sat Oct 28 16:25:48 2017
+fill_grid() filled 261000000 weights Sat Oct 28 16:35:02 2017
+fill_grid() filled 262000000 weights Sat Oct 28 16:45:57 2017
+fill_grid() filled 263000000 weights Sat Oct 28 16:54:50 2017
+fill_grid() filled 264000000 weights Sat Oct 28 17:05:55 2017
+fill_grid() filled 265000000 weights Sat Oct 28 17:14:52 2017
+fill_grid() filled 266000000 weights Sat Oct 28 17:25:54 2017
+fill_grid() filled 267000000 weights Sat Oct 28 17:34:52 2017
+fill_grid() filled 268000000 weights Sat Oct 28 17:46:01 2017
+fill_grid() filled 269000000 weights Sat Oct 28 17:54:25 2017
+fill_grid() filled 270000000 weights Sat Oct 28 18:05:33 2017
+fill_grid() filled 271000000 weights Sat Oct 28 18:13:22 2017
+fill_grid() filled 272000000 weights Sat Oct 28 18:24:41 2017
+fill_grid() filled 273000000 weights Sat Oct 28 18:31:33 2017
+fill_grid() filled 274000000 weights Sat Oct 28 18:42:55 2017
+fill_grid() filled 275000000 weights Sat Oct 28 18:48:48 2017
+fill_grid() filled 276000000 weights Sat Oct 28 18:59:44 2017
+fill_grid() filled 277000000 weights Sat Oct 28 19:05:36 2017
+
+************* Integration by Vegas (iteration  12) **************
+*                                                               *
+*  integral  =  280001.67       accum. integral =  279665.32    *
+*  std. dev. =  668.76484       accum. std. dev =  178.94633    *
+*   max. wt. =    347.221                                       *
+*                                                               *
+**************   chi**2/iteration =  1.326       ****************
+
+ Writing out intermediate results for iteration          12
+fill_grid() filled 278000000 weights Sat Oct 28 19:08:07 2017
+fill_grid() filled 279000000 weights Sat Oct 28 19:18:11 2017
+fill_grid() filled 280000000 weights Sat Oct 28 19:25:48 2017
+fill_grid() filled 281000000 weights Sat Oct 28 19:36:42 2017
+fill_grid() filled 282000000 weights Sat Oct 28 19:45:57 2017
+fill_grid() filled 283000000 weights Sat Oct 28 19:56:15 2017
+fill_grid() filled 284000000 weights Sat Oct 28 20:06:20 2017
+fill_grid() filled 285000000 weights Sat Oct 28 20:16:03 2017
+fill_grid() filled 286000000 weights Sat Oct 28 20:26:30 2017
+fill_grid() filled 287000000 weights Sat Oct 28 20:35:58 2017
+fill_grid() filled 288000000 weights Sat Oct 28 20:46:20 2017
+fill_grid() filled 289000000 weights Sat Oct 28 20:55:49 2017
+fill_grid() filled 290000000 weights Sat Oct 28 21:06:36 2017
+fill_grid() filled 291000000 weights Sat Oct 28 21:15:31 2017
+fill_grid() filled 292000000 weights Sat Oct 28 21:25:59 2017
+fill_grid() filled 293000000 weights Sat Oct 28 21:34:53 2017
+fill_grid() filled 294000000 weights Sat Oct 28 21:45:51 2017
+fill_grid() filled 295000000 weights Sat Oct 28 21:53:38 2017
+fill_grid() filled 296000000 weights Sat Oct 28 22:04:50 2017
+fill_grid() filled 297000000 weights Sat Oct 28 22:11:27 2017
+fill_grid() filled 298000000 weights Sat Oct 28 22:21:59 2017
+
+************* Integration by Vegas (iteration  13) **************
+*                                                               *
+*  integral  =  279131.71       accum. integral =  279623.30    *
+*  std. dev. =  612.11371       accum. std. dev =  171.75728    *
+*   max. wt. =    347.221                                       *
+*                                                               *
+**************   chi**2/iteration =  1.274       ****************
+
+ Writing out intermediate results for iteration          13
+fill_grid() filled 299000000 weights Sat Oct 28 22:25:35 2017
+fill_grid() filled 300000000 weights Sat Oct 28 22:30:43 2017
+fill_grid() filled 301000000 weights Sat Oct 28 22:41:43 2017
+fill_grid() filled 302000000 weights Sat Oct 28 22:48:52 2017
+fill_grid() filled 303000000 weights Sat Oct 28 23:00:13 2017
+fill_grid() filled 304000000 weights Sat Oct 28 23:08:31 2017
+fill_grid() filled 305000000 weights Sat Oct 28 23:19:42 2017
+fill_grid() filled 306000000 weights Sat Oct 28 23:28:18 2017
+fill_grid() filled 307000000 weights Sat Oct 28 23:39:31 2017
+fill_grid() filled 308000000 weights Sat Oct 28 23:48:15 2017
+fill_grid() filled 309000000 weights Sat Oct 28 23:59:20 2017
+fill_grid() filled 310000000 weights Sun Oct 29 00:08:04 2017
+fill_grid() filled 311000000 weights Sun Oct 29 00:19:17 2017
+fill_grid() filled 312000000 weights Sun Oct 29 00:27:53 2017
+fill_grid() filled 313000000 weights Sun Oct 29 00:39:03 2017
+fill_grid() filled 314000000 weights Sun Oct 29 00:47:26 2017
+fill_grid() filled 315000000 weights Sun Oct 29 00:58:47 2017
+fill_grid() filled 316000000 weights Sun Oct 29 01:06:52 2017
+fill_grid() filled 317000000 weights Sun Oct 29 01:17:53 2017
+fill_grid() filled 318000000 weights Sun Oct 29 01:26:55 2017
+fill_grid() filled 319000000 weights Sun Oct 29 01:35:52 2017
+fill_grid() filled 320000000 weights Sun Oct 29 01:44:17 2017
+
+************* Integration by Vegas (iteration  14) **************
+*                                                               *
+*  integral  =  279316.59       accum. integral =  279599.50    *
+*  std. dev. =  592.14846       accum. std. dev =  164.95815    *
+*   max. wt. =    347.221                                       *
+*                                                               *
+**************   chi**2/iteration =  1.195       ****************
+
+ Writing out intermediate results for iteration          14
+fill_grid() filled 321000000 weights Sun Oct 29 01:46:20 2017
+fill_grid() filled 322000000 weights Sun Oct 29 01:54:58 2017
+fill_grid() filled 323000000 weights Sun Oct 29 01:04:20 2017
+fill_grid() filled 324000000 weights Sun Oct 29 01:13:15 2017
+fill_grid() filled 325000000 weights Sun Oct 29 01:24:46 2017
+fill_grid() filled 326000000 weights Sun Oct 29 01:32:39 2017
+fill_grid() filled 327000000 weights Sun Oct 29 01:43:56 2017
+fill_grid() filled 328000000 weights Sun Oct 29 01:52:29 2017
+fill_grid() filled 329000000 weights Sun Oct 29 02:03:41 2017
+fill_grid() filled 330000000 weights Sun Oct 29 02:12:17 2017
+fill_grid() filled 331000000 weights Sun Oct 29 02:23:29 2017
+fill_grid() filled 332000000 weights Sun Oct 29 02:32:09 2017
+fill_grid() filled 333000000 weights Sun Oct 29 02:43:17 2017
+fill_grid() filled 334000000 weights Sun Oct 29 02:51:55 2017
+fill_grid() filled 335000000 weights Sun Oct 29 03:03:13 2017
+fill_grid() filled 336000000 weights Sun Oct 29 03:11:42 2017
+fill_grid() filled 337000000 weights Sun Oct 29 03:22:56 2017
+fill_grid() filled 338000000 weights Sun Oct 29 03:30:46 2017
+fill_grid() filled 339000000 weights Sun Oct 29 03:42:14 2017
+fill_grid() filled 340000000 weights Sun Oct 29 03:49:00 2017
+fill_grid() filled 341000000 weights Sun Oct 29 03:59:59 2017
+fill_grid() filled 342000000 weights Sun Oct 29 04:05:56 2017
+
+************* Integration by Vegas (iteration  15) **************
+*                                                               *
+*  integral  =  278699.19       accum. integral =  279533.77    *
+*  std. dev. =  587.78778       accum. std. dev =  158.82224    *
+*   max. wt. =    347.221                                       *
+*                                                               *
+**************   chi**2/iteration =  1.265       ****************
+
+
+
+Value of final tota integral is   601558.3227 +/-   159.8621 fb
+
+ Total number of shots       :    322781250
+ Total no. failing cuts      :    208597386
+ Number failing jet cuts     :            0
+ Number failing process cuts :     88836310
+
+   Jet efficiency : 100.00%
+   Cut efficiency :  56.24%
+ Total efficiency :  56.24%
+
+ Contribution from parton sub-processes:
+ ---------------------------------------
+       GG     |        -758.22136   -0.13%
+       GQ     |      193366.07421   32.14%
+       GQB    |       57785.18651    9.61%
+       QG     |      193341.13079   32.14%
+       QBG    |       57815.74329    9.61%
+       QQ     |       25334.26426    4.21%
+       QBQB   |        3168.84726    0.53%
+       QQB    |       35751.23870    5.94%
+       QBQ    |       35754.05904    5.94%
+ ---------------------------------------
+
+ ****************************************************
+ output files  dirgam_tota_NNPDF31_1___1___ATLASPHT15
+ ****************************************************
+Write out grids ...
+saving grid N=1	of 5	appl::grid::Write() ATLASPHT15_Etagamma.root	dirname grid	pdfname 
+writing basic.config
+grid::Write()size(untrimmed)=68062 kB	size(trimmed)=15895 kB (23.3%)
+size(untrimmed)=69696000	size(trimmed)=16276905	fraction=23.3541 %
+saving grid N=2	of 5	appl::grid::Write() ATLASPHT15_Et_1bin.root	dirname grid	pdfname 
+writing basic.config
+grid::Write()size(untrimmed)=79406 kB	size(trimmed)=9438 kB (11.8%)
+size(untrimmed)=81312000	size(trimmed)=9665456	fraction=11.8869 %
+saving grid N=3	of 5	appl::grid::Write() ATLASPHT15_Et_2bin.root	dirname grid	pdfname 
+writing basic.config
+grid::Write()size(untrimmed)=79406 kB	size(trimmed)=9496 kB (11.9%)
+size(untrimmed)=81312000	size(trimmed)=9724640	fraction=11.9597 %
+saving grid N=4	of 5	appl::grid::Write() ATLASPHT15_Et_3bin.root	dirname grid	pdfname 
+writing basic.config
+grid::Write()size(untrimmed)=73734 kB	size(trimmed)=8366 kB (11.3%)
+size(untrimmed)=75504000	size(trimmed)=8567752	fraction=11.3474 %
+saving grid N=5	of 5	appl::grid::Write() ATLASPHT15_Et_4bin.root	dirname grid	pdfname 
+writing basic.config
+grid::Write()size(untrimmed)=68062 kB	size(trimmed)=7612 kB (11.1%)
+size(untrimmed)=69696000	size(trimmed)=7795068	fraction=11.1844 %
+ ***********************************************
+ saved grids Sun Oct 29 04:06:47 2017
+ ***********************************************
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG IEEE_DIVIDE_BY_ZERO IEEE_UNDERFLOW_FLAG IEEE_DENORMAL
+Thanks for using LHAPDF 6.1.6. Please make sure to cite the paper:
+  Eur.Phys.J. C75 (2015) 3, 132  (http://arxiv.org/abs/1412.7420)
+---------------
+Job output ends
+=========================================================
+PBS job: finished date = Sun Oct 29 04:06:47 GMT 2017
+Total run time : 67 Hours 7 Minutes 47 Seconds
+=========================================================
