@@ -12,11 +12,7 @@ reflects the official name used in NNPDF fits through the `buildmaster` implemen
 
 Each folder contains a specific README file with the summary information about the grid origin and usage.
 
-### Tag policy
+# Testing tools
 
-This repository is usually tagged before the production of a new NNPDF release so tables have a history.
-
-### Commit policy
-
-The update of tables in this repository can be performed directly from developers. 
-New tables must agree with the naming convensions used by other projects.
+The appltest directory contains some basic tools for making predictions from
+APPLgrid files.
