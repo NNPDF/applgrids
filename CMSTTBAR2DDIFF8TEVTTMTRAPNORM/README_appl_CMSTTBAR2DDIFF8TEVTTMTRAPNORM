@@ -1,0 +1,7 @@
+***************************************************************************
+SetName: CMSTTBAR2DDIFF8TEVTMTTRAPNORM
+Author:  Emanuele R. Nocera (emanuele.nocera@ed.ac.uk)
+Date:    04.2018
+CodesUsed: from Xfitter (arXiv:1703.01630)
+AdditionalInfo: numerator applgrids must be normalised to the bin width
+***************************************************************************
