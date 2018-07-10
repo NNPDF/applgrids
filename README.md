@@ -12,6 +12,11 @@ reflects the official name used in NNPDF fits through the `buildmaster` implemen
 
 Each folder contains a specific README file with the summary information about the grid origin and usage.
 
+### Testing code
+
+A small testing code for generating predictions from APPLgrids + LHAPDF is
+provided in `appltest`.
+
 ### Tag policy
 
 This repository is usually tagged before the production of a new NNPDF release so tables have a history.
@@ -19,4 +24,4 @@ This repository is usually tagged before the production of a new NNPDF release s
 ### Commit policy
 
 The update of tables in this repository can be performed directly from developers. 
-New tables must agree with the naming convensions used by other projects.
+New tables must agree with the naming conventions used by other projects.
