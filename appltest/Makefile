@@ -10,7 +10,7 @@ LHALDFLAGS=  $(shell lhapdf-config --ldflags)
 #########################################
 
 # Total flags for test code
-TSTFLAGS=$(AFLAGS) $(LHAFLAGS)
+TSTFLAGS=$(AFLAGS) $(LHAFLAGS) -std=c++17
 TSTLDFLAGS=$(ALDFLAGS) $(LHALDFLAGS)
 
 #########################################
