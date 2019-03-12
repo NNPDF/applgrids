@@ -1,5 +1,5 @@
 ***************************************************************************
-SetName: CMSTTBAR2DDIFF8TEVTMTTRAPNORM
+SetName: CMS_TTBAR_2D_DIFF_MTT_TTRAP_NORM
 Author:  Emanuele R. Nocera (emanuele.nocera@ed.ac.uk)
 Date:    04.2018
 CodesUsed: from Xfitter (arXiv:1703.01630)
