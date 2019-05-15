@@ -2,6 +2,6 @@
 SetName: CMS_TTB_DIFF_13TEV_2016_LJ_TPTNORM
 Author:  Emanuele R. Nocera (enocera@nikhef.nl)
 Date:    05.2019
-CodesUsed: fastNLO tables from A. Mitov at al.
+CodesUsed: mg5_aMC benchmarked against fastNLO tables by Mitov et al.
 AdditionalInfo: none
 ***************************************************************************
