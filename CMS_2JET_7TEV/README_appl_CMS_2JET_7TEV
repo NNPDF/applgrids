@@ -1,0 +1,7 @@
+*****************************************************************************
+ ExpName: CMS_2JET_7TEV
+ Author: Emanuele R. Nocera (enocera@nikhef.nl)
+ Date: August 2019
+ CodesUsed: NLOjet+fastNLO; fastNLO grids from hepdata
+ AdditionalInfo: dijet invariant mass as central scale
+*****************************************************************************
