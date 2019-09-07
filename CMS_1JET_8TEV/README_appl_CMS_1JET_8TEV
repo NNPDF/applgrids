@@ -2,6 +2,6 @@
  ExpName: CMS_1JET_8TEV
  Author: Emanuele R. Nocera (enocera@nikhef.nl)
  Date: May 2019
- CodesUsed: fastnlo grids generated with nlojet++ and the fastnlo-toolkit
- AdditionalInfo: HT_hat as central scale
+ CodesUsed: applgrids provided by M. Sutton (converted from FastNLO grids)
+ AdditionalInfo: pt_jet as central scale
 *****************************************************************************
