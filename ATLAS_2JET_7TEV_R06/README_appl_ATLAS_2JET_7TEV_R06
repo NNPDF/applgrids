@@ -3,5 +3,5 @@ SetName: ATLAS_2JET_7TEV_R06
 Author:  Emanuele R. Nocera (enocera@nikhef.nl)
 Date:    06.2019
 CodesUsed: NLOJET++
-AdditionalInfo: Applgrids downloaded from https://ploughshare.web.cern.ch/
+AdditionalInfo: dilepton invariant mass used as central scale
 ***************************************************************************
