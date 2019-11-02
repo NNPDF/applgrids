@@ -1,5 +1,5 @@
 ***************************************************************************
-SetName: ATLAS_TOPDIFF_DILEPT_8TEV_TTM_NORM
+SetName: ATLAS_TOPDIFF_DILEPT_8TEV_TTMNORM
 Author:  Emanuele R. Nocera (e.nocera@nikhef.nl)
 Date:    11.2019
 CodesUsed: madgraph/amcfast
