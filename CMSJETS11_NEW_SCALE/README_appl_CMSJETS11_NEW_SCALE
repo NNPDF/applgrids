@@ -1,5 +1,5 @@
 ***********************************************************************
-ExpName: CMSJETS11_NEW
+ExpName: CMSJETS11_NEW_SCALE
 Author: Emanuele R. Nocera (enocera@nikhef.nl)
 Date: November 2019
 CodesUsed: fastnlo grids generated with nlojet++ and the fastnlo-toolkit
