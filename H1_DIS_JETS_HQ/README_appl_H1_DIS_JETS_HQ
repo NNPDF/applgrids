@@ -1,0 +1,7 @@
+*****************************************************************************
+ ExpName: H1_DIS_JETS_HQ
+ Author: Emanuele R. Nocera (enocera@nikhef.nl)
+ Date: December 2019
+ CodesUsed: fastnlo grids from https://fastnlo.hepforge.org/scenarios/
+ AdditionalInfo: 0.5(pT2+Q2)
+*****************************************************************************
