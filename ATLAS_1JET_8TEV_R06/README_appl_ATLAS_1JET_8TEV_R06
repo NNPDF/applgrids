@@ -1,0 +1,7 @@
+*****************************************************************************
+ ExpName: ATLAS_1JET_8TEV_R06
+ Author: Emanuele R. Nocera (enocera@nikhef.nl)
+ Date: July 2019
+ CodesUsed: fastnlo grids generated with nlojet++ and the fastnlo-toolkit
+ AdditionalInfo: HT_hat as central scale
+*****************************************************************************

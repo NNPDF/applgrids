@@ -1,0 +1,7 @@
+***************************************************************************
+SetName: ATLAS_2JET_7TEV_R04
+Author:  Emanuele R. Nocera (enocera@nikhef.nl)
+Date:    06.2019
+CodesUsed: NLOJET++
+AdditionalInfo: dilepton invariant mass as the central scale
+***************************************************************************
