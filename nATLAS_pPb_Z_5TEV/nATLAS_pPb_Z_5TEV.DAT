@@ -35,9 +35,9 @@
 .true.		[Gflag]
 
 [Heavy quark masses]
-172.9d0		[top mass]
+173.1d0		[top mass]
 4.18d0		[bottom mass]
-1.27d0		[charm mass]
+1.28d0		[charm mass]
 
 [Pdf selection]
 'CT10.00'	[pdlabel]
@@ -47,8 +47,8 @@ CT10nlo.LHgrid	[LHAPDF group]
 0           	[LHAPDF set]
 
 [Jet definition and event cuts]
-60d0		[m34min]
-120d0		[m34max]
+66d0		[m34min]
+116d0		[m34max]
 0d0		[m56min]
 14000d0		[m56max]
 .true.		[inclusive]
