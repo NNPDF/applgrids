@@ -1,0 +1,7 @@
+***************************************************************************
+SetName: CMS_2JET_5TEV
+Author:  Rabah Abdul Khalek (rabahak@nikhef.nl)
+Date:    11.2020
+CodesUsed: NLOJET++
+AdditionalInfo: dijet average pT used as central scale
+***************************************************************************
